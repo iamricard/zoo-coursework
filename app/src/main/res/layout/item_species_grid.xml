@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+
+    <variable
+      name="species"
+      type="internet.famous.animal.zoo.data.local.Species" />
+  </data>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="20dp">
+
+    <TextView
+      android:id="@+id/species_emoji"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:background="@drawable/circle"
+      android:gravity="center"
+      android:text="@{species.emoji}"
+      android:textColor="#000000"
+      android:textSize="24sp" />
+
+    <TextView
+      android:id="@+id/species_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@{species.name}"
+      android:textColor="#000000"
+      android:textSize="16sp" />
+  </LinearLayout>
+</layout>

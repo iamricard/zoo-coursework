@@ -1,6 +1,5 @@
-package internet.famous.animal.zoo.keeper;
+package internet.famous.animal.zoo.data.local;
 
-import internet.famous.animal.zoo.pen.Pen;
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;

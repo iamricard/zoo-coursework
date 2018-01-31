@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:5455517960167878785",
-      "lastPropertyId": "7:9094154178298357011",
+      "lastPropertyId": "8:2551093748910917652",
       "name": "Species",
       "properties": [
         {
@@ -31,6 +31,10 @@
         {
           "id": "7:9094154178298357011",
           "name": "isPettable"
+        },
+        {
+          "id": "8:2551093748910917652",
+          "name": "emoji"
         }
       ],
       "relations": []

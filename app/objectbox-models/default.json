@@ -90,7 +90,7 @@
     },
     {
       "id": "4:2707590854240560012",
-      "lastPropertyId": "3:6562399263143452426",
+      "lastPropertyId": "4:2765857679573037300",
       "name": "Animal",
       "properties": [
         {
@@ -105,13 +105,18 @@
           "id": "3:6562399263143452426",
           "indexId": "2:5845882499079183167",
           "name": "speciesId"
+        },
+        {
+          "id": "4:2765857679573037300",
+          "indexId": "3:2731031315216014133",
+          "name": "penId"
         }
       ],
       "relations": []
     }
   ],
   "lastEntityId": "4:2707590854240560012",
-  "lastIndexId": "2:5845882499079183167",
+  "lastIndexId": "3:2731031315216014133",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 4,

@@ -1,7 +1,5 @@
-package internet.famous.animal.zoo.species;
+package internet.famous.animal.zoo.data.local;
 
-import internet.famous.animal.zoo.AreaType;
-import internet.famous.animal.zoo.animal.Animal;
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
@@ -54,19 +52,5 @@ public final class Species {
     s.airNeeded = airNeeded;
     s.isPettable = isPettable;
     return s;
-  }
-
-  public AreaType areaType() {
-    if (airNeeded > 0) {
-      return AreaType.AIR;
-    } else if (isPettable) {
-      return AreaType.PETTABLE;
-    } else if (waterNeeded > 0) {
-      if (landNeeded > 0) {
-        return AreaType.AMPHIBIOUS;
-      }
-      return AreaType.WATER;
-    }
-    return AreaType.LAND;
   }
 }

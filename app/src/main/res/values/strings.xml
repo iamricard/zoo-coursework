@@ -8,31 +8,20 @@
     <item>Species</item>
   </string-array>
 
-  <string name="land_pen">Dry Pen</string>
-  <string name="pettable_pen">Petting Pen</string>
-  <string name="amphibious_pen">Amphibious Pen</string>
-  <string name="water_pen">Aquarium</string>
-  <string name="air_pen">Aviary</string>
-
-  <string name="entity_type_land">🐘</string>
-  <string name="entity_type_air">🦉</string>
-  <string name="entity_type_pettable">🐑</string>
-  <string name="entity_type_water">🐳</string>
-  <string name="entity_type_amphibious">🐸</string>
-  <string name="entity_type_unknown">😈</string>
-
-  <string name="species_title">Species name: %1$s</string>
-  <string name="species_subtitle">Animal count: %1$d</string>
-
-  <string name="pen_title">Pen ID: %1$d</string>
-  <string name="pen_subtitle">Animals: %1$d, Pen type: %2$s</string>
-
-  <string name="keeper_title">Keeper\'s name: %1$s</string>
-  <string name="keeper_subtitle">In charge of %1$d pens</string>
+  <string name="type_unknown">😈</string>
 
   <string name="animal_title">Animal name: %1$s</string>
   <string name="animal_subtitle">Species: %1$s</string>
   <string name="animal_form_name_hint">Animal name</string>
   <string name="animal_form_button_save">Save</string>
   <string name="animal_form_species_unknown">👾 Tap to select a species</string>
+
+  <string name="keeper_title">Keeper\'s name: %1$s</string>
+  <string name="keeper_subtitle">In charge of %1$d pens</string>
+
+  <string name="pen_title">Pen ID: %1$d</string>
+  <string name="pen_subtitle">Animals: %1$d, Pen type: %2$s</string>
+
+  <string name="species_title">Species name: %1$s</string>
+  <string name="species_subtitle">Animal count: %1$d</string>
 </resources>

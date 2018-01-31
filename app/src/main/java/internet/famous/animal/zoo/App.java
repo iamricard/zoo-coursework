@@ -1,32 +1,46 @@
 package internet.famous.animal.zoo;
 
+import android.app.Activity;
 import android.app.Application;
+import android.support.v4.util.Pair;
 
-import internet.famous.animal.zoo.animal.Animal;
-import internet.famous.animal.zoo.keeper.Keeper;
-import internet.famous.animal.zoo.pen.Pen;
-import internet.famous.animal.zoo.species.Species;
+import com.google.common.collect.ImmutableList;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
+import internet.famous.animal.zoo.data.local.Animal;
+import internet.famous.animal.zoo.data.local.Keeper;
+import internet.famous.animal.zoo.data.local.Pen;
+import internet.famous.animal.zoo.data.local.Species;
+import internet.famous.animal.zoo.di.DaggerAppComponent;
 import io.objectbox.Box;
-import io.objectbox.BoxStore;
 
-public final class App extends Application {
-  private BoxStore boxStore;
+public final class App extends Application implements HasActivityInjector {
+  @Inject DispatchingAndroidInjector<Activity> activityDispatchingInjector;
+  @Inject Box<Animal> animalBox;
+  @Inject Box<Keeper> keeperBox;
+  @Inject Box<Pen> penBox;
+  @Inject Box<Species> speciesBox;
 
   @Override
   public void onCreate() {
     super.onCreate();
-    //    EmojiCompat.init(new BundledEmojiCompatConfig(this).setReplaceAll(true));
-    boxStore = MyObjectBox.builder().androidContext(this).build();
+    DaggerAppComponent.builder().application(this).build().inject(this);
     seedData();
   }
 
-  public BoxStore getBoxStore() {
-    return boxStore;
+  @Override
+  public AndroidInjector<Activity> activityInjector() {
+    return activityDispatchingInjector;
   }
 
   private void seedData() {
     // Species seeds
-    Box<Species> speciesBox = boxStore.boxFor(Species.class);
     speciesBox.removeAll();
     Species sloth = Species.newLandSpecies("sloth", "\uD83D\uDE34", 3, false);
     speciesBox.put(sloth);
@@ -48,39 +62,25 @@ public final class App extends Application {
     speciesBox.put(cat);
 
     // Animal seeds
-    Box<Animal> animalBox = boxStore.boxFor(Animal.class);
     animalBox.removeAll();
-    Animal pipoca = new Animal();
-    pipoca.name = "Pipoca";
-    pipoca.species.setTarget(dog);
-    animalBox.put(pipoca);
-    Animal samantha = new Animal();
-    samantha.name = "Samantha";
-    samantha.species.setTarget(dog);
-    animalBox.put(samantha);
-    Animal lucky = new Animal();
-    lucky.name = "Lucky";
-    lucky.species.setTarget(dog);
-    animalBox.put(lucky);
-    Animal totem = new Animal();
-    totem.name = "Totem";
-    totem.species.setTarget(dog);
-    animalBox.put(totem);
-    Animal atena = new Animal();
-    atena.name = "Atena";
-    atena.species.setTarget(dog);
-    animalBox.put(atena);
-    Animal mala = new Animal();
-    mala.name = "Mala";
-    mala.species.setTarget(cat);
-    animalBox.put(mala);
-    Animal henry = new Animal();
-    henry.name = "Henry";
-    henry.species.setTarget(parrot);
-    animalBox.put(henry);
+    List<Pair<String, Species>> animals =
+        ImmutableList.of(
+            new Pair<>("Pipoca", dog),
+            new Pair<>("Flipper", dolphin),
+            new Pair<>("Hedwig", owl),
+            new Pair<>("Pingu", penguin),
+            new Pair<>("Totem", dog),
+            new Pair<>("Atena", dog),
+            new Pair<>("Mala", cat),
+            new Pair<>("Henry", parrot));
+    for (Pair<String, Species> animal : animals) {
+      Animal a = new Animal();
+      a.name = animal.first;
+      a.species.setTarget(animal.second);
+      animalBox.put(a);
+    }
 
     // Keeper seeds
-    Box<Keeper> keeperBox = boxStore.boxFor(Keeper.class);
     keeperBox.removeAll();
     Keeper hardip = new Keeper("Hardip");
     keeperBox.put(hardip);
@@ -92,7 +92,6 @@ public final class App extends Application {
     keeperBox.put(alan);
 
     // Pen seeds
-    Box<Pen> penBox = boxStore.boxFor(Pen.class);
     penBox.removeAll();
 
     Pen landPen = Pen.landPen(100, true);

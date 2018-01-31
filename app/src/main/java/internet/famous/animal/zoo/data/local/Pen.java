@@ -1,8 +1,9 @@
-package internet.famous.animal.zoo.pen;
+package internet.famous.animal.zoo.data.local;
 
-import internet.famous.animal.zoo.keeper.Keeper;
+import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
+import io.objectbox.relation.ToMany;
 import io.objectbox.relation.ToOne;
 
 @Entity
@@ -13,6 +14,7 @@ public final class Pen {
   public long waterSpace = 0;
   public long airSpace = 0;
   public boolean isPettable = false;
+  @Backlink public ToMany<Animal> animals;
 
   public static Pen landPen(long landSpace, boolean isPettable) {
     Pen p = new Pen();
