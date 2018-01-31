@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CheckerFrameworkPluginSettings">
+    <option name="enabledCheckers">
+      <set>
+        <option value="org.checkerframework.checker.fenum.FenumChecker" />
+        <option value="org.checkerframework.checker.formatter.FormatterChecker" />
+        <option value="org.checkerframework.checker.guieffect.GuiEffectChecker" />
+        <option value="org.checkerframework.checker.i18n.I18nChecker" />
+        <option value="org.checkerframework.checker.igj.IGJChecker" />
+        <option value="org.checkerframework.checker.interning.InterningChecker" />
+        <option value="org.checkerframework.checker.javari.JavariChecker" />
+        <option value="org.checkerframework.checker.linear.LinearChecker" />
+        <option value="org.checkerframework.checker.lock.LockChecker" />
+        <option value="org.checkerframework.checker.nullness.NullnessChecker" />
+        <option value="org.checkerframework.checker.propkey.PropertyKeyChecker" />
+        <option value="org.checkerframework.checker.regex.RegexChecker" />
+        <option value="org.checkerframework.checker.signature.SignatureChecker" />
+        <option value="org.checkerframework.checker.tainting.TaintingChecker" />
+        <option value="org.checkerframework.checker.units.UnitsChecker" />
+        <option value="org.checkerframework.common.subtyping.SubtypingChecker" />
+        <option value="org.checkerframework.common.value.ValueChecker" />
+      </set>
+    </option>
+  </component>
+</project>

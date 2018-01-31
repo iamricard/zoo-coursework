@@ -1,0 +1,127 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:5455517960167878785",
+      "lastPropertyId": "8:2551093748910917652",
+      "name": "Species",
+      "properties": [
+        {
+          "id": "2:7341139244967550208",
+          "name": "name"
+        },
+        {
+          "id": "3:7693208159167750529",
+          "name": "landNeeded"
+        },
+        {
+          "id": "4:3711875205866189335",
+          "name": "waterNeeded"
+        },
+        {
+          "id": "5:4752215491226818255",
+          "name": "airNeeded"
+        },
+        {
+          "id": "6:9068133759463471672",
+          "name": "id"
+        },
+        {
+          "id": "7:9094154178298357011",
+          "name": "isPettable"
+        },
+        {
+          "id": "8:2551093748910917652",
+          "name": "emoji"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:3304561174895925536",
+      "lastPropertyId": "3:5395711481258559601",
+      "name": "Keeper",
+      "properties": [
+        {
+          "id": "2:4752563061016801223",
+          "name": "name"
+        },
+        {
+          "id": "3:5395711481258559601",
+          "name": "id"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:4722991963579697711",
+      "lastPropertyId": "6:3670548500832532234",
+      "name": "Pen",
+      "properties": [
+        {
+          "id": "1:2899066360598902740",
+          "name": "id"
+        },
+        {
+          "id": "2:7384731039259768270",
+          "name": "landSpace"
+        },
+        {
+          "id": "3:7827780561285822308",
+          "name": "waterSpace"
+        },
+        {
+          "id": "4:4683029367094794799",
+          "name": "airSpace"
+        },
+        {
+          "id": "5:1070298195935110845",
+          "name": "isPettable"
+        },
+        {
+          "id": "6:3670548500832532234",
+          "indexId": "1:7773413925984635236",
+          "name": "keeperId"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:2707590854240560012",
+      "lastPropertyId": "3:6562399263143452426",
+      "name": "Animal",
+      "properties": [
+        {
+          "id": "1:2509830104850969598",
+          "name": "id"
+        },
+        {
+          "id": "2:8514758885600810596",
+          "name": "name"
+        },
+        {
+          "id": "3:6562399263143452426",
+          "indexId": "2:5845882499079183167",
+          "name": "speciesId"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "4:2707590854240560012",
+  "lastIndexId": "2:5845882499079183167",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    1572171773595963330,
+    5860099992311420980
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
