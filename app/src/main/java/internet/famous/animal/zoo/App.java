@@ -42,23 +42,23 @@ public final class App extends Application implements HasActivityInjector {
   private void seedData() {
     // Species seeds
     speciesBox.removeAll();
-    Species sloth = Species.newLandSpecies("sloth", "\uD83D\uDE34", 3, false);
+    Species sloth = Species.newLandSpecies("Sloth", "\uD83D\uDE34", 3, false);
     speciesBox.put(sloth);
-    Species penguin = Species.newAmphibiousSpecies("penguin", "\uD83D\uDC27", 2, 4);
+    Species penguin = Species.newAmphibiousSpecies("Penguin", "\uD83D\uDC27", 2, 4);
     speciesBox.put(penguin);
-    Species goat = Species.newLandSpecies("goat", "\uD83D\uDC10", 3, true);
+    Species goat = Species.newLandSpecies("Goat", "\uD83D\uDC10", 3, true);
     speciesBox.put(goat);
-    Species dog = Species.newLandSpecies("dog", "\uD83D\uDC15", 3.5, true);
+    Species dog = Species.newLandSpecies("Dog", "\uD83D\uDC15", 3.5, true);
     speciesBox.put(dog);
-    Species owl = Species.newAirSpecies("owl", "\uD83E\uDD89", 20);
+    Species owl = Species.newAirSpecies("Owl", "\uD83E\uDD89", 20);
     speciesBox.put(owl);
-    Species parrot = Species.newAirSpecies("parrot", "\uD83D\uDC26", 10);
+    Species parrot = Species.newAirSpecies("Parrot", "\uD83D\uDC26", 10);
     speciesBox.put(parrot);
-    Species dolphin = Species.newWaterSpecies("dolphin", "\uD83D\uDC2C", 40);
+    Species dolphin = Species.newWaterSpecies("Dolphin", "\uD83D\uDC2C", 40);
     speciesBox.put(dolphin);
-    Species hippo = Species.newAmphibiousSpecies("hippo", "\uD83E\uDD8F", 10, 20);
+    Species hippo = Species.newAmphibiousSpecies("Hippo", "\uD83E\uDD8F", 10, 20);
     speciesBox.put(hippo);
-    Species cat = Species.newLandSpecies("cat", "\uD83D\uDC08", 4, true);
+    Species cat = Species.newLandSpecies("Cat", "\uD83D\uDC08", 4, true);
     speciesBox.put(cat);
 
     // Animal seeds

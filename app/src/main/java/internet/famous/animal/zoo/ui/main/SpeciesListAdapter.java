@@ -3,9 +3,6 @@ package internet.famous.animal.zoo.ui.main;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
 
 import internet.famous.animal.zoo.data.local.Species;
@@ -30,29 +27,11 @@ public final class SpeciesListAdapter
     }
   }
 
-  private List<Species> species = new ArrayList<>();
-
   @Inject
   SpeciesListAdapter() {}
 
   @Override
-  public void setData(List<Species> species) {
-    this.species = species;
-    notifyDataSetChanged();
-  }
-
-  @Override
   public SpeciesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     return SpeciesViewHolder.create(LayoutInflater.from(parent.getContext()), parent);
-  }
-
-  @Override
-  public void onBindViewHolder(SpeciesViewHolder holder, int position) {
-    holder.onBind(species.get(position));
-  }
-
-  @Override
-  public int getItemCount() {
-    return species.size();
   }
 }

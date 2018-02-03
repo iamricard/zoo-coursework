@@ -17,12 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/animal_form_name_hint"
+        android:inputType="textCapWords"
         android:textSize="34sp" />
 
     </android.support.design.widget.TextInputLayout>
 
     <Button
-      android:id="@+id/select_species_dialog_button"
+      android:id="@+id/select_species_btn"
       style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

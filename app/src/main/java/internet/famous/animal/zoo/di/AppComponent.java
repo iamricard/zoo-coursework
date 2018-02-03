@@ -21,7 +21,7 @@ import internet.famous.animal.zoo.data.DataModule;
     ActivityBuilderModule.class
   }
 )
-interface AppComponent extends AndroidInjector<DaggerApplication> {
+public interface AppComponent extends AndroidInjector<DaggerApplication> {
   void inject(App app);
 
   @Override

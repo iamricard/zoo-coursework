@@ -5,9 +5,7 @@
     android:id="@+id/recyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:divider="@null"
-    android:dividerHeight="0dp"
+    android:clipToPadding="false"
     android:paddingHorizontal="16dp"
-    android:paddingVertical="8dp"
-    android:scrollbarStyle="outsideOverlay" />
+    android:paddingBottom="8dp" />
 </layout>

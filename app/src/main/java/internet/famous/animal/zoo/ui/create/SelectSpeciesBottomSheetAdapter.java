@@ -1,22 +1,32 @@
 package internet.famous.animal.zoo.ui.create;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Species;
 import internet.famous.animal.zoo.databinding.ItemSpeciesGridBinding;
 import internet.famous.animal.zoo.ui.BaseAdapter;
 import internet.famous.animal.zoo.ui.BaseViewHolder;
 
-public class SpeciesGridAdapter extends BaseAdapter<SpeciesGridAdapter.SpeciesViewHolder, Species> {
+@Singleton
+public class SelectSpeciesBottomSheetAdapter
+    extends BaseAdapter<SelectSpeciesBottomSheetAdapter.SpeciesViewHolder, Species> {
   static final class SpeciesViewHolder extends BaseViewHolder<Species, ItemSpeciesGridBinding> {
     public static SpeciesViewHolder create(LayoutInflater inflater, ViewGroup parent) {
-      return new SpeciesViewHolder(ItemSpeciesGridBinding.inflate(inflater, parent, false));
+      ItemSpeciesGridBinding binding = ItemSpeciesGridBinding.inflate(inflater, parent, false);
+      int sidePadding =
+          parent
+              .getContext()
+              .getResources()
+              .getDimensionPixelSize(R.dimen.list_layout_side_padding);
+      View root = binding.getRoot();
+      root.getLayoutParams().width = (parent.getMeasuredWidth() - (sidePadding * 2)) / 3;
+      return new SpeciesViewHolder(binding);
     }
 
     public SpeciesViewHolder(ItemSpeciesGridBinding binding) {
@@ -29,28 +39,11 @@ public class SpeciesGridAdapter extends BaseAdapter<SpeciesGridAdapter.SpeciesVi
     }
   }
 
-  private List<Species> species = new ArrayList<>();
-
   @Inject
-  SpeciesGridAdapter() {}
+  SelectSpeciesBottomSheetAdapter() {}
 
   @Override
-  public void setData(List<Species> species) {
-    this.species = species;
-  }
-
-  @Override
-  public SpeciesGridAdapter.SpeciesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+  public SpeciesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     return SpeciesViewHolder.create(LayoutInflater.from(parent.getContext()), parent);
-  }
-
-  @Override
-  public void onBindViewHolder(SpeciesViewHolder holder, int position) {
-    holder.onBind(species.get(position));
-  }
-
-  @Override
-  public int getItemCount() {
-    return species.size();
   }
 }
