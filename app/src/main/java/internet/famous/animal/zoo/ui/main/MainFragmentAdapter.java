@@ -22,13 +22,13 @@ final class MainFragmentAdapter extends FragmentPagerAdapter {
   @Override
   public Fragment getItem(int position) {
     if (position == 0) {
-      return AnimalListFragment.newInstance();
+      return new AnimalListFragment();
     } else if (position == 1) {
-      return KeeperListFragment.newInstance();
+      return new KeeperListFragment();
     } else if (position == 2) {
-      return PenListFragment.newInstance();
+      return new PenListFragment();
     }
-    return SpeciesListFragment.newInstance();
+    return new SpeciesListFragment();
   }
 
   @Override
