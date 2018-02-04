@@ -18,7 +18,8 @@ import internet.famous.animal.zoo.data.DataModule;
     AndroidInjectionModule.class,
     AppModule.class,
     DataModule.class,
-    ActivityBuilderModule.class
+    ActivityBuilderModule.class,
+    FragmentBuilderModule.class
   }
 )
 public interface AppComponent extends AndroidInjector<DaggerApplication> {

@@ -1,5 +1,7 @@
 package internet.famous.animal.zoo.data.local;
 
+import javax.inject.Inject;
+
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
@@ -11,9 +13,6 @@ public final class Keeper {
   public String name;
   @Backlink public ToMany<Pen> pens;
 
+  @Inject
   public Keeper() {}
-
-  public Keeper(String name) {
-    this.name = name;
-  }
 }

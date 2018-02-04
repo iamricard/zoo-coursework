@@ -10,14 +10,16 @@
 
   <string name="type_unknown">😈</string>
 
+  <string name="button_save">Save</string>
+
   <string name="animal_title">Animal name: %1$s</string>
   <string name="animal_subtitle">Species: %1$s</string>
   <string name="animal_form_name_hint">Animal name</string>
-  <string name="animal_form_button_save">Save</string>
   <string name="animal_form_species_unknown">👾 Tap to select a species</string>
 
   <string name="keeper_title">Keeper\'s name: %1$s</string>
   <string name="keeper_subtitle">In charge of %1$d pens</string>
+  <string name="keeper_form_name_hint">Keeper name</string>
 
   <string name="pen_title">Pen ID: %1$d</string>
   <string name="pen_subtitle">Animals: %1$d, Pen type: %2$s</string>

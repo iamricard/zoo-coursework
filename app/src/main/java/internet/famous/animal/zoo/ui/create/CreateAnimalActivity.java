@@ -1,31 +1,41 @@
 package internet.famous.animal.zoo.ui.create;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import javax.inject.Inject;
 
 import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Animal;
-import internet.famous.animal.zoo.data.local.Species;
 import internet.famous.animal.zoo.databinding.ActivityCreateAnimalBinding;
-import internet.famous.animal.zoo.ui.BaseActivity;
-import internet.famous.animal.zoo.ui.main.MainActivity;
-import io.objectbox.Box;
 
-public final class CreateAnimalActivity extends BaseActivity<ActivityCreateAnimalBinding> {
-  private Species animalSpecies = null;
-  @Inject Box<Animal> animalBox;
+public final class CreateAnimalActivity
+    extends BaseCreateActivity<Animal, ActivityCreateAnimalBinding> {
+  private static final int MINIMUM_NAME_LENGTH = 3;
+
   @Inject SelectSpeciesBottomSheetFragment selectSpeciesFragment;
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    binding.editTextAnimalName.addTextChangedListener(
+        new TextWatcher() {
+          @Override
+          public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+          @Override
+          public void onTextChanged(CharSequence s, int start, int before, int count) {
+            enableSaveButtonIfAnimalIsValid();
+          }
+
+          @Override
+          public void afterTextChanged(Editable s) {}
+        });
     binding.selectSpeciesBtn.setOnClickListener(this::onSelectSpeciesBtnClicked);
-    binding.saveButton.setOnClickListener(this::onSaveAnimalBtnClicked);
+    binding.saveButton.setOnClickListener(this::onSaveBtnClicked);
   }
 
   @Override
@@ -37,27 +47,17 @@ public final class CreateAnimalActivity extends BaseActivity<ActivityCreateAnima
     selectSpeciesFragment
         .setOnSpeciesSelected(
             species -> {
-              animalSpecies = species;
+              data.species.setTarget(species);
               binding.selectSpeciesBtn.setText(String.format("%s %s", species.emoji, species.name));
               selectSpeciesFragment.dismiss();
+              enableSaveButtonIfAnimalIsValid();
             })
         .show(getSupportFragmentManager(), "select_species");
   }
 
-  private void onSaveAnimalBtnClicked(View view) {
-    String animalName = binding.editTextAnimalName.getText().toString();
-    if (animalName.isEmpty()) {
-      binding.editTextAnimalName.setError("Please select a name for the critter.");
-      return;
-    }
-    if (animalSpecies == null) {
-      Snackbar.make(view, "Please select a species for the critter", Snackbar.LENGTH_SHORT).show();
-      return;
-    }
-    Animal newAnimal = new Animal();
-    newAnimal.name = animalName;
-    newAnimal.species.setTarget(animalSpecies);
-    animalBox.put(newAnimal);
-    startActivity(new Intent(this, MainActivity.class));
+  private void enableSaveButtonIfAnimalIsValid() {
+    data.name = binding.editTextAnimalName.getText().toString();
+    binding.saveButton.setEnabled(
+        data.name.length() >= MINIMUM_NAME_LENGTH && data.species.getTarget() != null);
   }
 }

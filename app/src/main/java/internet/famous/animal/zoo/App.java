@@ -82,13 +82,17 @@ public final class App extends Application implements HasActivityInjector {
 
     // Keeper seeds
     keeperBox.removeAll();
-    Keeper hardip = new Keeper("Hardip");
+    Keeper hardip = new Keeper();
+    hardip.name = "Hardip";
     keeperBox.put(hardip);
-    Keeper alex = new Keeper("Alex");
+    Keeper alex = new Keeper();
+    alex.name = "Alex";
     keeperBox.put(alex);
-    Keeper farhad = new Keeper("Farhad");
+    Keeper farhad = new Keeper();
+    farhad.name = "Farhad";
     keeperBox.put(farhad);
-    Keeper alan = new Keeper("Alan");
+    Keeper alan = new Keeper();
+    alan.name = "Alan";
     keeperBox.put(alan);
 
     // Pen seeds

@@ -12,10 +12,10 @@
       android:layout_height="wrap_content">
 
       <android.support.design.widget.TextInputEditText
-        android:id="@+id/edit_text_animal_name"
+        android:id="@+id/edit_text_keeper_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/animal_form_name_hint"
+        android:hint="@string/keeper_form_name_hint"
         android:inputType="textCapWords"
         android:textSize="34sp">
 
@@ -23,15 +23,6 @@
       </android.support.design.widget.TextInputEditText>
 
     </android.support.design.widget.TextInputLayout>
-
-    <Button
-      android:id="@+id/select_species_btn"
-      style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:paddingVertical="24dp"
-      android:text="@string/animal_form_species_unknown"
-      android:textSize="24sp" />
 
     <Button
       android:id="@+id/save_button"

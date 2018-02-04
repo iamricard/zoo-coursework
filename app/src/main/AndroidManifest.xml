@@ -17,5 +17,6 @@
       </intent-filter>
     </activity>
     <activity android:name=".ui.create.CreateAnimalActivity" />
+    <activity android:name=".ui.create.CreateKeeperActivity" />
   </application>
 </manifest>

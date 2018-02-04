@@ -1,5 +1,7 @@
 package internet.famous.animal.zoo.data.local;
 
+import javax.inject.Inject;
+
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 import io.objectbox.relation.ToOne;
@@ -10,4 +12,7 @@ public final class Animal {
   public String name;
   public ToOne<Species> species;
   public ToOne<Pen> pen;
+
+  @Inject
+  public Animal() {}
 }
