@@ -26,8 +26,8 @@
   <string name="keeper_subtitle">In charge of %1$d pens</string>
   <string name="keeper_form_name_hint">Keeper name</string>
 
-  <string name="pen_title">Pen ID: %1$d</string>
-  <string name="pen_subtitle">Animals: %1$d, Pen type: %2$s</string>
+  <string name="pen_title">Type: %1$s — ID: %2$d</string>
+  <string name="pen_subtitle">Animals: %1$d</string>
 
   <string name="species_title">Species name: %1$s</string>
   <string name="species_subtitle">Animal count: %1$d</string>
@@ -42,4 +42,8 @@
   <string name="environment_dry">Dry</string>
   <string name="environment_water">Water</string>
   <string name="environment_hybrid">Amphibious</string>
+  <string name="animal_assign_pen">Assign pen</string>
+  <string name="no_pen_assigned">Warning! No pen assigned.</string>
+  <string name="no_keeper_assigned">Warning! No keeper assigned.</string>
+  <string name="pen_assign_keeper">Assign keeper</string>
 </resources>

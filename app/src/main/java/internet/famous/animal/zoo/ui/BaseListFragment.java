@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
 import internet.famous.animal.zoo.databinding.GenericListBinding;
+import io.objectbox.Box;
 import io.objectbox.android.AndroidScheduler;
 import io.objectbox.query.QueryBuilder;
 import io.objectbox.reactive.DataSubscriptionList;
@@ -19,10 +20,11 @@ import io.objectbox.reactive.DataSubscriptionList;
 public abstract class BaseListFragment<AdapterT extends BaseAdapter<?, DataT>, DataT>
     extends Fragment {
   private final DataSubscriptionList subscriptions = new DataSubscriptionList();
-  @Inject AdapterT adapter;
+  @Inject protected AdapterT adapter;
+  @Inject protected Box<DataT> box;
 
   @Override
-  public final void onCreate(@Nullable Bundle savedInstanceState) {
+  public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     AndroidSupportInjection.inject(this);
   }

@@ -1,6 +1,7 @@
 package internet.famous.animal.zoo.ui.main;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import javax.inject.Inject;
@@ -23,6 +24,9 @@ final class PenListAdapter extends BaseAdapter<PenListAdapter.PenViewHolder, Pen
     @Override
     protected void bindData(Pen pen) {
       binding.setPen(pen);
+      if (pen.keeper.getTarget() == null) {
+        binding.noKeeperWarning.setVisibility(View.VISIBLE);
+      }
     }
   }
 

@@ -1,6 +1,7 @@
 package internet.famous.animal.zoo.ui.main;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import javax.inject.Inject;
@@ -24,6 +25,9 @@ final class AnimalListAdapter extends BaseAdapter<AnimalListAdapter.AnimalViewHo
     protected void bindData(Animal animal) {
       binding.setAnimal(animal);
       binding.setSpecies(animal.species.getTarget());
+      if (animal.pen.getTarget() == null) {
+        binding.noPenWarning.setVisibility(View.VISIBLE);
+      }
     }
   }
 

@@ -12,9 +12,9 @@ import io.objectbox.relation.ToOne;
 public final class Pen {
   @Id public long id;
   public ToOne<Keeper> keeper;
-  public double landSpace = 0;
-  public double waterSpace = 0;
-  public double airSpace = 0;
+  public double landSpace = -1;
+  public double waterSpace = -1;
+  public double airSpace = -1;
   public boolean isPettable = false;
   @Backlink public ToMany<Animal> animals;
 
@@ -46,4 +46,61 @@ public final class Pen {
 
   @Inject
   public Pen() {}
+
+  @Override
+  public String toString() {
+    if (landSpace > 0) {
+      if (waterSpace > 0) {
+        return "Hybrid";
+      } else if (isPettable) {
+        return "Petting";
+      }
+      return "Dry";
+    } else if (waterSpace > 0) {
+      return "Aquarium";
+    }
+    return "Aviary";
+  }
+
+  public boolean canAccomodate(Animal animal) {
+    Species species = animal.species.getTarget();
+    double availableAir = airSpace - usedAir();
+    double availableLand = landSpace - usedLand();
+    double availableWater = waterSpace - usedWater();
+    if (species.landNeeded > 0) {
+      if (species.waterNeeded > 0) {
+        return availableLand >= species.landNeeded && availableWater >= species.waterNeeded;
+      } else if (species.isPettable) {
+        return availableLand >= species.landNeeded && isPettable;
+      } else {
+        return availableLand >= species.landNeeded;
+      }
+    } else if (species.waterNeeded > 0) {
+      return availableWater >= species.waterNeeded;
+    } else if (species.airNeeded > 0) {
+      return availableAir >= species.airNeeded;
+    }
+    return false;
+  }
+
+  private double usedAir() {
+    return animals
+        .stream()
+        .map(a -> a.species.getTarget().airNeeded)
+        .reduce(0.0, (used, needed) -> used + needed);
+  }
+
+  private double usedLand() {
+    return animals
+        .stream()
+        .map(a -> a.species.getTarget().landNeeded)
+        .reduce(0.0, (used, needed) -> used + needed);
+  }
+
+  private double usedWater() {
+    return animals
+        .stream()
+        .map(a -> a.species.getTarget().waterNeeded)
+        .reduce(0.0, (used, needed) -> used + needed);
+  }
 }

@@ -18,7 +18,6 @@
       android:id="@+id/entity_type"
       android:layout_width="48dp"
       android:layout_height="48dp"
-      android:background="@drawable/circle"
       android:gravity="center"
       android:text="@{species.emoji}"
       android:textColor="#000000"
