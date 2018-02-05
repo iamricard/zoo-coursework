@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
-import internet.famous.animal.zoo.databinding.FragmentGenericListBinding;
+import internet.famous.animal.zoo.databinding.GenericListBinding;
 import io.objectbox.android.AndroidScheduler;
 import io.objectbox.query.QueryBuilder;
 import io.objectbox.reactive.DataSubscriptionList;
@@ -30,8 +30,7 @@ public abstract class BaseListFragment<AdapterT extends BaseAdapter<?, DataT>, D
   @Override
   public final View onCreateView(
       LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
-    FragmentGenericListBinding binding =
-        FragmentGenericListBinding.inflate(inflater, parent, false);
+    GenericListBinding binding = GenericListBinding.inflate(inflater, parent, false);
     binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     binding.recyclerView.setAdapter(adapter);
     return binding.getRoot();

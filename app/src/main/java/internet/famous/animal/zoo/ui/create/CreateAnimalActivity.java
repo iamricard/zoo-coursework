@@ -12,6 +12,8 @@ import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Animal;
 import internet.famous.animal.zoo.databinding.ActivityCreateAnimalBinding;
 
+import static android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE;
+
 public final class CreateAnimalActivity
     extends BaseCreateActivity<Animal, ActivityCreateAnimalBinding> {
   private static final int MINIMUM_NAME_LENGTH = 3;
@@ -21,6 +23,7 @@ public final class CreateAnimalActivity
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    getWindow().setSoftInputMode(SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     binding.editTextAnimalName.addTextChangedListener(
         new TextWatcher() {
           @Override
@@ -35,7 +38,7 @@ public final class CreateAnimalActivity
           public void afterTextChanged(Editable s) {}
         });
     binding.selectSpeciesBtn.setOnClickListener(this::onSelectSpeciesBtnClicked);
-    binding.saveButton.setOnClickListener(this::onSaveBtnClicked);
+    binding.saveBtn.setOnClickListener(this::onSaveBtnClicked);
   }
 
   @Override
@@ -57,7 +60,7 @@ public final class CreateAnimalActivity
 
   private void enableSaveButtonIfAnimalIsValid() {
     data.name = binding.editTextAnimalName.getText().toString();
-    binding.saveButton.setEnabled(
+    binding.saveBtn.setEnabled(
         data.name.length() >= MINIMUM_NAME_LENGTH && data.species.getTarget() != null);
   }
 }

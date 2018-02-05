@@ -10,12 +10,17 @@
 
   <string name="type_unknown">😈</string>
 
-  <string name="button_save">Save</string>
+  <string name="save_btn">Save</string>
+  <string name="form_select_environment">Environment</string>
+  <string name="form_space_requirements">Space</string>
+  <string name="form_air_req">Air in m³</string>
+  <string name="form_water_req">Water in m³</string>
+  <string name="form_land_req">Land in m²</string>
 
   <string name="animal_title">Animal name: %1$s</string>
   <string name="animal_subtitle">Species: %1$s</string>
   <string name="animal_form_name_hint">Animal name</string>
-  <string name="animal_form_species_unknown">👾 Tap to select a species</string>
+  <string name="animal_form_select_species_btn">👾 Tap to select a species</string>
 
   <string name="keeper_title">Keeper\'s name: %1$s</string>
   <string name="keeper_subtitle">In charge of %1$d pens</string>
@@ -26,4 +31,15 @@
 
   <string name="species_title">Species name: %1$s</string>
   <string name="species_subtitle">Animal count: %1$d</string>
+  <string-array name="species_form_steps">
+    <item>Environment</item>
+    <item>Space requirements</item>
+    <item>Name</item>
+  </string-array>
+  <string name="species_form_name_hint">Species name</string>
+  <string name="species_form_emoji_hint">Species emoji</string>
+  <string name="environment_air">Air</string>
+  <string name="environment_dry">Dry</string>
+  <string name="environment_water">Water</string>
+  <string name="environment_hybrid">Amphibious</string>
 </resources>

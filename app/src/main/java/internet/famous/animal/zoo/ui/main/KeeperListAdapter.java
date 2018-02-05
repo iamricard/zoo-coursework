@@ -10,19 +10,18 @@ import internet.famous.animal.zoo.databinding.ItemKeeperListBinding;
 import internet.famous.animal.zoo.ui.BaseAdapter;
 import internet.famous.animal.zoo.ui.BaseViewHolder;
 
-public final class KeeperListAdapter
-    extends BaseAdapter<KeeperListAdapter.KeeperViewHolder, Keeper> {
+final class KeeperListAdapter extends BaseAdapter<KeeperListAdapter.KeeperViewHolder, Keeper> {
   static final class KeeperViewHolder extends BaseViewHolder<Keeper, ItemKeeperListBinding> {
     public static KeeperViewHolder create(LayoutInflater inflater, ViewGroup parent) {
       return new KeeperViewHolder(ItemKeeperListBinding.inflate(inflater, parent, false));
     }
 
-    public KeeperViewHolder(ItemKeeperListBinding binding) {
+    KeeperViewHolder(ItemKeeperListBinding binding) {
       super(binding);
     }
 
     @Override
-    protected void onBind(Keeper keeper, ItemKeeperListBinding binding) {
+    protected void bindData(Keeper keeper) {
       binding.setKeeper(keeper);
     }
   }

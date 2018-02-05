@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+
+    <variable
+      name="activity"
+      type="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity" />
+  </data>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/app_padding">
+
+    <TextView
+      style="@style/TextAppearance.AppCompat.Headline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:text="@string/form_select_environment" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/radio_buttons"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:dividerPadding="8dp"
+      android:stretchMode="columnWidth">
+
+      <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/environment_air" />
+
+      <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/environment_dry" />
+
+      <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/environment_water" />
+
+      <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/environment_hybrid" />
+    </RadioGroup>
+
+    <LinearLayout
+      android:id="@+id/space_requirements"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:visibility="gone">
+
+      <TextView
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/form_space_requirements" />
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/air_req"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/form_air_req"
+          android:inputType="numberDecimal"
+          android:onTextChanged="@{activity.onAirReqChanged}" />
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/land_req"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/form_land_req"
+          android:inputType="numberDecimal"
+          android:onTextChanged="@{activity.onLandReqChanged}" />
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/water_req"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/form_water_req"
+          android:inputType="numberDecimal"
+          android:onTextChanged="@{activity.onWaterReqChanged}" />
+      </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp">
+
+      <android.support.design.widget.TextInputEditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/species_form_name_hint"
+        android:inputType="textCapWords"
+        android:onTextChanged="@{activity.onNameChanged}" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp">
+
+      <android.support.design.widget.TextInputEditText
+        android:id="@+id/emoji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/species_form_emoji_hint"
+        android:onTextChanged="@{activity.onEmojiChanged}" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+      android:id="@+id/save_btn"
+      style="@style/Widget.AppCompat.Button.Colored"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:enabled="false"
+      android:paddingVertical="20dp"
+      android:text="@string/save_btn"
+      android:textSize="20sp" />
+  </LinearLayout>
+</layout>

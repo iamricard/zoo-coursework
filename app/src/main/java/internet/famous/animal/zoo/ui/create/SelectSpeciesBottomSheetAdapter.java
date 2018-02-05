@@ -14,27 +14,24 @@ import internet.famous.animal.zoo.ui.BaseAdapter;
 import internet.famous.animal.zoo.ui.BaseViewHolder;
 
 @Singleton
-public class SelectSpeciesBottomSheetAdapter
+final class SelectSpeciesBottomSheetAdapter
     extends BaseAdapter<SelectSpeciesBottomSheetAdapter.SpeciesViewHolder, Species> {
   static final class SpeciesViewHolder extends BaseViewHolder<Species, ItemSpeciesGridBinding> {
     public static SpeciesViewHolder create(LayoutInflater inflater, ViewGroup parent) {
       ItemSpeciesGridBinding binding = ItemSpeciesGridBinding.inflate(inflater, parent, false);
       int sidePadding =
-          parent
-              .getContext()
-              .getResources()
-              .getDimensionPixelSize(R.dimen.list_layout_side_padding);
+          parent.getContext().getResources().getDimensionPixelSize(R.dimen.app_padding);
       View root = binding.getRoot();
       root.getLayoutParams().width = (parent.getMeasuredWidth() - (sidePadding * 2)) / 3;
       return new SpeciesViewHolder(binding);
     }
 
-    public SpeciesViewHolder(ItemSpeciesGridBinding binding) {
+    SpeciesViewHolder(ItemSpeciesGridBinding binding) {
       super(binding);
     }
 
     @Override
-    protected void onBind(Species species, ItemSpeciesGridBinding binding) {
+    protected void bindData(Species species) {
       binding.setSpecies(species);
     }
   }

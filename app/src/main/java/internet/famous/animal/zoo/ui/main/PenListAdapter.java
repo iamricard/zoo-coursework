@@ -10,18 +10,18 @@ import internet.famous.animal.zoo.databinding.ItemPenListBinding;
 import internet.famous.animal.zoo.ui.BaseAdapter;
 import internet.famous.animal.zoo.ui.BaseViewHolder;
 
-public final class PenListAdapter extends BaseAdapter<PenListAdapter.PenViewHolder, Pen> {
+final class PenListAdapter extends BaseAdapter<PenListAdapter.PenViewHolder, Pen> {
   static final class PenViewHolder extends BaseViewHolder<Pen, ItemPenListBinding> {
     public static PenViewHolder create(LayoutInflater inflater, ViewGroup parent) {
       return new PenViewHolder(ItemPenListBinding.inflate(inflater, parent, false));
     }
 
-    public PenViewHolder(ItemPenListBinding binding) {
+    PenViewHolder(ItemPenListBinding binding) {
       super(binding);
     }
 
     @Override
-    protected void onBind(Pen pen, ItemPenListBinding binding) {
+    protected void bindData(Pen pen) {
       binding.setPen(pen);
     }
   }

@@ -10,19 +10,18 @@ import internet.famous.animal.zoo.databinding.ItemSpeciesListBinding;
 import internet.famous.animal.zoo.ui.BaseAdapter;
 import internet.famous.animal.zoo.ui.BaseViewHolder;
 
-public final class SpeciesListAdapter
-    extends BaseAdapter<SpeciesListAdapter.SpeciesViewHolder, Species> {
+final class SpeciesListAdapter extends BaseAdapter<SpeciesListAdapter.SpeciesViewHolder, Species> {
   static final class SpeciesViewHolder extends BaseViewHolder<Species, ItemSpeciesListBinding> {
     public static SpeciesViewHolder create(LayoutInflater inflater, ViewGroup parent) {
       return new SpeciesViewHolder(ItemSpeciesListBinding.inflate(inflater, parent, false));
     }
 
-    public SpeciesViewHolder(ItemSpeciesListBinding binding) {
+    SpeciesViewHolder(ItemSpeciesListBinding binding) {
       super(binding);
     }
 
     @Override
-    protected void onBind(Species species, ItemSpeciesListBinding binding) {
+    protected void bindData(Species species) {
       binding.setSpecies(species);
     }
   }

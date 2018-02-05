@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/app_padding">
 
     <android.support.design.widget.TextInputLayout
       android:layout_width="match_parent"
@@ -30,17 +30,17 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:paddingVertical="24dp"
-      android:text="@string/animal_form_species_unknown"
+      android:text="@string/animal_form_select_species_btn"
       android:textSize="24sp" />
 
     <Button
-      android:id="@+id/save_button"
+      android:id="@+id/save_btn"
       style="@style/Widget.AppCompat.Button.Colored"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:enabled="false"
       android:paddingVertical="20dp"
-      android:text="@string/button_save"
+      android:text="@string/save_btn"
       android:textSize="20sp" />
   </LinearLayout>
 </layout>

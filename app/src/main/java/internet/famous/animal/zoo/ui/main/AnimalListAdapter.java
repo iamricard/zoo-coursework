@@ -10,10 +10,9 @@ import internet.famous.animal.zoo.databinding.ItemAnimalListBinding;
 import internet.famous.animal.zoo.ui.BaseAdapter;
 import internet.famous.animal.zoo.ui.BaseViewHolder;
 
-public final class AnimalListAdapter
-    extends BaseAdapter<AnimalListAdapter.AnimalViewHolder, Animal> {
+final class AnimalListAdapter extends BaseAdapter<AnimalListAdapter.AnimalViewHolder, Animal> {
   static final class AnimalViewHolder extends BaseViewHolder<Animal, ItemAnimalListBinding> {
-    public static AnimalViewHolder create(LayoutInflater inflater, ViewGroup parent) {
+    static AnimalViewHolder create(LayoutInflater inflater, ViewGroup parent) {
       return new AnimalViewHolder(ItemAnimalListBinding.inflate(inflater, parent, false));
     }
 
@@ -22,7 +21,7 @@ public final class AnimalListAdapter
     }
 
     @Override
-    protected void onBind(Animal animal, ItemAnimalListBinding binding) {
+    protected void bindData(Animal animal) {
       binding.setAnimal(animal);
       binding.setSpecies(animal.species.getTarget());
     }

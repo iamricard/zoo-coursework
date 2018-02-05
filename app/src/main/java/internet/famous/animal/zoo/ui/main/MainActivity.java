@@ -13,6 +13,8 @@ import internet.famous.animal.zoo.databinding.ActivityMainBinding;
 import internet.famous.animal.zoo.ui.BaseActivity;
 import internet.famous.animal.zoo.ui.create.CreateAnimalActivity;
 import internet.famous.animal.zoo.ui.create.CreateKeeperActivity;
+import internet.famous.animal.zoo.ui.create.CreatePenActivity;
+import internet.famous.animal.zoo.ui.create.CreateSpeciesActivity;
 
 public final class MainActivity extends BaseActivity<ActivityMainBinding> {
   private List<Intent> createEntityActivityIntents;
@@ -29,8 +31,8 @@ public final class MainActivity extends BaseActivity<ActivityMainBinding> {
         ImmutableList.of(
             new Intent(this, CreateAnimalActivity.class),
             new Intent(this, CreateKeeperActivity.class),
-            new Intent(this, CreateKeeperActivity.class),
-            new Intent(this, CreateKeeperActivity.class));
+            new Intent(this, CreatePenActivity.class),
+            new Intent(this, CreateSpeciesActivity.class));
     binding.viewpager.setAdapter(new MainFragmentAdapter(this));
     binding.tabs.setupWithViewPager(binding.viewpager);
     binding.btnCreate.setOnClickListener(this::handleBtnCreateClick);

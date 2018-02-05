@@ -18,5 +18,7 @@
     </activity>
     <activity android:name=".ui.create.CreateAnimalActivity" />
     <activity android:name=".ui.create.CreateKeeperActivity" />
+    <activity android:name=".ui.create.CreateSpeciesActivity" />
+    <activity android:name=".ui.create.CreatePenActivity" />
   </application>
 </manifest>

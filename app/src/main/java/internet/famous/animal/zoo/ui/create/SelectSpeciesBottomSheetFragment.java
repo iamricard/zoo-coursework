@@ -15,7 +15,7 @@ import javax.inject.Inject;
 import dagger.android.support.AndroidSupportInjection;
 import internet.famous.animal.zoo.data.local.Species;
 import internet.famous.animal.zoo.data.local.Species_;
-import internet.famous.animal.zoo.databinding.FragmentGenericListBinding;
+import internet.famous.animal.zoo.databinding.GenericListBinding;
 import io.objectbox.Box;
 import io.objectbox.android.AndroidScheduler;
 import io.objectbox.reactive.DataSubscriptionList;
@@ -52,8 +52,7 @@ public final class SelectSpeciesBottomSheetFragment extends BottomSheetDialogFra
   @Override
   public View onCreateView(
       LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
-    FragmentGenericListBinding binding =
-        FragmentGenericListBinding.inflate(inflater, parent, false);
+    GenericListBinding binding = GenericListBinding.inflate(inflater, parent, false);
     binding.recyclerView.setLayoutManager(
         new StaggeredGridLayoutManager(GRID_COLUMNS, StaggeredGridLayoutManager.HORIZONTAL));
     binding.recyclerView.setAdapter(adapter);

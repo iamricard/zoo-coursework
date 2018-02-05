@@ -1,5 +1,7 @@
 package internet.famous.animal.zoo.data.local;
 
+import javax.inject.Inject;
+
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
@@ -41,4 +43,7 @@ public final class Pen {
     p.airSpace = airSpace;
     return p;
   }
+
+  @Inject
+  public Pen() {}
 }

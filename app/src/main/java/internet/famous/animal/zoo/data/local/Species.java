@@ -1,5 +1,7 @@
 package internet.famous.animal.zoo.data.local;
 
+import javax.inject.Inject;
+
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
@@ -10,9 +12,9 @@ public final class Species {
   @Id public long id;
   public String name;
   public String emoji;
-  public double landNeeded;
-  public double waterNeeded;
-  public double airNeeded;
+  public double landNeeded = -1;
+  public double waterNeeded = -1;
+  public double airNeeded = -1;
   public boolean isPettable;
   @Backlink public ToMany<Animal> animals;
 
@@ -53,4 +55,7 @@ public final class Species {
     s.isPettable = isPettable;
     return s;
   }
+
+  @Inject
+  public Species() {}
 }

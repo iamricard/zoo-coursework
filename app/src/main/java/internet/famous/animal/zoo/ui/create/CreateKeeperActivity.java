@@ -9,6 +9,8 @@ import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Keeper;
 import internet.famous.animal.zoo.databinding.ActivityCreateKeeperBinding;
 
+import static android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE;
+
 public final class CreateKeeperActivity
     extends BaseCreateActivity<Keeper, ActivityCreateKeeperBinding> {
   private static final int MINIMUM_NAME_LENGTH = 3;
@@ -16,6 +18,7 @@ public final class CreateKeeperActivity
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    getWindow().setSoftInputMode(SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     binding.editTextKeeperName.addTextChangedListener(
         new TextWatcher() {
           @Override
@@ -24,13 +27,13 @@ public final class CreateKeeperActivity
           @Override
           public void onTextChanged(CharSequence s, int start, int before, int count) {
             data.name = binding.editTextKeeperName.getText().toString();
-            binding.saveButton.setEnabled(data.name.length() >= MINIMUM_NAME_LENGTH);
+            binding.saveBtn.setEnabled(data.name.length() >= MINIMUM_NAME_LENGTH);
           }
 
           @Override
           public void afterTextChanged(Editable s) {}
         });
-    binding.saveButton.setOnClickListener(this::onSaveBtnClicked);
+    binding.saveBtn.setOnClickListener(this::onSaveBtnClicked);
   }
 
   @Override
