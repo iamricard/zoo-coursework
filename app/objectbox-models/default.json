@@ -4,129 +4,126 @@
   "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
   "entities": [
     {
-      "id": "1:5455517960167878785",
-      "lastPropertyId": "8:2551093748910917652",
-      "name": "Species",
+      "id": "1:514878620033984009",
+      "lastPropertyId": "4:652346288802443633",
+      "name": "Animal",
       "properties": [
         {
-          "id": "2:7341139244967550208",
-          "name": "name"
-        },
-        {
-          "id": "3:7693208159167750529",
-          "name": "landNeeded"
-        },
-        {
-          "id": "4:3711875205866189335",
-          "name": "waterNeeded"
-        },
-        {
-          "id": "5:4752215491226818255",
-          "name": "airNeeded"
-        },
-        {
-          "id": "6:9068133759463471672",
+          "id": "1:1625774847144143090",
           "name": "id"
         },
         {
-          "id": "7:9094154178298357011",
-          "name": "isPettable"
+          "id": "2:6902143813302122481",
+          "name": "name"
         },
         {
-          "id": "8:2551093748910917652",
-          "name": "emoji"
+          "id": "3:671663106369585854",
+          "indexId": "1:5975163634623507856",
+          "name": "speciesId"
+        },
+        {
+          "id": "4:652346288802443633",
+          "indexId": "2:2866606136002010154",
+          "name": "penId"
         }
       ],
       "relations": []
     },
     {
-      "id": "2:3304561174895925536",
-      "lastPropertyId": "3:5395711481258559601",
+      "id": "2:7039232757340045952",
+      "lastPropertyId": "2:2981931076593972800",
       "name": "Keeper",
       "properties": [
         {
-          "id": "2:4752563061016801223",
-          "name": "name"
+          "id": "1:2948811386060801375",
+          "name": "id"
         },
         {
-          "id": "3:5395711481258559601",
-          "name": "id"
+          "id": "2:2981931076593972800",
+          "name": "name"
         }
       ],
       "relations": []
     },
     {
-      "id": "3:4722991963579697711",
-      "lastPropertyId": "6:3670548500832532234",
+      "id": "3:2673071803269652331",
+      "lastPropertyId": "6:7965788492013482845",
       "name": "Pen",
       "properties": [
         {
-          "id": "1:2899066360598902740",
+          "id": "1:2988018441355675429",
           "name": "id"
         },
         {
-          "id": "2:7384731039259768270",
+          "id": "2:467697388448840984",
           "name": "landSpace"
         },
         {
-          "id": "3:7827780561285822308",
+          "id": "3:6826699473077779306",
           "name": "waterSpace"
         },
         {
-          "id": "4:4683029367094794799",
+          "id": "4:223811416346863087",
           "name": "airSpace"
         },
         {
-          "id": "5:1070298195935110845",
+          "id": "5:6035362996532855685",
           "name": "isPettable"
         },
         {
-          "id": "6:3670548500832532234",
-          "indexId": "1:7773413925984635236",
+          "id": "6:7965788492013482845",
+          "indexId": "3:7695293521040056974",
           "name": "keeperId"
         }
       ],
       "relations": []
     },
     {
-      "id": "4:2707590854240560012",
-      "lastPropertyId": "4:2765857679573037300",
-      "name": "Animal",
+      "id": "4:5183368075155831058",
+      "lastPropertyId": "7:1979846194381776387",
+      "name": "Species",
       "properties": [
         {
-          "id": "1:2509830104850969598",
+          "id": "1:5007954061077712326",
           "name": "id"
         },
         {
-          "id": "2:8514758885600810596",
+          "id": "2:5448497895240077100",
           "name": "name"
         },
         {
-          "id": "3:6562399263143452426",
-          "indexId": "2:5845882499079183167",
-          "name": "speciesId"
+          "id": "3:7992225586401111981",
+          "name": "emoji"
         },
         {
-          "id": "4:2765857679573037300",
-          "indexId": "3:2731031315216014133",
-          "name": "penId"
+          "id": "4:1875795761352038411",
+          "name": "landNeeded"
+        },
+        {
+          "id": "5:7682640842032422261",
+          "name": "waterNeeded"
+        },
+        {
+          "id": "6:3373408152158787751",
+          "name": "airNeeded"
+        },
+        {
+          "id": "7:1979846194381776387",
+          "name": "isPettable"
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "4:2707590854240560012",
-  "lastIndexId": "3:2731031315216014133",
+  "lastEntityId": "4:5183368075155831058",
+  "lastIndexId": "3:7695293521040056974",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 4,
   "modelVersionParserMinimum": 4,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [
-    1572171773595963330,
-    5860099992311420980
-  ],
+  "retiredPropertyUids": [],
   "retiredRelationUids": [],
   "version": 1
 }

@@ -4,6 +4,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import internet.famous.animal.zoo.ui.create.CreateAnimalActivity;
 import internet.famous.animal.zoo.ui.create.CreateKeeperActivity;
+import internet.famous.animal.zoo.ui.create.CreatePenActivity;
 import internet.famous.animal.zoo.ui.create.CreateSpeciesActivity;
 import internet.famous.animal.zoo.ui.main.MainActivity;
 
@@ -17,6 +18,9 @@ interface ActivityBuilderModule {
 
   @ContributesAndroidInjector
   CreateKeeperActivity contributeCreateKeeperActivity();
+
+  @ContributesAndroidInjector
+  CreatePenActivity contributeCreatePenActivity();
 
   @ContributesAndroidInjector
   CreateSpeciesActivity contributeCreateSpeciesActivity();

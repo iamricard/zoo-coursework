@@ -12,9 +12,9 @@ import io.objectbox.relation.ToOne;
 public final class Pen {
   @Id public long id;
   public ToOne<Keeper> keeper;
-  public long landSpace = 0;
-  public long waterSpace = 0;
-  public long airSpace = 0;
+  public double landSpace = 0;
+  public double waterSpace = 0;
+  public double airSpace = 0;
   public boolean isPettable = false;
   @Backlink public ToMany<Animal> animals;
 

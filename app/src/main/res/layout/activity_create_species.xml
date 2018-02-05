@@ -73,7 +73,7 @@
           android:layout_height="wrap_content"
           android:hint="@string/form_air_req"
           android:inputType="numberDecimal"
-          android:onTextChanged="@{activity.onAirReqChanged}" />
+          android:onTextChanged="@{activity::onAirReqChanged}" />
       </android.support.design.widget.TextInputLayout>
 
       <android.support.design.widget.TextInputLayout
@@ -86,7 +86,7 @@
           android:layout_height="wrap_content"
           android:hint="@string/form_land_req"
           android:inputType="numberDecimal"
-          android:onTextChanged="@{activity.onLandReqChanged}" />
+          android:onTextChanged="@{activity::onLandReqChanged}" />
       </android.support.design.widget.TextInputLayout>
 
       <android.support.design.widget.TextInputLayout
@@ -99,7 +99,7 @@
           android:layout_height="wrap_content"
           android:hint="@string/form_water_req"
           android:inputType="numberDecimal"
-          android:onTextChanged="@{activity.onWaterReqChanged}" />
+          android:onTextChanged="@{activity::onWaterReqChanged}" />
       </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/species_form_name_hint"
         android:inputType="textCapWords"
-        android:onTextChanged="@{activity.onNameChanged}" />
+        android:onTextChanged="@{activity::onNameChanged}" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -127,7 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/species_form_emoji_hint"
-        android:onTextChanged="@{activity.onEmojiChanged}" />
+        android:onTextChanged="@{activity::onEmojiChanged}" />
     </android.support.design.widget.TextInputLayout>
 
     <Button

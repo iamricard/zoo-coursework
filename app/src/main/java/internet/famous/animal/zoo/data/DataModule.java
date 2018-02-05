@@ -19,7 +19,7 @@ public final class DataModule {
   @Provides
   @Singleton
   BoxStore provideBoxStore(Application application) {
-    return MyObjectBox.builder().androidContext(application).build();
+    return MyObjectBox.builder().androidContext(application).name("zoo-db").build();
   }
 
   @Provides

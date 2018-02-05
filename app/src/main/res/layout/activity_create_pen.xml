@@ -1,19 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+  <data>
+
+    <variable
+      name="activity"
+      type="internet.famous.animal.zoo.ui.create.CreatePenActivity" />
+  </data>
+
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/app_padding">
 
-    <Button
-      android:id="@+id/select_pen_type_btn"
-      style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+    <TextView
+      style="@style/TextAppearance.AppCompat.Headline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:text="@string/form_select_environment" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/radio_buttons"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:paddingVertical="24dp"
-      android:text="TODO"
-      android:textSize="24sp" />
+      android:dividerPadding="8dp"
+      android:stretchMode="columnWidth">
+
+      <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/environment_air" />
+
+      <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/environment_dry" />
+
+      <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/environment_water" />
+
+      <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/environment_hybrid" />
+    </RadioGroup>
+
+    <LinearLayout
+      android:id="@+id/space_requirements"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:visibility="gone">
+
+      <TextView
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/form_space_requirements" />
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/air_space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/form_air_req"
+          android:inputType="numberDecimal"
+          android:onTextChanged="@{activity::onAirSpaceChanged}" />
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/land_space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/form_land_req"
+          android:inputType="numberDecimal"
+          android:onTextChanged="@{activity::onLandSpaceChanged}" />
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/water_space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/form_water_req"
+          android:inputType="numberDecimal"
+          android:onTextChanged="@{activity::onWaterSpaceChanged}" />
+      </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+      android:id="@+id/save_btn"
+      style="@style/Widget.AppCompat.Button.Colored"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:enabled="false"
+      android:paddingVertical="20dp"
+      android:text="@string/save_btn"
+      android:textSize="20sp" />
   </LinearLayout>
 </layout>
