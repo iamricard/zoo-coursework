@@ -103,7 +103,6 @@ public final class App extends Application implements HasActivityInjector {
     penBox.put(landPen);
 
     landPen = Pen.landPen(7, false);
-    landPen.keeper.setTarget(hardip);
     penBox.put(landPen);
 
     Pen hybridPen = Pen.amphibiousPen(100, 200);

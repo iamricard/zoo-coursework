@@ -17,7 +17,6 @@ public final class AnimalListFragment extends BaseListFragment<AnimalListAdapter
           AssignAnimalBottomSheetFragment fragment =
               AssignAnimalBottomSheetFragment.newInstance(animal.id);
           fragment.show(getActivity().getSupportFragmentManager(), "assign-animal");
-          adapter.notifyDataSetChanged();
         });
   }
 

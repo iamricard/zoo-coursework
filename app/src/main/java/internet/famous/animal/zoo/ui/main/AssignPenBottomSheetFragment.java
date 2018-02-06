@@ -8,32 +8,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.stream.Collectors;
-
 import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
-import internet.famous.animal.zoo.data.local.Animal;
+import internet.famous.animal.zoo.data.local.Keeper;
 import internet.famous.animal.zoo.data.local.Pen;
 import internet.famous.animal.zoo.databinding.GenericListBinding;
 import io.objectbox.Box;
 
-public final class AssignAnimalBottomSheetFragment extends BottomSheetDialogFragment {
-  private static final String ARG_ANIMAL_ID = "ARG_ANIMAL_ID";
+public final class AssignPenBottomSheetFragment extends BottomSheetDialogFragment {
+  private static final String ARG_PEN_ID = "ARG_PEN_ID";
 
-  public static AssignAnimalBottomSheetFragment newInstance(long animalId) {
+  public static AssignPenBottomSheetFragment newInstance(long penId) {
     Bundle args = new Bundle();
-    args.putLong(ARG_ANIMAL_ID, animalId);
-    AssignAnimalBottomSheetFragment fragment = new AssignAnimalBottomSheetFragment();
+    args.putLong(ARG_PEN_ID, penId);
+    AssignPenBottomSheetFragment fragment = new AssignPenBottomSheetFragment();
     fragment.setArguments(args);
     return fragment;
   }
 
-  @Inject Box<Animal> animalBox;
+  @Inject Box<Keeper> keeperBox;
   @Inject Box<Pen> penBox;
-  @Inject PenListAdapter adapter;
+  @Inject KeeperListAdapter adapter;
 
-  public AssignAnimalBottomSheetFragment() {}
+  public AssignPenBottomSheetFragment() {}
 
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,20 +42,13 @@ public final class AssignAnimalBottomSheetFragment extends BottomSheetDialogFrag
   @Override
   public View onCreateView(
       LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-    Animal animal = animalBox.get(getArguments().getLong(ARG_ANIMAL_ID));
-    adapter.setData(
-        penBox
-            .query()
-            .build()
-            .find()
-            .stream()
-            .filter(pen -> pen.canAccommodate(animal))
-            .collect(Collectors.toList()));
+    Pen pen = penBox.get(getArguments().getLong(ARG_PEN_ID));
+    adapter.setData(keeperBox.query().build().find());
     adapter.setOnItemClickedConsumer(
-        pen -> {
-          animal.pen.setTarget(pen);
-          animalBox.put(animal);
-          penBox.put(animal.pen.getTarget());
+        keeper -> {
+          pen.keeper.setTarget(keeper);
+          penBox.put(pen);
+          keeperBox.put(pen.keeper.getTarget());
           dismiss();
         });
     GenericListBinding binding = GenericListBinding.inflate(inflater, container, false);
