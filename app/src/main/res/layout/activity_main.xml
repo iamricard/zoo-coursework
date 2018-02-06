@@ -2,6 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
+  <data>
+
+    <import type="android.support.v4.content.ContextCompat" />
+
+    <variable
+      name="weather"
+      type="internet.famous.animal.zoo.data.local.entity.WeatherEntity" />
+  </data>
+
   <android.support.design.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -15,10 +24,24 @@
         android:layout_height="wrap_content"
         app:layout_scrollFlags="scroll|enterAlways">
 
-        <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="weather info" />
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:tint="?android:attr/colorForeground"
+            android:src="@{weather == null ? @drawable/ic_weather_01d : ContextCompat.getDrawable(context, weather.icon)}" />
+
+          <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@{String.format(@string/weather_text, weather.description, weather.temperature)}" />
+        </LinearLayout>
       </android.support.v7.widget.Toolbar>
 
       <android.support.design.widget.TabLayout

@@ -6,6 +6,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface OpenWeatherMapService {
-  @GET("weather")
+  @GET("weather?units=metric")
   Call<WeatherEntity> fetchWeather(@Query("id") int id);
 }

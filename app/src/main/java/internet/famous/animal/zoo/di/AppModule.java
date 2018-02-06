@@ -13,6 +13,7 @@ import dagger.Module;
 import dagger.Provides;
 import internet.famous.animal.zoo.data.local.ZooDatabase;
 import internet.famous.animal.zoo.data.local.dao.WeatherDao;
+import internet.famous.animal.zoo.data.local.entity.WeatherEntity;
 import internet.famous.animal.zoo.data.remote.ApiConstants;
 import internet.famous.animal.zoo.data.remote.OpenWeatherMapService;
 import internet.famous.animal.zoo.data.remote.RequestInterceptor;
@@ -40,7 +41,8 @@ public abstract class AppModule {
   static OpenWeatherMapService provideOpenWeatherMapService(OkHttpClient okHttpClient) {
     return new Retrofit.Builder()
         .baseUrl(ApiConstants.ENDPOINT)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(
+            GsonConverterFactory.create(WeatherEntity.WeatherDeserializer.create()))
         .client(okHttpClient)
         .build()
         .create(OpenWeatherMapService.class);
@@ -49,7 +51,9 @@ public abstract class AppModule {
   @Provides
   @Singleton
   static ZooDatabase provideMovieDatabase(Application application) {
-    return Room.databaseBuilder(application, ZooDatabase.class, "zoo-db.db").build();
+    return Room.databaseBuilder(application, ZooDatabase.class, "zoo.db")
+        .fallbackToDestructiveMigration()
+        .build();
   }
 
   @Provides

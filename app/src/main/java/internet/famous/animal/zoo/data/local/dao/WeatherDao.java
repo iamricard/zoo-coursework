@@ -19,5 +19,5 @@ public interface WeatherDao {
   LiveData<WeatherEntity> getWeather(int id);
 
   @Insert(onConflict = OnConflictStrategy.REPLACE)
-  void saveWeatherEntity(WeatherEntity weatherEntities);
+  void save(WeatherEntity weatherEntities);
 }
