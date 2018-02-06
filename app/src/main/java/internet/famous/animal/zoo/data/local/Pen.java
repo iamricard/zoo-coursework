@@ -1,14 +1,12 @@
 package internet.famous.animal.zoo.data.local;
 
-import java.util.function.Function;
-
-import javax.inject.Inject;
-
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 import io.objectbox.relation.ToMany;
 import io.objectbox.relation.ToOne;
+import java.util.function.Function;
+import javax.inject.Inject;
 
 @Entity
 public final class Pen {
@@ -19,6 +17,9 @@ public final class Pen {
   public double airSpace = -1;
   public boolean isPettable = false;
   @Backlink public ToMany<Animal> animals;
+
+  @Inject
+  public Pen() {}
 
   public static Pen landPen(long landSpace, boolean isPettable) {
     Pen p = new Pen();
@@ -45,9 +46,6 @@ public final class Pen {
     p.airSpace = airSpace;
     return p;
   }
-
-  @Inject
-  public Pen() {}
 
   @Override
   public String toString() {

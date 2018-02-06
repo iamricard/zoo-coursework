@@ -42,8 +42,8 @@
         android:id="@+id/no_keeper_warning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceListItemSecondary"
         android:text="@{pen.keeper.getTarget() == null ? @string/no_keeper_assigned : @string/keeper_assigned}"
+        android:textAppearance="?android:attr/textAppearanceListItemSecondary"
         android:textColor="@{pen.keeper.getTarget() == null ? @android:color/holo_red_dark : @android:color/holo_green_dark}" />
     </LinearLayout>
 

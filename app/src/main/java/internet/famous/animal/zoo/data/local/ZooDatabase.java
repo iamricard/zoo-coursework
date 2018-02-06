@@ -2,7 +2,6 @@ package internet.famous.animal.zoo.data.local;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
-
 import internet.famous.animal.zoo.data.local.dao.WeatherDao;
 import internet.famous.animal.zoo.data.local.entity.WeatherEntity;
 

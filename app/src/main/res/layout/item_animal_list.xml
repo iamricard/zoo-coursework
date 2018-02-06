@@ -55,8 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@{animal.pen.getTarget() == null ? @string/no_pen_assigned : @string/pen_assigned}"
-        android:textColor="@{animal.pen.getTarget() == null ? @android:color/holo_red_dark : @android:color/holo_green_dark}"
-        android:textAppearance="?android:attr/textAppearanceListItemSecondary" />
+        android:textAppearance="?android:attr/textAppearanceListItemSecondary"
+        android:textColor="@{animal.pen.getTarget() == null ? @android:color/holo_red_dark : @android:color/holo_green_dark}" />
     </LinearLayout>
 
     <Button

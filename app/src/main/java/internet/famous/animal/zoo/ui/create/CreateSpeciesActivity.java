@@ -6,15 +6,12 @@ import android.text.InputFilter;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.RadioGroup;
-
 import com.vdurmont.emoji.EmojiManager;
-
-import javax.inject.Inject;
-
 import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Species;
 import internet.famous.animal.zoo.databinding.ActivityCreateSpeciesBinding;
 import io.objectbox.Box;
+import javax.inject.Inject;
 
 public final class CreateSpeciesActivity
     extends BaseCreateActivity<Species, ActivityCreateSpeciesBinding> {

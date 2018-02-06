@@ -5,7 +5,6 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MediatorLiveData;
 import android.os.AsyncTask;
 import android.support.annotation.MainThread;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

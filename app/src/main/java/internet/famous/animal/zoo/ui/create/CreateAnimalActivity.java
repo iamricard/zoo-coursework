@@ -1,18 +1,16 @@
 package internet.famous.animal.zoo.ui.create;
 
+import static android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-
-import javax.inject.Inject;
-
 import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Animal;
 import internet.famous.animal.zoo.databinding.ActivityCreateAnimalBinding;
-
-import static android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE;
+import javax.inject.Inject;
 
 public final class CreateAnimalActivity
     extends BaseCreateActivity<Animal, ActivityCreateAnimalBinding> {

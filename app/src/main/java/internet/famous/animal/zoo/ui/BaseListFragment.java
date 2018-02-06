@@ -1,5 +1,7 @@
 package internet.famous.animal.zoo.ui;
 
+import static android.widget.LinearLayout.VERTICAL;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,17 +10,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import javax.inject.Inject;
-
 import dagger.android.support.AndroidSupportInjection;
 import internet.famous.animal.zoo.databinding.GenericListBinding;
 import io.objectbox.Box;
 import io.objectbox.android.AndroidScheduler;
 import io.objectbox.query.QueryBuilder;
 import io.objectbox.reactive.DataSubscriptionList;
-
-import static android.widget.LinearLayout.VERTICAL;
+import javax.inject.Inject;
 
 public abstract class BaseListFragment<AdapterT extends BaseAdapter<?, DataT>, DataT>
     extends Fragment {

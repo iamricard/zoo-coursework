@@ -1,10 +1,9 @@
 package internet.famous.animal.zoo.data.local;
 
-import javax.inject.Inject;
-
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 import io.objectbox.relation.ToOne;
+import javax.inject.Inject;
 
 @Entity
 public final class Animal {

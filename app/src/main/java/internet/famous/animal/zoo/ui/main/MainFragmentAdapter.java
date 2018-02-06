@@ -3,7 +3,6 @@ package internet.famous.animal.zoo.ui.main;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
-
 import internet.famous.animal.zoo.R;
 
 final class MainFragmentAdapter extends FragmentPagerAdapter {

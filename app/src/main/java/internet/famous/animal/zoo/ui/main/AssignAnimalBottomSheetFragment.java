@@ -7,19 +7,21 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import java.util.stream.Collectors;
-
-import javax.inject.Inject;
-
 import dagger.android.support.AndroidSupportInjection;
 import internet.famous.animal.zoo.data.local.Animal;
 import internet.famous.animal.zoo.data.local.Pen;
 import internet.famous.animal.zoo.databinding.GenericListBinding;
 import io.objectbox.Box;
+import java.util.stream.Collectors;
+import javax.inject.Inject;
 
 public final class AssignAnimalBottomSheetFragment extends BottomSheetDialogFragment {
   private static final String ARG_ANIMAL_ID = "ARG_ANIMAL_ID";
+  @Inject Box<Animal> animalBox;
+  @Inject Box<Pen> penBox;
+  @Inject PenListAdapter adapter;
+
+  public AssignAnimalBottomSheetFragment() {}
 
   public static AssignAnimalBottomSheetFragment newInstance(long animalId) {
     Bundle args = new Bundle();
@@ -28,12 +30,6 @@ public final class AssignAnimalBottomSheetFragment extends BottomSheetDialogFrag
     fragment.setArguments(args);
     return fragment;
   }
-
-  @Inject Box<Animal> animalBox;
-  @Inject Box<Pen> penBox;
-  @Inject PenListAdapter adapter;
-
-  public AssignAnimalBottomSheetFragment() {}
 
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -3,11 +3,6 @@ package internet.famous.animal.zoo.di;
 import android.app.Application;
 import android.arch.persistence.room.Room;
 import android.content.Context;
-
-import java.util.concurrent.TimeUnit;
-
-import javax.inject.Singleton;
-
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
@@ -17,15 +12,14 @@ import internet.famous.animal.zoo.data.local.entity.WeatherEntity;
 import internet.famous.animal.zoo.data.remote.ApiConstants;
 import internet.famous.animal.zoo.data.remote.OpenWeatherMapService;
 import internet.famous.animal.zoo.data.remote.RequestInterceptor;
+import java.util.concurrent.TimeUnit;
+import javax.inject.Singleton;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 public abstract class AppModule {
-  @Binds
-  abstract Context bindApplicationContext(Application application);
-
   @Provides
   @Singleton
   static OkHttpClient provideOkHttpClient() {
@@ -61,4 +55,7 @@ public abstract class AppModule {
   static WeatherDao provideMovieDao(ZooDatabase movieDatabase) {
     return movieDatabase.weatherDao();
   }
+
+  @Binds
+  abstract Context bindApplicationContext(Application application);
 }

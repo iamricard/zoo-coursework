@@ -2,7 +2,6 @@ package internet.famous.animal.zoo.data.local.entity;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
-
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -12,11 +11,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.annotations.SerializedName;
-
+import internet.famous.animal.zoo.R;
 import java.lang.reflect.Type;
 import java.util.Map;
-
-import internet.famous.animal.zoo.R;
 
 @Entity(tableName = "weather")
 public final class WeatherEntity {

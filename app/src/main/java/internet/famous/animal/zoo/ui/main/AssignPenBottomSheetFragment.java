@@ -7,17 +7,20 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import javax.inject.Inject;
-
 import dagger.android.support.AndroidSupportInjection;
 import internet.famous.animal.zoo.data.local.Keeper;
 import internet.famous.animal.zoo.data.local.Pen;
 import internet.famous.animal.zoo.databinding.GenericListBinding;
 import io.objectbox.Box;
+import javax.inject.Inject;
 
 public final class AssignPenBottomSheetFragment extends BottomSheetDialogFragment {
   private static final String ARG_PEN_ID = "ARG_PEN_ID";
+  @Inject Box<Keeper> keeperBox;
+  @Inject Box<Pen> penBox;
+  @Inject KeeperListAdapter adapter;
+
+  public AssignPenBottomSheetFragment() {}
 
   public static AssignPenBottomSheetFragment newInstance(long penId) {
     Bundle args = new Bundle();
@@ -26,12 +29,6 @@ public final class AssignPenBottomSheetFragment extends BottomSheetDialogFragmen
     fragment.setArguments(args);
     return fragment;
   }
-
-  @Inject Box<Keeper> keeperBox;
-  @Inject Box<Pen> penBox;
-  @Inject KeeperListAdapter adapter;
-
-  public AssignPenBottomSheetFragment() {}
 
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {

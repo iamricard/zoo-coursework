@@ -1,18 +1,14 @@
 package internet.famous.animal.zoo.ui.main;
 
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
-
 import com.google.common.collect.ImmutableList;
-
-import java.util.List;
-
-import javax.inject.Inject;
-
 import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.WeatherRepository;
 import internet.famous.animal.zoo.databinding.ActivityMainBinding;
@@ -21,12 +17,12 @@ import internet.famous.animal.zoo.ui.create.CreateAnimalActivity;
 import internet.famous.animal.zoo.ui.create.CreateKeeperActivity;
 import internet.famous.animal.zoo.ui.create.CreatePenActivity;
 import internet.famous.animal.zoo.ui.create.CreateSpeciesActivity;
-
-import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import java.util.List;
+import javax.inject.Inject;
 
 public final class MainActivity extends BaseActivity<ActivityMainBinding> {
-  private List<Intent> createEntityActivityIntents;
   @Inject WeatherRepository weatherRepository;
+  private List<Intent> createEntityActivityIntents;
 
   @Override
   public int getLayoutRes() {

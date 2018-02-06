@@ -2,7 +2,6 @@ package internet.famous.animal.zoo.ui.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-
 import internet.famous.animal.zoo.data.local.Pen;
 import internet.famous.animal.zoo.data.local.Pen_;
 import internet.famous.animal.zoo.ui.BaseListFragment;

@@ -1,15 +1,14 @@
 package internet.famous.animal.zoo.ui.create;
 
+import static android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
-
 import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Keeper;
 import internet.famous.animal.zoo.databinding.ActivityCreateKeeperBinding;
-
-import static android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE;
 
 public final class CreateKeeperActivity
     extends BaseCreateActivity<Keeper, ActivityCreateKeeperBinding> {

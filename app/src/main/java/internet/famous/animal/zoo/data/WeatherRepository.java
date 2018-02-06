@@ -1,16 +1,14 @@
 package internet.famous.animal.zoo.data;
 
+import static internet.famous.animal.zoo.data.remote.ApiConstants.CITY_ID;
+
 import android.arch.lifecycle.LiveData;
-
-import javax.inject.Inject;
-
 import internet.famous.animal.zoo.data.local.dao.WeatherDao;
 import internet.famous.animal.zoo.data.local.entity.WeatherEntity;
 import internet.famous.animal.zoo.data.remote.OpenWeatherMapService;
 import internet.famous.animal.zoo.data.remote.RemoteResource;
+import javax.inject.Inject;
 import retrofit2.Call;
-
-import static internet.famous.animal.zoo.data.remote.ApiConstants.CITY_ID;
 
 public final class WeatherRepository {
   private final WeatherDao dao;
