@@ -30,6 +30,7 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
       binding.airSpace.setVisibility(View.VISIBLE);
       binding.landSpace.setVisibility(View.GONE);
       binding.waterSpace.setVisibility(View.GONE);
+      binding.pettableCheckbox.setVisibility(View.GONE);
     } else if (id == 2) {
       data.airSpace = 0;
       data.landSpace = -1;
@@ -37,6 +38,7 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
       binding.airSpace.setVisibility(View.GONE);
       binding.landSpace.setVisibility(View.VISIBLE);
       binding.waterSpace.setVisibility(View.GONE);
+      binding.pettableCheckbox.setVisibility(View.VISIBLE);
     } else if (id == 3) {
       data.airSpace = 0;
       data.landSpace = 0;
@@ -44,6 +46,7 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
       binding.airSpace.setVisibility(View.GONE);
       binding.landSpace.setVisibility(View.GONE);
       binding.waterSpace.setVisibility(View.VISIBLE);
+      binding.pettableCheckbox.setVisibility(View.GONE);
     } else {
       data.airSpace = 0;
       data.landSpace = -1;
@@ -51,6 +54,7 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
       binding.airSpace.setVisibility(View.GONE);
       binding.landSpace.setVisibility(View.VISIBLE);
       binding.waterSpace.setVisibility(View.VISIBLE);
+      binding.pettableCheckbox.setVisibility(View.GONE);
     }
     binding.spaceRequirements.setVisibility(View.VISIBLE);
   }
@@ -71,6 +75,7 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
   }
 
   private void activateSaveBtnIfPossible() {
+    data.isPettable = binding.pettableCheckbox.isChecked();
     if (data.airSpace > -1 && data.landSpace > -1 && data.waterSpace > -1) {
       binding.saveBtn.setEnabled(true);
     } else {

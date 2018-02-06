@@ -1,12 +1,14 @@
 package internet.famous.animal.zoo.data.local;
 
+import java.util.function.Function;
+
+import javax.inject.Inject;
+
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 import io.objectbox.relation.ToMany;
 import io.objectbox.relation.ToOne;
-import java.util.function.Function;
-import javax.inject.Inject;
 
 @Entity
 public final class Pen {
@@ -47,21 +49,6 @@ public final class Pen {
     return p;
   }
 
-  @Override
-  public String toString() {
-    if (landSpace > 0) {
-      if (waterSpace > 0) {
-        return "Hybrid";
-      } else if (isPettable) {
-        return "Petting";
-      }
-      return "Dry";
-    } else if (waterSpace > 0) {
-      return "Aquarium";
-    }
-    return "Aviary";
-  }
-
   public boolean canAccommodate(Animal animal) {
     Species species = animal.species.getTarget();
     double availableAir = airSpace - usedSpace(s -> s.airNeeded);
@@ -81,6 +68,19 @@ public final class Pen {
       return availableAir >= species.airNeeded;
     }
     return false;
+  }
+
+  public Environment getEnvironment() {
+    if (airSpace > 0) {
+      return Environment.AIR;
+    } else if (isPettable) {
+      return Environment.PETTING;
+    } else if (landSpace <= 0) {
+      return Environment.WATER;
+    } else if (waterSpace <= 0) {
+      return Environment.DRY;
+    }
+    return Environment.HYBRID;
   }
 
   private double usedSpace(Function<Species, Double> attrGetter) {

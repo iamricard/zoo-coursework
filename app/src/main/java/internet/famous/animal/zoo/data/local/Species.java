@@ -57,4 +57,17 @@ public final class Species {
     s.isPettable = isPettable;
     return s;
   }
+
+  public Environment getEnvironment() {
+    if (airNeeded > 0) {
+      return Environment.AIR;
+    } else if (isPettable) {
+      return Environment.PETTING;
+    } else if (landNeeded <= 0) {
+      return Environment.WATER;
+    } else if (waterNeeded <= 0) {
+      return Environment.DRY;
+    }
+    return Environment.HYBRID;
+  }
 }

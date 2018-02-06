@@ -49,6 +49,13 @@
         android:text="@string/environment_hybrid" />
     </RadioGroup>
 
+    <CheckBox
+      android:id="@+id/pettable_checkbox"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/pettable_checkbox"
+      android:visibility="gone" />
+
     <LinearLayout
       android:id="@+id/space_requirements"
       android:layout_width="match_parent"

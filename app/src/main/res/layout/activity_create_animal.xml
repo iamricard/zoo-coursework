@@ -29,7 +29,8 @@
       style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:paddingVertical="24dp"
+      android:paddingBottom="24dp"
+      android:paddingTop="24dp"
       android:text="@string/animal_form_select_species_btn"
       android:textSize="24sp" />
 
@@ -39,7 +40,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:enabled="false"
-      android:paddingVertical="20dp"
+      android:paddingBottom="20dp"
+      android:paddingTop="20dp"
       android:text="@string/save_btn"
       android:textSize="20sp" />
   </LinearLayout>

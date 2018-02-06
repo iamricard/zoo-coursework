@@ -15,7 +15,8 @@
     android:layout_margin="8dp"
     android:background="?android:selectableItemBackground"
     android:clickable="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:focusable="true">
 
     <TextView
       android:id="@+id/species_emoji"

@@ -15,7 +15,6 @@ import javax.inject.Inject;
 
 public final class CreateSpeciesActivity
     extends BaseCreateActivity<Species, ActivityCreateSpeciesBinding> {
-  private final Species species = new Species();
   @Inject Box<Species> speciesBox;
 
   @Override
@@ -41,6 +40,7 @@ public final class CreateSpeciesActivity
       binding.airReq.setVisibility(View.VISIBLE);
       binding.landReq.setVisibility(View.GONE);
       binding.waterReq.setVisibility(View.GONE);
+      binding.pettableCheckbox.setVisibility(View.GONE);
     } else if (id == 2) {
       data.airNeeded = 0;
       data.landNeeded = -1;
@@ -48,6 +48,7 @@ public final class CreateSpeciesActivity
       binding.airReq.setVisibility(View.GONE);
       binding.landReq.setVisibility(View.VISIBLE);
       binding.waterReq.setVisibility(View.GONE);
+      binding.pettableCheckbox.setVisibility(View.VISIBLE);
     } else if (id == 3) {
       data.airNeeded = 0;
       data.landNeeded = 0;
@@ -55,6 +56,7 @@ public final class CreateSpeciesActivity
       binding.airReq.setVisibility(View.GONE);
       binding.landReq.setVisibility(View.GONE);
       binding.waterReq.setVisibility(View.VISIBLE);
+      binding.pettableCheckbox.setVisibility(View.GONE);
     } else {
       data.airNeeded = 0;
       data.landNeeded = -1;
@@ -62,6 +64,7 @@ public final class CreateSpeciesActivity
       binding.airReq.setVisibility(View.GONE);
       binding.landReq.setVisibility(View.VISIBLE);
       binding.waterReq.setVisibility(View.VISIBLE);
+      binding.pettableCheckbox.setVisibility(View.GONE);
     }
     binding.spaceRequirements.setVisibility(View.VISIBLE);
   }
@@ -92,6 +95,7 @@ public final class CreateSpeciesActivity
   }
 
   private void activateSaveBtnIfPossible() {
+    data.isPettable = binding.pettableCheckbox.isChecked();
     if (data.name != null
         && !data.name.isEmpty()
         && data.emoji != null

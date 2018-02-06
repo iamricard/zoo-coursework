@@ -27,7 +27,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{String.format(@string/pen_title, pen.toString(), pen.id)}"
+        android:text="@{String.format(@string/pen_title, pen.getEnvironment(), pen.id)}"
         android:textAppearance="?android:attr/textAppearanceListItem" />
 
       <TextView
