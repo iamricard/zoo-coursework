@@ -113,6 +113,13 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "5:3646843574963920884",
+      "lastPropertyId": "0:0",
+      "name": "Weather",
+      "properties": [],
+      "relations": []
     }
   ],
   "lastEntityId": "5:3646843574963920884",
@@ -121,9 +128,7 @@
   "lastSequenceId": "0:0",
   "modelVersion": 4,
   "modelVersionParserMinimum": 4,
-  "retiredEntityUids": [
-    3646843574963920884
-  ],
+  "retiredEntityUids": [],
   "retiredIndexUids": [],
   "retiredPropertyUids": [],
   "retiredRelationUids": [],

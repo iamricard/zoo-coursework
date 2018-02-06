@@ -42,10 +42,9 @@
         android:id="@+id/no_keeper_warning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/no_keeper_assigned"
         android:textAppearance="?android:attr/textAppearanceListItemSecondary"
-        android:textColor="@color/colorAccent"
-        android:visibility="@{pen.keeper.getTarget() == null ? View.VISIBLE : View.GONE}" />
+        android:text="@{pen.keeper.getTarget() == null ? @string/no_keeper_assigned : @string/keeper_assigned}"
+        android:textColor="@{pen.keeper.getTarget() == null ? @android:color/holo_red_dark : @android:color/holo_green_dark}" />
     </LinearLayout>
 
     <Button

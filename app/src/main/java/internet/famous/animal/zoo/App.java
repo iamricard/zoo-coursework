@@ -3,6 +3,7 @@ package internet.famous.animal.zoo;
 import android.app.Activity;
 import android.app.Application;
 import android.support.v4.util.Pair;
+import android.support.v7.app.AppCompatDelegate;
 
 import com.google.common.collect.ImmutableList;
 
@@ -21,6 +22,10 @@ import internet.famous.animal.zoo.di.DaggerAppComponent;
 import io.objectbox.Box;
 
 public final class App extends Application implements HasActivityInjector {
+  static {
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
+  }
+
   @Inject DispatchingAndroidInjector<Activity> activityDispatchingInjector;
   @Inject Box<Animal> animalBox;
   @Inject Box<Keeper> keeperBox;

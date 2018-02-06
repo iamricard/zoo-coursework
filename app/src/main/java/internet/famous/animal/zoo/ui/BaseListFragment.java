@@ -3,6 +3,7 @@ package internet.famous.animal.zoo.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,8 @@ import io.objectbox.Box;
 import io.objectbox.android.AndroidScheduler;
 import io.objectbox.query.QueryBuilder;
 import io.objectbox.reactive.DataSubscriptionList;
+
+import static android.widget.LinearLayout.VERTICAL;
 
 public abstract class BaseListFragment<AdapterT extends BaseAdapter<?, DataT>, DataT>
     extends Fragment {
@@ -35,6 +38,7 @@ public abstract class BaseListFragment<AdapterT extends BaseAdapter<?, DataT>, D
     GenericListBinding binding = GenericListBinding.inflate(inflater, parent, false);
     binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     binding.recyclerView.setAdapter(adapter);
+    binding.recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), VERTICAL));
     return binding.getRoot();
   }
 

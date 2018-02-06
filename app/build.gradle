@@ -5,7 +5,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "internet.famous.animal.zoo"
-        minSdkVersion 27
+        minSdkVersion 24
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -28,19 +28,30 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.0.2'
-    implementation 'com.android.support:design:27.0.2'
-    implementation 'com.android.support:recyclerview-v7:27.0.2'
+
+    // Support libraries
+    implementation rootProject.ext.supportLibAppCompat
+    implementation rootProject.ext.supportLibDesign
+    implementation rootProject.ext.archRuntime
+    annotationProcessor rootProject.ext.archCompiler
+    implementation rootProject.ext.roomRuntime
+    annotationProcessor rootProject.ext.roomCompiler
 
     // Guava (https://github.com/google/guava)
-    implementation 'com.google.guava:guava:23.6-android'
+    implementation rootProject.ext.guava
 
     // Dagger 2 (https://google.github.io/dagger)
-    implementation 'com.google.dagger:dagger-android:2.13'
-    implementation 'com.google.dagger:dagger-android-support:2.13'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.13'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
+    annotationProcessor rootProject.ext.daggerCompiler
+    implementation rootProject.ext.dagger
+    implementation rootProject.ext.daggerAndroid
+    implementation rootProject.ext.daggerAndroidSupport
+    annotationProcessor rootProject.ext.daggerAndroidProcessor
 
     // emoji-java (https://github.com/vdurmont/emoji-java)
-    implementation 'com.vdurmont:emoji-java:4.0.0'
+    implementation rootProject.ext.emojiJava
+
+    // retrofit (http://square.github.io/retrofit/)
+    implementation rootProject.ext.okhttp
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.gsonConverter
 }
