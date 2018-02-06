@@ -1,5 +1,7 @@
 package internet.famous.animal.zoo.data.local;
 
+import java.util.function.Function;
+
 import javax.inject.Inject;
 
 import io.objectbox.annotation.Backlink;
@@ -62,45 +64,31 @@ public final class Pen {
     return "Aviary";
   }
 
-  public boolean canAccomodate(Animal animal) {
+  public boolean canAccommodate(Animal animal) {
     Species species = animal.species.getTarget();
-    double availableAir = airSpace - usedAir();
-    double availableLand = landSpace - usedLand();
-    double availableWater = waterSpace - usedWater();
+    double availableAir = airSpace - usedSpace(s -> s.airNeeded);
+    double availableLand = landSpace - usedSpace(s -> s.landNeeded);
+    double availableWater = waterSpace - usedSpace(s -> s.waterNeeded);
     if (species.landNeeded > 0) {
       if (species.waterNeeded > 0) {
         return availableLand >= species.landNeeded && availableWater >= species.waterNeeded;
-      } else if (species.isPettable) {
-        return availableLand >= species.landNeeded && isPettable;
-      } else {
-        return availableLand >= species.landNeeded;
       }
+      if (isPettable) {
+        return availableLand >= species.landNeeded && species.isPettable;
+      }
+      return availableLand >= species.landNeeded && waterSpace <= 0;
     } else if (species.waterNeeded > 0) {
-      return availableWater >= species.waterNeeded;
+      return availableWater >= species.waterNeeded && landSpace <= 0;
     } else if (species.airNeeded > 0) {
       return availableAir >= species.airNeeded;
     }
     return false;
   }
 
-  private double usedAir() {
+  private double usedSpace(Function<Species, Double> attrGetter) {
     return animals
         .stream()
-        .map(a -> a.species.getTarget().airNeeded)
-        .reduce(0.0, (used, needed) -> used + needed);
-  }
-
-  private double usedLand() {
-    return animals
-        .stream()
-        .map(a -> a.species.getTarget().landNeeded)
-        .reduce(0.0, (used, needed) -> used + needed);
-  }
-
-  private double usedWater() {
-    return animals
-        .stream()
-        .map(a -> a.species.getTarget().waterNeeded)
-        .reduce(0.0, (used, needed) -> used + needed);
+        .map(attrGetter.compose(animal -> animal.species.getTarget()))
+        .reduce(0.0, Double::sum);
   }
 }

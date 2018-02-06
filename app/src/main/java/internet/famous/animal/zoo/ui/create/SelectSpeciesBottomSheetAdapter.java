@@ -14,7 +14,7 @@ import internet.famous.animal.zoo.ui.BaseAdapter;
 import internet.famous.animal.zoo.ui.BaseViewHolder;
 
 @Singleton
-final class SelectSpeciesBottomSheetAdapter
+public final class SelectSpeciesBottomSheetAdapter
     extends BaseAdapter<SelectSpeciesBottomSheetAdapter.SpeciesViewHolder, Species> {
   static final class SpeciesViewHolder extends BaseViewHolder<Species, ItemSpeciesGridBinding> {
     public static SpeciesViewHolder create(LayoutInflater inflater, ViewGroup parent) {

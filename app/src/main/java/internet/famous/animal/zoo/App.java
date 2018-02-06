@@ -98,11 +98,11 @@ public final class App extends Application implements HasActivityInjector {
     // Pen seeds
     penBox.removeAll();
 
-    Pen landPen = Pen.landPen(100, true);
+    Pen landPen = Pen.landPen(5, true);
     landPen.keeper.setTarget(hardip);
     penBox.put(landPen);
 
-    landPen = Pen.landPen(200, false);
+    landPen = Pen.landPen(7, false);
     landPen.keeper.setTarget(hardip);
     penBox.put(landPen);
 

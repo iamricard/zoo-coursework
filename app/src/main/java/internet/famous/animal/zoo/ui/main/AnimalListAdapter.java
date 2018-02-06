@@ -1,11 +1,13 @@
 package internet.famous.animal.zoo.ui.main;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.function.Consumer;
 
 import javax.inject.Inject;
 
+import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Animal;
 import internet.famous.animal.zoo.databinding.ItemAnimalListBinding;
 import internet.famous.animal.zoo.ui.BaseAdapter;
@@ -25,11 +27,10 @@ final class AnimalListAdapter extends BaseAdapter<AnimalListAdapter.AnimalViewHo
     protected void bindData(Animal animal) {
       binding.setAnimal(animal);
       binding.setSpecies(animal.species.getTarget());
-      if (animal.pen.getTarget() == null) {
-        binding.noPenWarning.setVisibility(View.VISIBLE);
-      }
     }
   }
+
+  private Consumer<Animal> consumer;
 
   @Inject
   AnimalListAdapter() {}
@@ -37,5 +38,22 @@ final class AnimalListAdapter extends BaseAdapter<AnimalListAdapter.AnimalViewHo
   @Override
   public AnimalViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     return AnimalViewHolder.create(LayoutInflater.from(parent.getContext()), parent);
+  }
+
+  @Override
+  public void onBindViewHolder(AnimalViewHolder holder, Animal animal) {
+    holder
+        .itemView
+        .findViewById(R.id.assign_btn)
+        .setOnClickListener(
+            __ -> {
+              if (consumer != null) {
+                consumer.accept(animal);
+              }
+            });
+  }
+
+  void setOnAssignBtnClicked(Consumer<Animal> consumer) {
+    this.consumer = consumer;
   }
 }

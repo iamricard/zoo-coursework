@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 public abstract class BaseAdapter<T extends BaseViewHolder<DataT, ?>, DataT>
     extends RecyclerView.Adapter<T> {
   private Consumer<DataT> onItemClickedConsumer;
-  protected List<DataT> dataList = new ArrayList<>();
+  private List<DataT> dataList = new ArrayList<>();
 
   public final void setData(List<DataT> dataList) {
     this.dataList = dataList;
@@ -18,14 +18,18 @@ public abstract class BaseAdapter<T extends BaseViewHolder<DataT, ?>, DataT>
 
   @Override
   public final void onBindViewHolder(T holder, int position) {
-    holder.onBind(dataList.get(position));
+    DataT item = dataList.get(position);
+    holder.onBind(item);
     holder.itemView.setOnClickListener(
         view -> {
           if (onItemClickedConsumer != null) {
-            onItemClickedConsumer.accept(dataList.get(position));
+            onItemClickedConsumer.accept(item);
           }
         });
+    onBindViewHolder(holder, item);
   }
+
+  public void onBindViewHolder(T holder, DataT data) {}
 
   @Override
   public final int getItemCount() {
