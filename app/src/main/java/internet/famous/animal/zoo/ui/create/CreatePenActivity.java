@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.RadioGroup;
+
 import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Pen;
 import internet.famous.animal.zoo.databinding.ActivityCreatePenBinding;
@@ -23,7 +24,7 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
   }
 
   private void onRadioBtnSelected(RadioGroup group, int id) {
-    if (id == 1) {
+    if (id == R.id.air_radio_btn) {
       data.airSpace = -1;
       data.landSpace = 0;
       data.waterSpace = 0;
@@ -31,7 +32,7 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
       binding.landSpace.setVisibility(View.GONE);
       binding.waterSpace.setVisibility(View.GONE);
       binding.pettableCheckbox.setVisibility(View.GONE);
-    } else if (id == 2) {
+    } else if (id == R.id.dry_radio_btn) {
       data.airSpace = 0;
       data.landSpace = -1;
       data.waterSpace = 0;
@@ -39,7 +40,7 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
       binding.landSpace.setVisibility(View.VISIBLE);
       binding.waterSpace.setVisibility(View.GONE);
       binding.pettableCheckbox.setVisibility(View.VISIBLE);
-    } else if (id == 3) {
+    } else if (id == R.id.water_radio_btn) {
       data.airSpace = 0;
       data.landSpace = 0;
       data.waterSpace = -1;
@@ -75,7 +76,8 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
   }
 
   private void activateSaveBtnIfPossible() {
-    data.isPettable = binding.pettableCheckbox.isChecked();
+    data.isPettable =
+        binding.pettableCheckbox.isChecked() && data.waterSpace == 0 && data.airSpace == 0;
     if (data.airSpace > -1 && data.landSpace > -1 && data.waterSpace > -1) {
       binding.saveBtn.setEnabled(true);
     } else {

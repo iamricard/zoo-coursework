@@ -6,12 +6,15 @@ import android.text.InputFilter;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.RadioGroup;
+
 import com.vdurmont.emoji.EmojiManager;
+
+import javax.inject.Inject;
+
 import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Species;
 import internet.famous.animal.zoo.databinding.ActivityCreateSpeciesBinding;
 import io.objectbox.Box;
-import javax.inject.Inject;
 
 public final class CreateSpeciesActivity
     extends BaseCreateActivity<Species, ActivityCreateSpeciesBinding> {
@@ -33,7 +36,7 @@ public final class CreateSpeciesActivity
   }
 
   private void onRadioBtnSelected(RadioGroup group, int id) {
-    if (id == 1) {
+    if (id == R.id.air_radio_btn) {
       data.airNeeded = -1;
       data.landNeeded = 0;
       data.waterNeeded = 0;
@@ -41,7 +44,7 @@ public final class CreateSpeciesActivity
       binding.landReq.setVisibility(View.GONE);
       binding.waterReq.setVisibility(View.GONE);
       binding.pettableCheckbox.setVisibility(View.GONE);
-    } else if (id == 2) {
+    } else if (id == R.id.dry_radio_btn) {
       data.airNeeded = 0;
       data.landNeeded = -1;
       data.waterNeeded = 0;
@@ -49,7 +52,7 @@ public final class CreateSpeciesActivity
       binding.landReq.setVisibility(View.VISIBLE);
       binding.waterReq.setVisibility(View.GONE);
       binding.pettableCheckbox.setVisibility(View.VISIBLE);
-    } else if (id == 3) {
+    } else if (id == R.id.water_radio_btn) {
       data.airNeeded = 0;
       data.landNeeded = 0;
       data.waterNeeded = -1;
@@ -95,7 +98,8 @@ public final class CreateSpeciesActivity
   }
 
   private void activateSaveBtnIfPossible() {
-    data.isPettable = binding.pettableCheckbox.isChecked();
+    data.isPettable =
+        binding.pettableCheckbox.isChecked() && data.waterNeeded == 0 && data.airNeeded == 0;
     if (data.name != null
         && !data.name.isEmpty()
         && data.emoji != null

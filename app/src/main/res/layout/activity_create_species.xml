@@ -29,21 +29,25 @@
       android:stretchMode="columnWidth">
 
       <RadioButton
+        android:id="@+id/air_radio_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/environment_air" />
 
       <RadioButton
+        android:id="@+id/dry_radio_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/environment_dry" />
 
       <RadioButton
+        android:id="@+id/water_radio_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/environment_water" />
 
       <RadioButton
+        android:id="@+id/hybrid_radio_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/environment_hybrid" />
