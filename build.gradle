@@ -26,8 +26,6 @@ task clean(type: Delete) {
 
 ext {
     supportLibVersion = '27.0.2'
-    archComponentsVersion = '1.1.0'
-    roomVersion = '1.1.0-alpha1'
     daggerVersion = '2.13'
     retrofitVersion = '2.3.0'
     gsonConverterVersion = '2.3.0'
@@ -36,11 +34,7 @@ ext {
     emojiJavaVersion = '4.0.0'
 
     supportLibAppCompat = "com.android.support:appcompat-v7:$supportLibVersion"
-    archRuntime = "android.arch.lifecycle:extensions:$archComponentsVersion"
-    archCompiler = "android.arch.lifecycle:compiler:$archComponentsVersion"
     supportLibDesign = "com.android.support:design:$supportLibVersion"
-    roomRuntime = "android.arch.persistence.room:runtime:$roomVersion"
-    roomCompiler = "android.arch.persistence.room:compiler:$roomVersion"
     dagger = "com.google.dagger:dagger:$daggerVersion"
     daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
     daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"

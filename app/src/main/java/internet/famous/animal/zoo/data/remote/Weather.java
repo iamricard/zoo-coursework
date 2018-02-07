@@ -1,7 +1,5 @@
-package internet.famous.animal.zoo.data.local.entity;
+package internet.famous.animal.zoo.data.remote;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -10,22 +8,18 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import com.google.gson.annotations.SerializedName;
-import internet.famous.animal.zoo.R;
+
 import java.lang.reflect.Type;
 import java.util.Map;
 
-@Entity(tableName = "weather")
-public final class WeatherEntity {
-  @PrimaryKey
-  @SerializedName("id")
-  public int id;
+import internet.famous.animal.zoo.R;
 
+public final class Weather {
   public double temperature;
   public String description;
   public int icon;
 
-  public static final class WeatherDeserializer implements JsonDeserializer<WeatherEntity> {
+  public static final class WeatherDeserializer implements JsonDeserializer<Weather> {
     private static final Map<String, Integer> nameToResId;
 
     static {
@@ -54,17 +48,15 @@ public final class WeatherEntity {
 
     public static Gson create() {
       return new GsonBuilder()
-          .registerTypeAdapter(WeatherEntity.class, new WeatherDeserializer())
+          .registerTypeAdapter(Weather.class, new WeatherDeserializer())
           .create();
     }
 
     @Override
-    public WeatherEntity deserialize(
-        JsonElement json, Type typeOfT, JsonDeserializationContext context)
+    public Weather deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
         throws JsonParseException {
       JsonObject base = json.getAsJsonObject();
-      WeatherEntity weather = new WeatherEntity();
-      weather.id = base.get("id").getAsInt();
+      Weather weather = new Weather();
       weather.description =
           base.get("weather").getAsJsonArray().get(0).getAsJsonObject().get("main").getAsString();
       weather.temperature = base.get("main").getAsJsonObject().get("temp").getAsDouble();

@@ -48,6 +48,6 @@
   <string name="no_keeper_assigned">Warning! No keeper assigned.</string>
   <string name="keeper_assigned">All good! Keeper assigned.</string>
   <string name="pen_assign_keeper">Assign keeper</string>
-  <string name="weather_text">Condition: %1$s — Temperature: %2$.2f°C</string>
+  <string name="weather_text">Status: %1$s — Temp: %2$.2f°C</string>
   <string name="pettable_checkbox">Petting?</string>
 </resources>

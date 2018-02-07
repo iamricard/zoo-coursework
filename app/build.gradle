@@ -32,10 +32,6 @@ dependencies {
     // Support libraries
     implementation rootProject.ext.supportLibAppCompat
     implementation rootProject.ext.supportLibDesign
-    implementation rootProject.ext.archRuntime
-    annotationProcessor rootProject.ext.archCompiler
-    implementation rootProject.ext.roomRuntime
-    annotationProcessor rootProject.ext.roomCompiler
 
     // Guava (https://github.com/google/guava)
     implementation rootProject.ext.guava
