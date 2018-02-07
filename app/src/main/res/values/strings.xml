@@ -50,4 +50,9 @@
   <string name="pen_assign_keeper">Assign keeper</string>
   <string name="weather_text">Status: %1$s — Temp: %2$.2f°C</string>
   <string name="pettable_checkbox">Petting?</string>
+
+  <string name="allocate_animals_warning">⚠️ Assigned all possible animals, not enough room for all.</string>
+  <string name="allocate_animals_success">✅ Assigned all animals.</string>
+  <string name="allocate_keepers_done">✅ Assigned keepers.</string>
+  <string name="allocate_failure">💥 Uh-oh something went wrong.</string>
 </resources>

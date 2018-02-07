@@ -9,6 +9,9 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListeningExecutorService;
 
 import java.util.List;
 
@@ -16,6 +19,7 @@ import javax.annotation.Nullable;
 import javax.inject.Inject;
 
 import internet.famous.animal.zoo.R;
+import internet.famous.animal.zoo.data.local.AllocatorService;
 import internet.famous.animal.zoo.data.remote.OpenWeatherMapService;
 import internet.famous.animal.zoo.data.remote.Weather;
 import internet.famous.animal.zoo.databinding.ActivityMainBinding;
@@ -34,7 +38,9 @@ public final class MainActivity extends BaseActivity<ActivityMainBinding> {
   private static final int CITY_ID = 3128760;
 
   private List<Intent> createEntityActivityIntents;
+  @Inject ListeningExecutorService executor;
   @Inject OpenWeatherMapService weatherService;
+  @Inject AllocatorService allocatorService;
 
   @Override
   public int getLayoutRes() {
@@ -59,6 +65,7 @@ public final class MainActivity extends BaseActivity<ActivityMainBinding> {
     binding.tabs.setupWithViewPager(binding.viewpager);
     binding.btnCreate.setOnClickListener(this::handleBtnCreateClick);
     binding.btnRefreshWeather.setOnClickListener(this::loadWeather);
+    binding.btnAutoAllocate.setOnClickListener(this::handleBtnAutoAllocateClick);
   }
 
   private void handleBtnCreateClick(View __) {
@@ -81,5 +88,50 @@ public final class MainActivity extends BaseActivity<ActivityMainBinding> {
               @Override
               public void onFailure(Call<Weather> call, Throwable throwable) {}
             });
+  }
+
+  private void handleBtnAutoAllocateClick(View view) {
+    Futures.addCallback(
+        allocatorService.allocateAnimals(),
+        new FutureCallback<Boolean>() {
+          @Override
+          public void onSuccess(Boolean result) {
+            int resId =
+                result ? R.string.allocate_animals_success : R.string.allocate_animals_warning;
+            Snackbar.make(binding.getRoot(), resId, Snackbar.LENGTH_SHORT)
+                .addCallback(
+                    new Snackbar.Callback() {
+                      @Override
+                      public void onDismissed(Snackbar transientBottomBar, int event) {
+                        super.onDismissed(transientBottomBar, event);
+                        Futures.addCallback(
+                            allocatorService.allocateAnimals(),
+                            new FutureCallback<Boolean>() {
+                              @Override
+                              public void onSuccess(Boolean result) {
+                                Snackbar.make(
+                                        binding.getRoot(),
+                                        R.string.allocate_keepers_done,
+                                        Snackbar.LENGTH_SHORT)
+                                    .show();
+                              }
+
+                              @Override
+                              public void onFailure(Throwable t) {}
+                            },
+                            executor);
+                      }
+                    })
+                .show();
+          }
+
+          @Override
+          public void onFailure(Throwable t) {}
+        },
+        executor);
+  }
+
+  private void showSnackbar(int resId) {
+    ;
   }
 }

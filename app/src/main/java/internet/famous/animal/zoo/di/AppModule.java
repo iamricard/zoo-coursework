@@ -3,6 +3,10 @@ package internet.famous.animal.zoo.di;
 import android.app.Application;
 import android.content.Context;
 
+import com.google.common.util.concurrent.ListeningExecutorService;
+import com.google.common.util.concurrent.MoreExecutors;
+
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
@@ -79,5 +83,11 @@ public abstract class AppModule {
   @Singleton
   static Box<Species> provideSpeciesBox(BoxStore boxStore) {
     return boxStore.boxFor(Species.class);
+  }
+
+  @Provides
+  @Singleton
+  static ListeningExecutorService provideExecutorService() {
+    return MoreExecutors.listeningDecorator(Executors.newCachedThreadPool());
   }
 }
