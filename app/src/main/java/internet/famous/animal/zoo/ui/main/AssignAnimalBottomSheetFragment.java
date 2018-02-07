@@ -7,19 +7,22 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.stream.Collectors;
+
+import javax.inject.Inject;
+
 import dagger.android.support.AndroidSupportInjection;
 import internet.famous.animal.zoo.data.local.Animal;
 import internet.famous.animal.zoo.data.local.Pen;
 import internet.famous.animal.zoo.databinding.GenericListBinding;
 import io.objectbox.Box;
-import java.util.stream.Collectors;
-import javax.inject.Inject;
 
 public final class AssignAnimalBottomSheetFragment extends BottomSheetDialogFragment {
   private static final String ARG_ANIMAL_ID = "ARG_ANIMAL_ID";
   @Inject Box<Animal> animalBox;
   @Inject Box<Pen> penBox;
-  @Inject PenListAdapter adapter;
+  @Inject PenListAdapter penListAdapter;
 
   public AssignAnimalBottomSheetFragment() {}
 
@@ -41,7 +44,8 @@ public final class AssignAnimalBottomSheetFragment extends BottomSheetDialogFrag
   public View onCreateView(
       LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     Animal animal = animalBox.get(getArguments().getLong(ARG_ANIMAL_ID));
-    adapter.setData(
+    penListAdapter.setHideAssignBtn(true);
+    penListAdapter.setData(
         penBox
             .query()
             .build()
@@ -49,7 +53,7 @@ public final class AssignAnimalBottomSheetFragment extends BottomSheetDialogFrag
             .stream()
             .filter(pen -> pen.canAccommodate(animal))
             .collect(Collectors.toList()));
-    adapter.setOnItemClickedConsumer(
+    penListAdapter.setOnItemClickedConsumer(
         pen -> {
           animal.pen.setTarget(pen);
           animalBox.put(animal);
@@ -57,7 +61,7 @@ public final class AssignAnimalBottomSheetFragment extends BottomSheetDialogFrag
           dismiss();
         });
     GenericListBinding binding = GenericListBinding.inflate(inflater, container, false);
-    binding.recyclerView.setAdapter(adapter);
+    binding.recyclerView.setAdapter(penListAdapter);
     binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     return binding.getRoot();
   }
