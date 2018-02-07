@@ -56,7 +56,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/Applications/Android%20Studio%203.2%20Preview.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_refresh_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/Applications/Android%20Studio%203.2%20Preview.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/device/ic_brightness_auto_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -67,7 +67,7 @@
                         <option name="values">
                           <map>
                             <entry key="autoMirrored" value="true" />
-                            <entry key="outputName" value="ic_refresh" />
+                            <entry key="outputName" value="ic_auto" />
                             <entry key="sourceFile" value="$USER_HOME$/Downloads/ic_unknown.svg" />
                           </map>
                         </option>
