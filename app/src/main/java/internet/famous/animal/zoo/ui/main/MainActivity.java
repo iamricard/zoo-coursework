@@ -105,7 +105,7 @@ public final class MainActivity extends BaseActivity<ActivityMainBinding> {
                       public void onDismissed(Snackbar transientBottomBar, int event) {
                         super.onDismissed(transientBottomBar, event);
                         Futures.addCallback(
-                            allocatorService.allocateAnimals(),
+                            allocatorService.allocateKeepers(),
                             new FutureCallback<Boolean>() {
                               @Override
                               public void onSuccess(Boolean result) {

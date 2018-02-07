@@ -4,7 +4,13 @@ import android.app.Activity;
 import android.app.Application;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatDelegate;
+
 import com.google.common.collect.ImmutableList;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
@@ -14,8 +20,6 @@ import internet.famous.animal.zoo.data.local.Pen;
 import internet.famous.animal.zoo.data.local.Species;
 import internet.famous.animal.zoo.di.DaggerAppComponent;
 import io.objectbox.Box;
-import java.util.List;
-import javax.inject.Inject;
 
 public final class App extends Application implements HasActivityInjector {
   static {

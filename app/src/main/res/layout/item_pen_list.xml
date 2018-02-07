@@ -39,12 +39,20 @@
         android:textColor="?android:textColorSecondary" />
 
       <TextView
-        android:id="@+id/no_keeper_warning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{pen.keeper.getTarget() == null ? @string/no_keeper_assigned : @string/keeper_assigned}"
+        android:text="@{String.format(@string/keeper_assigned, pen.keeper.getTarget().name)}"
         android:textAppearance="?android:attr/textAppearanceListItemSecondary"
-        android:textColor="@{pen.keeper.getTarget() == null ? @android:color/holo_red_dark : @android:color/holo_green_dark}" />
+        android:textColor="?android:textColorSecondary"
+        android:visibility="@{pen.keeper.isNull() ? View.GONE : View.VISIBLE}" />
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{@string/no_keeper_assigned}"
+        android:textAppearance="?android:attr/textAppearanceListItemSecondary"
+        android:textColor="?android:colorError"
+        android:visibility="@{pen.keeper.isNull() ? View.VISIBLE : View.GONE}" />
     </LinearLayout>
 
     <Button

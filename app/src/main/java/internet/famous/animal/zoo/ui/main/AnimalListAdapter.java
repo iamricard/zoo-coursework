@@ -2,13 +2,17 @@ package internet.famous.animal.zoo.ui.main;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import java.util.function.Consumer;
+
+import javax.inject.Inject;
+
 import internet.famous.animal.zoo.R;
 import internet.famous.animal.zoo.data.local.Animal;
+import internet.famous.animal.zoo.data.local.Keeper;
 import internet.famous.animal.zoo.databinding.ItemAnimalListBinding;
 import internet.famous.animal.zoo.ui.BaseAdapter;
 import internet.famous.animal.zoo.ui.BaseViewHolder;
-import java.util.function.Consumer;
-import javax.inject.Inject;
 
 final class AnimalListAdapter extends BaseAdapter<AnimalListAdapter.AnimalViewHolder, Animal> {
   private Consumer<Animal> consumer;
@@ -50,6 +54,12 @@ final class AnimalListAdapter extends BaseAdapter<AnimalListAdapter.AnimalViewHo
     @Override
     protected void bindData(Animal animal) {
       binding.setAnimal(animal);
+      Keeper keeper =
+          animal.pen.isNull() || animal.pen.getTarget().keeper.isNull()
+              ? Keeper.NONE
+              : animal.pen.getTarget().keeper.getTarget();
+      binding.setKeeper(keeper);
+      binding.setPen(animal.pen.getTarget());
       binding.setSpecies(animal.species.getTarget());
     }
   }

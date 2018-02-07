@@ -10,6 +10,14 @@
       type="internet.famous.animal.zoo.data.local.Animal" />
 
     <variable
+      name="keeper"
+      type="internet.famous.animal.zoo.data.local.Keeper" />
+
+    <variable
+      name="pen"
+      type="internet.famous.animal.zoo.data.local.Pen" />
+
+    <variable
       name="species"
       type="internet.famous.animal.zoo.data.local.Species" />
   </data>
@@ -51,12 +59,20 @@
         android:textAppearance="?android:attr/textAppearanceListItemSecondary" />
 
       <TextView
-        android:id="@+id/no_pen_warning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{animal.pen.getTarget() == null ? @string/no_pen_assigned : @string/pen_assigned}"
+        android:text="@{String.format(@string/pen_assigned, pen.id, keeper.name)}"
         android:textAppearance="?android:attr/textAppearanceListItemSecondary"
-        android:textColor="@{animal.pen.getTarget() == null ? @android:color/holo_red_dark : @android:color/holo_green_dark}" />
+        android:textColor="?android:textColorSecondary"
+        android:visibility="@{animal.pen.isNull() ? View.GONE : View.VISIBLE}" />
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{@string/no_pen_assigned}"
+        android:textAppearance="?android:attr/textAppearanceListItemSecondary"
+        android:textColor="?android:colorError"
+        android:visibility="@{animal.pen.isNull() ? View.VISIBLE : View.GONE}" />
     </LinearLayout>
 
     <Button
