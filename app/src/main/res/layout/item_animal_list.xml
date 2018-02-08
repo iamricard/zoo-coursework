@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:text="@{@string/no_pen_assigned}"
         android:textAppearance="?android:attr/textAppearanceListItemSecondary"
-        android:textColor="?android:colorError"
+        android:textColor="?attr/colorError"
         android:visibility="@{animal.pen.isNull() ? View.VISIBLE : View.GONE}" />
     </LinearLayout>
 
