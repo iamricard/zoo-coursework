@@ -1,0 +1,140 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[english,a4paper,]{report}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Programming - Part I},
+            pdfauthor={Ricard Solé Casas},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+% Make links footnotes instead of hotlinks:
+\DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{minted}
+\usemintedstyle{autumn}
+
+\usepackage{fontspec}
+\setmonofont{Fira Code}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase,Ligatures=TeX}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=english]{babel}
+\else
+  % load polyglossia as late as possible as it *could* call bidi if RTL lang (e.g. Hebrew or Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\fi
+
+\title{Programming - Part I}
+\author{Ricard Solé Casas}
+\providecommand{\institute}[1]{}
+\institute{Google UK \and Ada National College for Digital Skills}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\vspace*{\fill}
+
+\section*{Foreword}
+
+The source code for this report and app can be found on
+\href{https://github.com/rcsole/zoo-coursework}{Github}. A production
+version of the application can be installed from Google's Play Store at
+http://bit.ly/ada-zooify. The minimum Android version required is 5.0
+(Lollipop).
+
+Some of the decisions taken in building this app do not follow the
+original suggested guidelines. TODO.
+
+\section*{Declaration}
+
+I confirm that the submitted coursework is my own work and that all
+material attributed to others (whether published or unpublished) has
+been clearly identified and fully acknowledged and referred to original
+sources. I agree that the College has the right to submit my work to the
+plagiarism detection service. TurnitinUK for originality checks.
+
+\vspace*{\fill}
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{design-choices}{%
+\chapter{Design Choices}\label{design-choices}}
+
+I've made some choices for this solution that require some
+justification. The project guidelines suggested using the Java
+\href{https://www.wikiwand.com/en/Swing_(Java)}{Swing} framework, which
+was meant to be replaced by
+\href{https://www.wikiwand.com/en/JavaFX}{JavaFX}. However, both
+technologies are quite outdated. The former is partially deprecated and
+the latter doesn't appear to be well maintained, documentation is
+scarce, and Oracle has discontinued support for the editor tools. After
+some research I came to the conclusion that, as of June 2017, the
+community has pivoted towards using Java for the business logic and
+persistence through a web server, while leaving the templating and UI
+sections to a much more mature and seasoned technology: the HTML, CSS,
+and JavaScript triad.
+
+In this particular project, the server is built on the shoulders of the
+Java bindings to the \href{https://playframework.com}{Play} framework
+(see footnote for more information). The persistence layer is built on
+Java's \href{http://ebean-orm.github.io/}{Ebean} targeting a
+\href{https://www.postgresql.org}{PostgreSQL} backend. For deployment, I
+used \href{https://heroku.com}{Heroku} and integrated it with
+Github\footnote{https://devcenter.heroku.com/articles/github-integration}
+for automated deployments.
+
+I've also decided against displaying which questions were answered
+incorrectly. The reason for that is that it would serve as
+\emph{cheating}. One would just have to retake the entire Quiz and know
+which ones they have to actually change. Hiding which answers were
+incorrectly answered makes, in my opinion, for a more interesting game
+overall.
+
+Likewise I've also decided against prompting the user when skipping a
+question. I think that prompting the user \textbf{every time} they want
+to skip ahead involves too many clicks.
+
+In the following chapter I will elaborate on the core pieces of the
+application.
+
+\end{document}
