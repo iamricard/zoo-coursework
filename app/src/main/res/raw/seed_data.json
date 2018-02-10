@@ -1,0 +1,90 @@
+{
+  "species": [
+    {
+      "name": "Sloth",
+      "emoji": "😴",
+      "landNeeded": 3.0,
+      "waterNeeded": 0.0,
+      "airNeeded": 0.0,
+      "isPettable": false
+    },
+    {
+      "name": "Penguin",
+      "emoji": "🐧",
+      "landNeeded": 2.0,
+      "waterNeeded": 4.0,
+      "airNeeded": 0.0,
+      "isPettable": false
+    },
+    {
+      "name": "Goat",
+      "emoji": "🐐",
+      "landNeeded": 3.0,
+      "waterNeeded": 0.0,
+      "airNeeded": 0.0,
+      "isPettable": true
+    },
+    {
+      "name": "Owl",
+      "emoji": "🦉",
+      "landNeeded": 0.0,
+      "waterNeeded": 0.0,
+      "airNeeded": 20.0,
+      "isPettable": false
+    },
+    {
+      "name": "Parrot",
+      "emoji": "🐦",
+      "landNeeded": 0.0,
+      "waterNeeded": 0.0,
+      "airNeeded": 10.0,
+      "isPettable": false
+    },
+    {
+      "name": "Dolphin",
+      "emoji": "🐬",
+      "landNeeded": 0.0,
+      "waterNeeded": 20.0,
+      "airNeeded": 0.0,
+      "isPettable": false
+    },
+    {
+      "name": "Hippo",
+      "emoji": "🐘",
+      "landNeeded": 10.0,
+      "waterNeeded": 20.0,
+      "airNeeded": 0.0,
+      "isPettable": false
+    },
+    {
+      "name": "Dog",
+      "emoji": "🐕",
+      "landNeeded": 3.5,
+      "waterNeeded": 0,
+      "airNeeded": 0.0,
+      "isPettable": true
+    },
+    {
+      "name": "Cat",
+      "emoji": "🐈",
+      "landNeeded": 4.0,
+      "waterNeeded": 0.0,
+      "airNeeded": 0.0,
+      "isPettable": true
+    }
+  ],
+  "keepers": [
+    {
+      "name": "Hardip"
+    },
+    {
+      "name": "Alex"
+    },
+    {
+      "name": "Farhad"
+    },
+    {
+      "name": "Alan"
+    }
+  ]
+}

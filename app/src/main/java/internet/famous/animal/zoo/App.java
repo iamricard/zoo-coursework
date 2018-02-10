@@ -2,11 +2,15 @@ package internet.famous.animal.zoo;
 
 import android.app.Activity;
 import android.app.Application;
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatDelegate;
 
-import com.google.common.collect.ImmutableList;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -22,15 +26,20 @@ import internet.famous.animal.zoo.di.DaggerAppComponent;
 import io.objectbox.Box;
 
 public final class App extends Application implements HasActivityInjector {
+  private static final Gson gson = new Gson();
+
+  private static final String PREFS_FILENAME = "zoo-prefs";
+  private static final String DB_INITIALIZED_KEY = "dbInitialized";
+
   static {
     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
   }
 
   @Inject DispatchingAndroidInjector<Activity> activityDispatchingInjector;
-  @Inject Box<Animal> animalBox;
-  @Inject Box<Keeper> keeperBox;
-  @Inject Box<Pen> penBox;
-  @Inject Box<Species> speciesBox;
+  @Inject Box<Animal> animals;
+  @Inject Box<Keeper> keepers;
+  @Inject Box<Pen> pens;
+  @Inject Box<Species> species;
 
   @Override
   public void onCreate() {
@@ -44,82 +53,50 @@ public final class App extends Application implements HasActivityInjector {
     return activityDispatchingInjector;
   }
 
+  private boolean needsDataSeeds() {
+    return !getSharedPreferences(PREFS_FILENAME, MODE_PRIVATE)
+        .getBoolean(DB_INITIALIZED_KEY, false);
+  }
+
   private void seedData() {
-    // Species seeds
-    speciesBox.removeAll();
-    Species sloth = Species.newLandSpecies("Sloth", "\uD83D\uDE34", 3, false);
-    speciesBox.put(sloth);
-    Species penguin = Species.newAmphibiousSpecies("Penguin", "\uD83D\uDC27", 2, 4);
-    speciesBox.put(penguin);
-    Species goat = Species.newLandSpecies("Goat", "\uD83D\uDC10", 3, true);
-    speciesBox.put(goat);
-    Species dog = Species.newLandSpecies("Dog", "\uD83D\uDC15", 3.5, true);
-    speciesBox.put(dog);
-    Species owl = Species.newAirSpecies("Owl", "\uD83E\uDD89", 20);
-    speciesBox.put(owl);
-    Species parrot = Species.newAirSpecies("Parrot", "\uD83D\uDC26", 10);
-    speciesBox.put(parrot);
-    Species dolphin = Species.newWaterSpecies("Dolphin", "\uD83D\uDC2C", 40);
-    speciesBox.put(dolphin);
-    Species hippo = Species.newAmphibiousSpecies("Hippo", "\uD83E\uDD8F", 10, 20);
-    speciesBox.put(hippo);
-    Species cat = Species.newLandSpecies("Cat", "\uD83D\uDC08", 4, true);
-    speciesBox.put(cat);
-
-    // Animal seeds
-    animalBox.removeAll();
-    List<Pair<String, Species>> animals =
-        ImmutableList.of(
-            new Pair<>("Pipoca", dog),
-            new Pair<>("Flipper", dolphin),
-            new Pair<>("Hedwig", owl),
-            new Pair<>("Pingu", penguin),
-            new Pair<>("Totem", dog),
-            new Pair<>("Atena", dog),
-            new Pair<>("Mala", cat),
-            new Pair<>("Henry", parrot));
-    for (Pair<String, Species> animal : animals) {
-      Animal a = new Animal();
-      a.name = animal.first;
-      a.species.setTarget(animal.second);
-      animalBox.put(a);
+    if (getSharedPreferences(PREFS_FILENAME, MODE_PRIVATE).getBoolean(DB_INITIALIZED_KEY, false)) {
+      return;
     }
+    // Remove all existing data
+    animals.removeAll();
+    keepers.removeAll();
+    pens.removeAll();
+    species.removeAll();
 
-    // Keeper seeds
-    keeperBox.removeAll();
-    Keeper hardip = new Keeper();
-    hardip.name = "Hardip";
-    keeperBox.put(hardip);
-    Keeper alex = new Keeper();
-    alex.name = "Alex";
-    keeperBox.put(alex);
-    Keeper farhad = new Keeper();
-    farhad.name = "Farhad";
-    keeperBox.put(farhad);
-    Keeper alan = new Keeper();
-    alan.name = "Alan";
-    keeperBox.put(alan);
+    // Parse JSON file
+    InputStream resource = getResources().openRawResource(R.raw.seed_data);
+    String line;
+    BufferedReader reader = new BufferedReader(new InputStreamReader(resource));
+    StringBuilder stringBuilder = new StringBuilder();
+    try {
+      while ((line = reader.readLine()) != null) {
+        stringBuilder.append(line).append("\n");
+      }
+    } catch (IOException ignored) {
+    }
+    JsonSeedData data = gson.fromJson(stringBuilder.toString(), JsonSeedData.class);
 
-    // Pen seeds
-    penBox.removeAll();
+    // Put all seed data
+    species.put(data.species);
+    keepers.put(data.keepers);
 
-    Pen landPen = Pen.landPen(5, true);
-    landPen.keeper.setTarget(hardip);
-    penBox.put(landPen);
+    // Mark DB as initialized
+    getSharedPreferences(PREFS_FILENAME, MODE_PRIVATE)
+        .edit()
+        .putBoolean(DB_INITIALIZED_KEY, true)
+        .apply();
+  }
 
-    landPen = Pen.landPen(7, false);
-    penBox.put(landPen);
+  private static final class JsonSeedData {
+    @SerializedName("species")
+    public List<Species> species;
 
-    Pen hybridPen = Pen.amphibiousPen(100, 200);
-    hybridPen.keeper.setTarget(alan);
-    penBox.put(hybridPen);
-
-    Pen aquarium = Pen.aquarium(100);
-    aquarium.keeper.setTarget(alex);
-    penBox.put(aquarium);
-
-    Pen aviary = Pen.aviary(100);
-    aviary.keeper.setTarget(farhad);
-    penBox.put(aviary);
+    @SerializedName("keepers")
+    public List<Keeper> keepers;
   }
 }

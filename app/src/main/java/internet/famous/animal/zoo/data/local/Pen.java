@@ -25,32 +25,6 @@ public final class Pen {
   @Inject
   public Pen() {}
 
-  public static Pen landPen(long landSpace, boolean isPettable) {
-    Pen p = new Pen();
-    p.landSpace = landSpace;
-    p.isPettable = isPettable;
-    return p;
-  }
-
-  public static Pen aquarium(long waterSpace) {
-    Pen p = new Pen();
-    p.waterSpace = waterSpace;
-    return p;
-  }
-
-  public static Pen amphibiousPen(long landSpace, long waterSpace) {
-    Pen p = new Pen();
-    p.landSpace = landSpace;
-    p.waterSpace = waterSpace;
-    return p;
-  }
-
-  public static Pen aviary(long airSpace) {
-    Pen p = new Pen();
-    p.airSpace = airSpace;
-    return p;
-  }
-
   public boolean canAccommodate(Animal animal) {
     Species species = animal.species.getTarget();
     double availableAir = airSpace - usedSpace(s -> s.airNeeded);
