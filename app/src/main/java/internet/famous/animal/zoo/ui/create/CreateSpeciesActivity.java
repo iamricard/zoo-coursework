@@ -72,18 +72,18 @@ public final class CreateSpeciesActivity
     binding.spaceRequirements.setVisibility(View.VISIBLE);
   }
 
-  public void onAirReqChanged(CharSequence s, int start, int before, int count) {
-    data.airNeeded = Double.parseDouble(s.toString());
+  public void onAirReqChanged(CharSequence num, int start, int before, int count) {
+    data.airNeeded = safeDoubleParse(num);
     activateSaveBtnIfPossible();
   }
 
-  public void onLandReqChanged(CharSequence s, int start, int before, int count) {
-    data.landNeeded = Double.parseDouble(s.toString());
+  public void onLandReqChanged(CharSequence num, int start, int before, int count) {
+    data.landNeeded = safeDoubleParse(num);
     activateSaveBtnIfPossible();
   }
 
-  public void onWaterReqChanged(CharSequence s, int start, int before, int count) {
-    data.waterNeeded = Double.parseDouble(s.toString());
+  public void onWaterReqChanged(CharSequence num, int start, int before, int count) {
+    data.waterNeeded = safeDoubleParse(num);
     activateSaveBtnIfPossible();
   }
 
@@ -95,6 +95,14 @@ public final class CreateSpeciesActivity
   public void onEmojiChanged(CharSequence s, int start, int before, int count) {
     data.emoji = s.toString();
     activateSaveBtnIfPossible();
+  }
+
+  private double safeDoubleParse(CharSequence num) {
+    try {
+      return Double.parseDouble(num.toString());
+    } catch (NumberFormatException exception) {
+      return 0.0;
+    }
   }
 
   private void activateSaveBtnIfPossible() {

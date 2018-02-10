@@ -60,19 +60,27 @@ public final class CreatePenActivity extends BaseCreateActivity<Pen, ActivityCre
     binding.spaceRequirements.setVisibility(View.VISIBLE);
   }
 
-  public void onAirSpaceChanged(CharSequence s, int start, int before, int count) {
-    data.airSpace = Double.parseDouble(s.toString());
+  public void onAirSpaceChanged(CharSequence num, int start, int before, int count) {
+    data.airSpace = safeDoubleParse(num);
     activateSaveBtnIfPossible();
   }
 
-  public void onLandSpaceChanged(CharSequence s, int start, int before, int count) {
-    data.landSpace = Double.parseDouble(s.toString());
+  public void onLandSpaceChanged(CharSequence num, int start, int before, int count) {
+    data.landSpace = safeDoubleParse(num);
     activateSaveBtnIfPossible();
   }
 
-  public void onWaterSpaceChanged(CharSequence s, int start, int before, int count) {
-    data.waterSpace = Double.parseDouble(s.toString());
+  public void onWaterSpaceChanged(CharSequence num, int start, int before, int count) {
+    data.waterSpace = safeDoubleParse(num);
     activateSaveBtnIfPossible();
+  }
+
+  private double safeDoubleParse(CharSequence num) {
+    try {
+      return Double.parseDouble(num.toString());
+    } catch (NumberFormatException exception) {
+      return 0.0;
+    }
   }
 
   private void activateSaveBtnIfPossible() {
