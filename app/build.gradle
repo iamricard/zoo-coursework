@@ -13,8 +13,8 @@ android {
         applicationId "internet.famous.animal.zoo"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 12
-        versionName "A"
+        versionCode 13
+        versionName "A-1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
