@@ -15,58 +15,51 @@ public final class AllocatorService {
   private final Box<Animal> animals;
   private final Box<Keeper> keepers;
   private final Box<Pen> pens;
-  private final Box<Species> species;
 
   @Inject
   AllocatorService(
-      ListeningExecutorService executor,
-      Box<Animal> animals,
-      Box<Keeper> keepers,
-      Box<Pen> pens,
-      Box<Species> species) {
+      ListeningExecutorService executor, Box<Animal> animals, Box<Keeper> keepers, Box<Pen> pens) {
     this.executor = executor;
     this.animals = animals;
     this.keepers = keepers;
     this.pens = pens;
-    this.species = species;
   }
 
   public ListenableFuture<Boolean> allocateAnimals() {
-    return executor.submit(this::allocateAnimalsFn);
+    return executor.submit(
+        () -> {
+          boolean success = true;
+          for (Animal animal :
+              animals.query().filter(animal -> animal.pen.isNull()).build().find()) {
+            for (Pen pen : pens.query().build().find()) {
+              if (pen.canAccommodate(animal)) {
+                animal.pen.setTarget(pen);
+                animals.put(animal);
+                pens.put(pen);
+                break;
+              }
+            }
+            if (animal.pen.isNull()) {
+              success = false;
+            }
+          }
+          return success;
+        });
   }
 
   public ListenableFuture<Boolean> allocateKeepers() {
-    return executor.submit(this::allocateKeepersFn);
-  }
-
-  private Boolean allocateAnimalsFn() {
-    boolean success = true;
-    for (Animal animal : animals.query().filter(animal -> animal.pen.isNull()).build().find()) {
-      for (Pen pen : pens.query().build().find()) {
-        if (pen.canAccommodate(animal)) {
-          animal.pen.setTarget(pen);
-          animals.put(animal);
-          pens.put(pen);
-          break;
-        }
-      }
-      if (animal.pen.isNull()) {
-        success = false;
-      }
-    }
-    return success;
-  }
-
-  private Boolean allocateKeepersFn() {
-    Random rand = new Random();
-    List<Keeper> keeperList = keepers.query().build().find();
-    int keeperCount = keeperList.size();
-    for (Pen pen : pens.query().filter(pen -> pen.keeper.isNull()).build().find()) {
-      Keeper keeper = keeperList.get(rand.nextInt(keeperCount));
-      pen.keeper.setTarget(keeper);
-      pens.put(pen);
-      keepers.put(keeper);
-    }
-    return true;
+    return executor.submit(
+        () -> {
+          Random rand = new Random();
+          List<Keeper> keeperList = keepers.query().build().find();
+          int keeperCount = keeperList.size();
+          for (Pen pen : pens.query().filter(pen -> pen.keeper.isNull()).build().find()) {
+            Keeper keeper = keeperList.get(rand.nextInt(keeperCount));
+            pen.keeper.setTarget(keeper);
+            pens.put(pen);
+            keepers.put(keeper);
+          }
+          return true;
+        });
   }
 }

@@ -8,8 +8,6 @@
     <item>Species</item>
   </string-array>
 
-  <string name="type_unknown">😈</string>
-
   <string name="save_btn">Save</string>
   <string name="form_select_environment">Environment</string>
   <string name="form_space_requirements">Space</string>
@@ -31,11 +29,7 @@
 
   <string name="species_title">Species name: %1$s (%2$s)</string>
   <string name="species_subtitle">Animal count: %1$d</string>
-  <string-array name="species_form_steps">
-    <item>Environment</item>
-    <item>Space requirements</item>
-    <item>Name</item>
-  </string-array>
+
   <string name="species_form_name_hint">Species name</string>
   <string name="species_form_emoji_hint">Species emoji</string>
   <string name="environment_air">Air</string>
@@ -53,7 +47,5 @@
 
   <string name="allocate_animals_warning">⚠️ Assigned all possible animals, not enough room for all.</string>
   <string name="allocate_animals_success">✅ Assigned all animals.</string>
-  <string name="allocate_animals_failure">💥 Uh-oh something went wrong.</string>
   <string name="allocate_keepers_done">✅ Assigned keepers.</string>
-  <string name="allocate_failure">💥 Uh-oh something went wrong.</string>
 </resources>

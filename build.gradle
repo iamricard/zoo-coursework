@@ -6,7 +6,7 @@ buildscript {
         maven { url "http://objectbox.net/beta-repo/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0-alpha01'
+        classpath 'com.android.tools.build:gradle:3.2.0-alpha02'
         classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
     }
 }
@@ -32,6 +32,7 @@ ext {
     okhttpVersion = '3.9.1'
     guavaVersion = '23.6-android'
     emojiJavaVersion = '4.0.0'
+    streamVersion = '1.1.9'
 
     supportLibAppCompat = "com.android.support:appcompat-v7:$supportLibVersion"
     supportLibDesign = "com.android.support:design:$supportLibVersion"
@@ -45,4 +46,5 @@ ext {
     okhttp = "com.squareup.okhttp3:okhttp:$okhttpVersion"
     guava = "com.google.guava:guava:$guavaVersion"
     emojiJava = "com.vdurmont:emoji-java:$emojiJavaVersion"
+    streamBackport = "com.annimon:stream:$streamVersion"
 }

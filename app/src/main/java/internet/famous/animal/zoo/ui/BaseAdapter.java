@@ -1,9 +1,11 @@
 package internet.famous.animal.zoo.ui;
 
 import android.support.v7.widget.RecyclerView;
+
+import com.annimon.stream.function.Consumer;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 public abstract class BaseAdapter<T extends BaseViewHolder<DataT, ?>, DataT>
     extends RecyclerView.Adapter<T> {

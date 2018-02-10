@@ -7,6 +7,11 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.annimon.stream.function.Consumer;
+
+import javax.inject.Inject;
+
 import dagger.android.support.AndroidSupportInjection;
 import internet.famous.animal.zoo.data.local.Species;
 import internet.famous.animal.zoo.data.local.Species_;
@@ -14,8 +19,6 @@ import internet.famous.animal.zoo.databinding.GenericListBinding;
 import io.objectbox.Box;
 import io.objectbox.android.AndroidScheduler;
 import io.objectbox.reactive.DataSubscriptionList;
-import java.util.function.Consumer;
-import javax.inject.Inject;
 
 public final class SelectSpeciesBottomSheetFragment extends BottomSheetDialogFragment {
   private static final int GRID_COLUMNS = 3;

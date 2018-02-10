@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.function.Consumer;
+import com.annimon.stream.function.Consumer;
 
 import javax.inject.Inject;
 

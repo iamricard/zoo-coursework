@@ -3,7 +3,7 @@ package internet.famous.animal.zoo.ui.main;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import java.util.function.Consumer;
+import com.annimon.stream.function.Consumer;
 
 import javax.inject.Inject;
 

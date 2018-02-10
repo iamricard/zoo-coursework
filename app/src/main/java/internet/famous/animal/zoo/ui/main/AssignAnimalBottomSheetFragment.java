@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.stream.Collectors;
-
 import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
@@ -45,14 +43,7 @@ public final class AssignAnimalBottomSheetFragment extends BottomSheetDialogFrag
       LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     Animal animal = animalBox.get(getArguments().getLong(ARG_ANIMAL_ID));
     penListAdapter.setHideAssignBtn(true);
-    penListAdapter.setData(
-        penBox
-            .query()
-            .build()
-            .find()
-            .stream()
-            .filter(pen -> pen.canAccommodate(animal))
-            .collect(Collectors.toList()));
+    penListAdapter.setData(penBox.query().filter(pen -> pen.canAccommodate(animal)).build().find());
     penListAdapter.setOnItemClickedConsumer(
         pen -> {
           animal.pen.setTarget(pen);

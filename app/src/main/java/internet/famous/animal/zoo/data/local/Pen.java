@@ -1,6 +1,7 @@
 package internet.famous.animal.zoo.data.local;
 
-import java.util.function.Function;
+import com.annimon.stream.Stream;
+import com.annimon.stream.function.Function;
 
 import javax.inject.Inject;
 
@@ -12,6 +13,7 @@ import io.objectbox.relation.ToOne;
 
 @Entity
 public final class Pen {
+  private static final Function<Animal, Species> getSpecies = a -> a.species.getTarget();
   @Id public long id;
   public ToOne<Keeper> keeper;
   public double landSpace = -1;
@@ -84,9 +86,8 @@ public final class Pen {
   }
 
   private double usedSpace(Function<Species, Double> attrGetter) {
-    return animals
-        .stream()
-        .map(attrGetter.compose(animal -> animal.species.getTarget()))
-        .reduce(0.0, Double::sum);
+    return Stream.of(animals)
+        .map(Function.Util.compose(attrGetter, getSpecies))
+        .reduce(0.0, (a, b) -> a + b);
   }
 }

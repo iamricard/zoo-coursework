@@ -10,7 +10,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 
 import java.lang.reflect.Type;
-import java.util.Map;
 
 import internet.famous.animal.zoo.R;
 
@@ -20,29 +19,29 @@ public final class Weather {
   public int icon;
 
   public static final class WeatherDeserializer implements JsonDeserializer<Weather> {
-    private static final Map<String, Integer> nameToResId;
+    private static final ImmutableMap<String, Integer> nameToResId;
 
     static {
       nameToResId =
           new ImmutableMap.Builder<String, Integer>()
               .put("01d", R.drawable.ic_weather_01d)
-              .put("01n", R.drawable.ic_weather_01n)
+              .put("01n", R.drawable.ic_weather_01d)
               .put("02d", R.drawable.ic_weather_02d)
-              .put("02n", R.drawable.ic_weather_02n)
+              .put("02n", R.drawable.ic_weather_02d)
               .put("03d", R.drawable.ic_weather_03d)
-              .put("03n", R.drawable.ic_weather_03n)
-              .put("04d", R.drawable.ic_weather_04d)
-              .put("04n", R.drawable.ic_weather_04n)
+              .put("03n", R.drawable.ic_weather_03d)
+              .put("04d", R.drawable.ic_weather_03d)
+              .put("04n", R.drawable.ic_weather_03d)
               .put("09d", R.drawable.ic_weather_09d)
-              .put("09n", R.drawable.ic_weather_09n)
+              .put("09n", R.drawable.ic_weather_09d)
               .put("10d", R.drawable.ic_weather_10d)
-              .put("10n", R.drawable.ic_weather_10n)
+              .put("10n", R.drawable.ic_weather_10d)
               .put("11d", R.drawable.ic_weather_11d)
-              .put("11n", R.drawable.ic_weather_11n)
+              .put("11n", R.drawable.ic_weather_11d)
               .put("13d", R.drawable.ic_weather_13d)
-              .put("13n", R.drawable.ic_weather_13n)
+              .put("13n", R.drawable.ic_weather_13d)
               .put("50d", R.drawable.ic_weather_50d)
-              .put("50n", R.drawable.ic_weather_50n)
+              .put("50n", R.drawable.ic_weather_50d)
               .build();
     }
 
