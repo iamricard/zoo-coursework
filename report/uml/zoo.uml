@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>internet.famous.animal.zoo</OriginalElement>
+  <nodes>
+    <node x="2866.782226340692" y="3651.0">internet.famous.animal.zoo.di.AppComponent.Builder</node>
+    <node x="2588.2037680868757" y="1789.0">internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter</node>
+    <node x="5402.423809523809" y="2232.5">internet.famous.animal.zoo.ui.main.PenListFragment</node>
+    <node x="2870.282226340692" y="3528.0">internet.famous.animal.zoo.di.AppComponent</node>
+    <node x="32.5" y="2243.5">internet.famous.animal.zoo.ui.create.CreateSpeciesActivity.EmojiFilter</node>
+    <node x="773.3035714285716" y="2221.0">internet.famous.animal.zoo.ui.create.BaseCreateActivity</node>
+    <node x="4333.7820296823875" y="3019.0">internet.famous.animal.zoo.data.remote.RequestInterceptor</node>
+    <node x="4578.73630952381" y="743.5">internet.famous.animal.zoo.ui.BaseViewHolder</node>
+    <node x="2190.2820296823875" y="1490.0">internet.famous.animal.zoo.App.JsonSeedData</node>
+    <node x="5987.868102623867" y="1722.5">internet.famous.animal.zoo.ui.main.AssignAnimalBottomSheetFragment</node>
+    <node x="3932.2820296823875" y="2630.5">internet.famous.animal.zoo.ui.main.MainFragmentAdapter</node>
+    <node x="1793.397414297772" y="2908.0">internet.famous.animal.zoo.ui.main.MainActivity</node>
+    <node x="2841.1790513973165" y="317.0">internet.famous.animal.zoo.data.local.Pen</node>
+    <node x="2845.026273619538" y="733.0">internet.famous.animal.zoo.data.local.Animal</node>
+    <node x="2357.3929402862045" y="0.0">internet.famous.animal.zoo.data.local.Environment</node>
+    <node x="1217.4012736195382" y="2620.0">internet.famous.animal.zoo.ui.create.CreateAnimalActivity</node>
+    <node x="2366.6153630157205" y="1053.0">internet.famous.animal.zoo.data.local.Species</node>
+    <node x="6303.118102623867" y="1489.5">internet.famous.animal.zoo.ui.main.KeeperListAdapter</node>
+    <node x="4490.2820296823875" y="2653.5">internet.famous.animal.zoo.data.remote.Weather.WeatherDeserializer</node>
+    <node x="3858.782226340692" y="1130.5">internet.famous.animal.zoo.ui.main.AnimalListAdapter.AnimalViewHolder</node>
+    <node x="1986.0320296823875" y="1679.0">internet.famous.animal.zoo.App</node>
+    <node x="3765.666268086876" y="1456.0">internet.famous.animal.zoo.ui.main.AnimalListAdapter</node>
+    <node x="3169.0320296823875" y="2676.0">internet.famous.animal.zoo.data.remote.OpenWeatherMapService</node>
+    <node x="5.290271440629567" y="2565.0">internet.famous.animal.zoo.ui.create.CreateSpeciesActivity</node>
+    <node x="4793.09234504811" y="2243.5">internet.famous.animal.zoo.ui.main.SpeciesListFragment</node>
+    <node x="5723.423809523809" y="2243.5">internet.famous.animal.zoo.ui.main.KeeperListFragment</node>
+    <node x="2600.3285714285716" y="1478.5">internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter.SpeciesViewHolder</node>
+    <node x="5300.219726340692" y="2610.0">internet.famous.animal.zoo.di.FragmentBuilderModule</node>
+    <node x="4747.032226340692" y="1723.0">internet.famous.animal.zoo.ui.BaseListFragment</node>
+    <node x="1285.3035714285716" y="1086.0">internet.famous.animal.zoo.data.local.AllocatorService</node>
+    <node x="4274.2820296823875" y="2654.0">internet.famous.animal.zoo.data.remote.ApiConstants</node>
+    <node x="712.6162680868756" y="1755.5">internet.famous.animal.zoo.ui.BaseActivity</node>
+    <node x="922.1474142977718" y="2653.0">internet.famous.animal.zoo.ui.create.CreateKeeperActivity</node>
+    <node x="483.55357142857156" y="2598.5">internet.famous.animal.zoo.ui.create.CreatePenActivity</node>
+    <node x="688.9601109560758" y="3295.0">internet.famous.animal.zoo.di.ActivityBuilderModule</node>
+    <node x="4028.469726340692" y="3251.0">internet.famous.animal.zoo.di.AppModule</node>
+    <node x="4283.282226340692" y="1789.0">internet.famous.animal.zoo.ui.main.SpeciesListAdapter</node>
+    <node x="2472.0320296823875" y="2143.0">internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetFragment</node>
+    <node x="4406.454845048111" y="2232.5">internet.famous.animal.zoo.ui.main.AnimalListFragment</node>
+    <node x="6312.618102623867" y="1130.5">internet.famous.animal.zoo.ui.main.KeeperListAdapter.KeeperViewHolder</node>
+    <node x="4317.585601110959" y="1097.0">internet.famous.animal.zoo.ui.BaseAdapter</node>
+    <node x="6792.968452380952" y="1722.5">internet.famous.animal.zoo.ui.main.AssignPenBottomSheetFragment</node>
+    <node x="4103.692940286205" y="2221.5">internet.famous.animal.zoo.data.remote.Weather</node>
+    <node x="3117.432738095238" y="33.5">internet.famous.animal.zoo.data.local.Keeper</node>
+    <node x="5747.7931026238675" y="1434.0">internet.famous.animal.zoo.ui.main.PenListAdapter</node>
+    <node x="4447.282226340692" y="1478.5">internet.famous.animal.zoo.ui.main.SpeciesListAdapter.SpeciesViewHolder</node>
+    <node x="5689.493102623867" y="1130.5">internet.famous.animal.zoo.ui.main.PenListAdapter.PenViewHolder</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="internet.famous.animal.zoo.ui.main.KeeperListAdapter" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="154.875" y="-37.0" />
+      <point x="6664.493102623867" y="1414.0" />
+      <point x="6739.805602623867" y="1414.0" />
+      <point x="6739.805602623867" y="277.0" />
+      <point x="3256.2788919413915" y="277.0" />
+      <point x="43.84615384615381" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.FragmentBuilderModule" target="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetFragment">
+      <point x="-253.71428571428578" y="-91.5" />
+      <point x="5342.505440626406" y="2435.0" />
+      <point x="2778.0320296823875" y="2435.0" />
+      <point x="102.0" y="126.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.SpeciesListAdapter" target="internet.famous.animal.zoo.ui.BaseAdapter">
+      <point x="-52.125" y="-37.0" />
+      <point x="4439.657226340692" y="1659.0" />
+      <point x="4436.782226340692" y="1659.0" />
+      <point x="4436.782226340692" y="1414.0" />
+      <point x="4450.918934444292" y="1414.0" />
+      <point x="-26.66666666666697" y="81.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListFragment" target="internet.famous.animal.zoo.ui.main.AssignAnimalBottomSheetFragment">
+      <point x="127.59999999999991" y="-36.5" />
+      <point x="4693.55484504811" y="2093.0" />
+      <point x="6089.868102623867" y="2093.0" />
+      <point x="-102.0" y="103.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainActivity" target="internet.famous.animal.zoo.ui.create.CreatePenActivity">
+      <point x="-112.0" y="-136.5" />
+      <point x="1841.397414297772" y="2878.0" />
+      <point x="794.0535714285716" y="2878.0" />
+      <point x="103.5" y="103.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainActivity" target="internet.famous.animal.zoo.ui.create.CreateKeeperActivity">
+      <point x="-80.0" y="-136.5" />
+      <point x="1873.397414297772" y="2868.0" />
+      <point x="1109.6474142977718" y="2868.0" />
+      <point x="62.5" y="48.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.SpeciesListAdapter.SpeciesViewHolder" target="internet.famous.animal.zoo.ui.main.SpeciesListAdapter">
+      <point x="99.5" y="48.0" />
+      <point x="4745.782226340692" y="1659.0" />
+      <point x="4648.157226340692" y="1659.0" />
+      <point x="156.375" y="-37.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.Animal" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-17.076923076922867" y="70.0" />
+      <point x="2938.9493505426153" y="983.0" />
+      <point x="2568.215363015721" y="983.0" />
+      <point x="89.60000000000036" y="-125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.SpeciesListAdapter.SpeciesViewHolder" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-132.66666666666697" y="-48.0" />
+      <point x="4513.615559674025" y="1354.0" />
+      <point x="2581.2820296823875" y="1354.0" />
+      <point x="102.66666666666697" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AssignPenBottomSheetFragment" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="153.0" y="-103.5" />
+      <point x="7149.968452380952" y="1659.0" />
+      <point x="7107.653335186444" y="1659.0" />
+      <point x="7107.653335186444" y="257.0" />
+      <point x="3285.509661172161" y="257.0" />
+      <point x="73.07692307692287" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppComponent" target="internet.famous.animal.zoo.di.ActivityBuilderModule">
+      <point x="-95.25" y="-36.5" />
+      <point x="2902.032226340692" y="3508.0" />
+      <point x="894.9601109560758" y="3508.0" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.ActivityBuilderModule" target="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity">
+      <point x="-164.80000000000018" y="-69.5" />
+      <point x="730.1601109560756" y="3231.0" />
+      <point x="105.29027144062957" y="3231.0" />
+      <point x="-100.0" y="136.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AssignAnimalBottomSheetFragment" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="-51.0" y="-103.5" />
+      <point x="6140.868102623867" y="1659.0" />
+      <point x="6186.368102623867" y="1659.0" />
+      <point x="6186.368102623867" y="933.0" />
+      <point x="3041.4108890041534" y="933.0" />
+      <point x="85.38461538461524" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AssignAnimalBottomSheetFragment" target="internet.famous.animal.zoo.ui.main.PenListAdapter">
+      <point x="-153.0" y="-103.5" />
+      <point x="6038.868102623867" y="1659.0" />
+      <point x="6042.5431026238675" y="1659.0" />
+      <point x="98.25" y="92.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.FragmentBuilderModule" target="internet.famous.animal.zoo.ui.main.SpeciesListFragment">
+      <point x="-84.57142857142844" y="-91.5" />
+      <point x="5511.648297769264" y="2415.0" />
+      <point x="5036.84234504811" y="2415.0" />
+      <point x="81.25" y="25.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.KeeperListFragment" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="120.375" y="-25.5" />
+      <point x="6004.298809523809" y="2113.0" />
+      <point x="6750.805602623867" y="2113.0" />
+      <point x="6750.805602623867" y="267.0" />
+      <point x="3270.8942765567763" y="267.0" />
+      <point x="58.46153846153857" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.KeeperListAdapter.KeeperViewHolder" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="131.33333333333303" y="-48.0" />
+      <point x="6640.9514359572" y="893.0" />
+      <point x="6494.35798391645" y="893.0" />
+      <point x="6494.35798391645" y="287.0" />
+      <point x="3241.6635073260068" y="287.0" />
+      <point x="29.230769230769056" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.BaseCreateActivity" target="internet.famous.animal.zoo.ui.BaseActivity">
+      <point x="0.0" y="-48.0" />
+      <point x="897.3035714285716" y="2123.0" />
+      <point x="878.687696658304" y="2123.0" />
+      <point x="-66.42857142857156" y="70.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.FragmentBuilderModule" target="internet.famous.animal.zoo.ui.main.PenListFragment">
+      <point x="0.0" y="-91.5" />
+      <point x="5596.219726340692" y="2505.0" />
+      <point x="5628.173809523809" y="2505.0" />
+      <point x="75.25" y="36.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainFragmentAdapter" target="internet.famous.animal.zoo.ui.main.KeeperListFragment">
+      <point x="120.75" y="-71.0" />
+      <point x="4214.0320296823875" y="2515.0" />
+      <point x="5803.673809523809" y="2515.0" />
+      <point x="-80.25" y="25.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter" target="internet.famous.animal.zoo.ui.BaseAdapter">
+      <point x="156.375" y="-37.0" />
+      <point x="2953.0787680868757" y="1659.0" />
+      <point x="4261.782226340692" y="1659.0" />
+      <point x="4261.782226340692" y="1414.0" />
+      <point x="4397.585601110959" y="1414.0" />
+      <point x="-80.0" y="81.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.SpeciesListAdapter" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-156.375" y="-37.0" />
+      <point x="4335.407226340692" y="1659.0" />
+      <point x="4353.344726340692" y="1659.0" />
+      <point x="4353.344726340692" y="1364.0" />
+      <point x="2562.6153630157205" y="1364.0" />
+      <point x="84.0" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.App" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="-38.75" y="-147.0" />
+      <point x="2179.7820296823875" y="963.0" />
+      <point x="2904.795504388769" y="963.0" />
+      <point x="-51.230769230769056" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppModule" target="internet.famous.animal.zoo.data.remote.Weather">
+      <point x="172.66666666666663" y="-113.5" />
+      <point x="4460.1363930073585" y="3221.0" />
+      <point x="4991.7820296823875" y="3221.0" />
+      <point x="4991.7820296823875" y="2445.0" />
+      <point x="4276.942940286205" y="2445.0" />
+      <point x="78.75" y="47.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.App" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="-116.25" y="-147.0" />
+      <point x="2102.2820296823875" y="1639.0" />
+      <point x="1982.960110956076" y="1639.0" />
+      <point x="1982.960110956076" y="923.0" />
+      <point x="2219.9601109560763" y="923.0" />
+      <point x="2219.9601109560763" y="663.0" />
+      <point x="2910.984606952872" y="663.0" />
+      <point x="-109.69444444444434" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListAdapter.PenViewHolder" target="internet.famous.animal.zoo.ui.main.PenListAdapter">
+      <point x="107.75" y="48.0" />
+      <point x="6012.743102623867" y="1414.0" />
+      <point x="5944.2931026238675" y="1414.0" />
+      <point x="0.0" y="-92.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.Pen" target="internet.famous.animal.zoo.data.local.Environment">
+      <point x="-119.66666666666652" y="-148.0" />
+      <point x="2901.0123847306495" y="227.0" />
+      <point x="2505.1429402862045" y="227.0" />
+      <point x="49.25" y="103.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.ActivityBuilderModule" target="internet.famous.animal.zoo.ui.main.MainActivity">
+      <point x="164.80000000000018" y="-69.5" />
+      <point x="1059.760110956076" y="3231.0" />
+      <point x="1953.397414297772" y="3231.0" />
+      <point x="0.0" y="136.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.FragmentBuilderModule" target="internet.famous.animal.zoo.ui.main.KeeperListFragment">
+      <point x="84.57142857142844" y="-91.5" />
+      <point x="5680.791154912121" y="2525.0" />
+      <point x="5964.173809523809" y="2525.0" />
+      <point x="80.25" y="25.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateAnimalActivity" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="87.19999999999982" y="-81.5" />
+      <point x="1522.601273619538" y="2445.0" />
+      <point x="1882.8035714285716" y="2445.0" />
+      <point x="1882.8035714285716" y="953.0" />
+      <point x="2887.718581311846" y="953.0" />
+      <point x="-68.30769230769238" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppModule" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="-172.66666666666663" y="-113.5" />
+      <point x="4114.8030596740255" y="3221.0" />
+      <point x="3037.266071428571" y="3221.0" />
+      <point x="3037.266071428571" y="983.0" />
+      <point x="2956.026273619538" y="983.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppComponent" target="internet.famous.animal.zoo.App">
+      <point x="-31.75" y="-36.5" />
+      <point x="2965.532226340692" y="3498.0" />
+      <point x="2218.5320296823875" y="3498.0" />
+      <point x="0.0" y="147.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-156.375" y="-37.0" />
+      <point x="2640.3287680868757" y="1659.0" />
+      <point x="2589.8285714285716" y="1659.0" />
+      <point x="2589.8285714285716" y="1394.0" />
+      <point x="2506.6153630157205" y="1394.0" />
+      <point x="28.0" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppModule" target="internet.famous.animal.zoo.data.remote.OpenWeatherMapService">
+      <point x="-57.55555555555554" y="-113.5" />
+      <point x="4229.914170785137" y="3201.0" />
+      <point x="3373.0320296823875" y="3201.0" />
+      <point x="68.0" y="25.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter" target="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter.SpeciesViewHolder">
+      <point x="-52.125" y="-37.0" />
+      <point x="2744.5787680868757" y="1659.0" />
+      <point x="2699.8285714285716" y="1659.0" />
+      <point x="-99.5" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainFragmentAdapter" target="internet.famous.animal.zoo.ui.main.PenListFragment">
+      <point x="40.25" y="-71.0" />
+      <point x="4133.5320296823875" y="2505.0" />
+      <point x="5477.673809523809" y="2505.0" />
+      <point x="-75.25" y="36.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.Species" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="44.80000000000018" y="-125.5" />
+      <point x="2523.4153630157207" y="973.0" />
+      <point x="2921.872427465692" y="973.0" />
+      <point x="-34.15384615384619" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListFragment" target="internet.famous.animal.zoo.ui.main.PenListAdapter">
+      <point x="60.19999999999982" y="-36.5" />
+      <point x="5613.1238095238095" y="2083.0" />
+      <point x="5846.0431026238675" y="2083.0" />
+      <point x="-98.25" y="92.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.ActivityBuilderModule" target="internet.famous.animal.zoo.ui.create.CreatePenActivity">
+      <point x="-82.39999999999964" y="-69.5" />
+      <point x="812.5601109560762" y="3221.0" />
+      <point x="587.0535714285716" y="3221.0" />
+      <point x="-103.5" y="103.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateAnimalActivity" target="internet.famous.animal.zoo.ui.BaseActivity">
+      <point x="0.0" y="-81.5" />
+      <point x="1435.4012736195382" y="2113.0" />
+      <point x="1011.5448395154472" y="2113.0" />
+      <point x="66.42857142857156" y="70.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreatePenActivity" target="internet.famous.animal.zoo.ui.create.BaseCreateActivity">
+      <point x="51.75" y="-103.0" />
+      <point x="742.3035714285716" y="2535.0" />
+      <point x="850.8035714285716" y="2535.0" />
+      <point x="-46.5" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.Pen" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="-29.916666666666515" y="148.0" />
+      <point x="2990.7623847306495" y="703.0" />
+      <point x="2928.276273619538" y="703.0" />
+      <point x="-27.75" y="-70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.KeeperListAdapter.KeeperViewHolder" target="internet.famous.animal.zoo.ui.main.KeeperListAdapter">
+      <point x="98.5" y="48.0" />
+      <point x="6608.118102623867" y="1414.0" />
+      <point x="6561.243102623867" y="1414.0" />
+      <point x="51.625" y="-37.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.KeeperListAdapter.KeeperViewHolder" target="internet.famous.animal.zoo.ui.BaseViewHolder">
+      <point x="0.0" y="-48.0" />
+      <point x="6509.618102623867" y="903.0" />
+      <point x="4769.645400432901" y="903.0" />
+      <point x="90.90909090909099" y="59.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.Species" target="internet.famous.animal.zoo.data.local.Environment">
+      <point x="-89.60000000000036" y="-125.5" />
+      <point x="2389.01536301572" y="923.0" />
+      <point x="2406.6429402862045" y="923.0" />
+      <point x="-49.25" y="103.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.ActivityBuilderModule" target="internet.famous.animal.zoo.ui.create.CreateAnimalActivity">
+      <point x="82.39999999999964" y="-69.5" />
+      <point x="977.3601109560755" y="3221.0" />
+      <point x="1326.4012736195382" y="3221.0" />
+      <point x="-109.0" y="81.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.App.JsonSeedData" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="-50.75" y="-36.5" />
+      <point x="2241.0320296823875" y="1374.0" />
+      <point x="1993.960110956076" y="1374.0" />
+      <point x="1993.960110956076" y="277.0" />
+      <point x="3183.2019688644687" y="277.0" />
+      <point x="-29.230769230769056" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.AllocatorService" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="48.91666666666674" y="-92.5" />
+      <point x="1627.7202380952383" y="1033.0" />
+      <point x="1541.0329347535426" y="1033.0" />
+      <point x="1541.0329347535426" y="653.0" />
+      <point x="2891.040162508428" y="653.0" />
+      <point x="-129.6388888888887" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListAdapter" target="internet.famous.animal.zoo.ui.BaseAdapter">
+      <point x="-157.19999999999982" y="-92.5" />
+      <point x="5787.093102623868" y="1334.0" />
+      <point x="4557.585601110959" y="1334.0" />
+      <point x="80.0" y="81.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter.SpeciesViewHolder" target="internet.famous.animal.zoo.ui.BaseViewHolder">
+      <point x="0.0" y="-48.0" />
+      <point x="2799.3285714285716" y="1414.0" />
+      <point x="2860.161904761905" y="1414.0" />
+      <point x="2860.161904761905" y="993.0" />
+      <point x="4587.827218614719" y="993.0" />
+      <point x="-90.90909090909099" y="59.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainActivity" target="internet.famous.animal.zoo.ui.main.MainFragmentAdapter">
+      <point x="144.0" y="-136.5" />
+      <point x="2097.3974142977722" y="2888.0" />
+      <point x="4093.2820296823875" y="2888.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.App" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="193.75" y="-147.0" />
+      <point x="2412.2820296823875" y="1659.0" />
+      <point x="2403.7820296823875" y="1659.0" />
+      <point x="2403.7820296823875" y="1414.0" />
+      <point x="2431.9486963490535" y="1414.0" />
+      <point x="-46.66666666666697" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListAdapter.PenViewHolder" target="internet.famous.animal.zoo.ui.BaseViewHolder">
+      <point x="-143.66666666666697" y="-48.0" />
+      <point x="5761.3264359572" y="1013.0" />
+      <point x="4715.099945887446" y="1013.0" />
+      <point x="36.36363636363603" y="59.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.BaseAdapter" target="internet.famous.animal.zoo.ui.BaseViewHolder">
+      <point x="0.0" y="-81.5" />
+      <point x="4477.585601110959" y="1033.0" />
+      <point x="4660.554491341992" y="1033.0" />
+      <point x="-18.181818181818016" y="59.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreatePenActivity" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="-155.25" y="-103.0" />
+      <point x="535.3035714285716" y="2505.0" />
+      <point x="536.5759857263433" y="2505.0" />
+      <point x="536.5759857263433" y="1033.0" />
+      <point x="1402.6684442894098" y="1033.0" />
+      <point x="1402.6684442894098" y="633.0" />
+      <point x="2851.151273619538" y="633.0" />
+      <point x="-169.52777777777783" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListFragment" target="internet.famous.animal.zoo.ui.BaseListFragment">
+      <point x="-60.19999999999982" y="-36.5" />
+      <point x="5492.72380952381" y="2013.0" />
+      <point x="5027.532226340692" y="2013.0" />
+      <point x="76.5" y="103.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.remote.RequestInterceptor" target="internet.famous.animal.zoo.data.remote.ApiConstants">
+      <point x="0.0" y="-25.5" />
+      <point x="4449.7820296823875" y="2888.0" />
+      <point x="4421.2820296823875" y="2888.0" />
+      <point x="49.0" y="47.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.SpeciesListFragment" target="internet.famous.animal.zoo.ui.main.SpeciesListAdapter">
+      <point x="-40.625" y="-25.5" />
+      <point x="4914.96734504811" y="2053.0" />
+      <point x="4491.782226340692" y="2053.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.SpeciesListFragment" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-121.875" y="-25.5" />
+      <point x="4833.71734504811" y="2063.0" />
+      <point x="4272.782226340692" y="2063.0" />
+      <point x="4272.782226340692" y="1374.0" />
+      <point x="2543.9486963490535" y="1374.0" />
+      <point x="65.33333333333303" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreatePenActivity" target="internet.famous.animal.zoo.ui.BaseActivity">
+      <point x="-51.75" y="-103.0" />
+      <point x="638.8035714285716" y="2505.0" />
+      <point x="597.1474142977718" y="2505.0" />
+      <point x="597.1474142977718" y="2123.0" />
+      <point x="812.2591252297325" y="2123.0" />
+      <point x="-132.85714285714312" y="70.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.BaseListFragment" target="internet.famous.animal.zoo.ui.BaseAdapter">
+      <point x="0.0" y="-103.0" />
+      <point x="4951.032226340692" y="1344.0" />
+      <point x="4504.252267777626" y="1344.0" />
+      <point x="26.66666666666697" y="81.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.App" target="internet.famous.animal.zoo.App.JsonSeedData">
+      <point x="38.75" y="-147.0" />
+      <point x="2257.2820296823875" y="1659.0" />
+      <point x="2241.0320296823875" y="1659.0" />
+      <point x="-50.75" y="36.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListAdapter.AnimalViewHolder" target="internet.famous.animal.zoo.ui.main.AnimalListAdapter">
+      <point x="98.0" y="48.0" />
+      <point x="4152.782226340692" y="1394.0" />
+      <point x="4053.3662680868756" y="1394.0" />
+      <point x="82.19999999999982" y="-70.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AssignPenBottomSheetFragment" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="51.0" y="-103.5" />
+      <point x="7047.968452380952" y="643.0" />
+      <point x="3190.206829175094" y="643.0" />
+      <point x="169.52777777777783" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AssignAnimalBottomSheetFragment" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="153.0" y="-103.5" />
+      <point x="6344.868102623867" y="1649.0" />
+      <point x="6209.055602623867" y="1649.0" />
+      <point x="6209.055602623867" y="663.0" />
+      <point x="3150.317940286205" y="663.0" />
+      <point x="129.63888888888914" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppModule" target="internet.famous.animal.zoo.data.remote.Weather.WeatherDeserializer">
+      <point x="115.11111111111109" y="-113.5" />
+      <point x="4402.580837451803" y="3211.0" />
+      <point x="4735.7820296823875" y="3211.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.Animal" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="-83.25" y="-70.0" />
+      <point x="2872.776273619538" y="693.0" />
+      <point x="2970.817940286205" y="693.0" />
+      <point x="-49.86111111111131" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListAdapter" target="internet.famous.animal.zoo.ui.main.PenListAdapter.PenViewHolder">
+      <point x="-78.59999999999991" y="-92.5" />
+      <point x="5865.693102623867" y="1414.0" />
+      <point x="5797.243102623867" y="1414.0" />
+      <point x="-107.75" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-171.42857142857156" y="-136.5" />
+      <point x="33.86170001205801" y="2545.0" />
+      <point x="0.0" y="2545.0" />
+      <point x="0.0" y="1649.0" />
+      <point x="837.6386823846474" y="1649.0" />
+      <point x="837.6386823846474" y="1384.0" />
+      <point x="2375.9486963490535" y="1384.0" />
+      <point x="-102.66666666666697" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainFragmentAdapter" target="internet.famous.animal.zoo.ui.main.AnimalListFragment">
+      <point x="-120.75" y="-71.0" />
+      <point x="3972.5320296823875" y="2485.0" />
+      <point x="4486.204845048111" y="2485.0" />
+      <point x="-79.75" y="36.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.Keeper" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="0.0" y="70.0" />
+      <point x="3212.432738095238" y="297.0" />
+      <point x="3140.3457180639825" y="297.0" />
+      <point x="119.66666666666652" y="-148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppModule" target="internet.famous.animal.zoo.data.remote.RequestInterceptor">
+      <point x="57.55555555555554" y="-113.5" />
+      <point x="4345.025281896247" y="3201.0" />
+      <point x="4449.7820296823875" y="3201.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.AllocatorService" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="-244.58333333333348" y="-92.5" />
+      <point x="1334.220238095238" y="1023.0" />
+      <point x="1391.6684442894098" y="1023.0" />
+      <point x="1391.6684442894098" y="247.0" />
+      <point x="3139.3558150183153" y="247.0" />
+      <point x="-73.07692307692287" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppModule" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="230.22222222222217" y="-113.5" />
+      <point x="4517.691948562914" y="3231.0" />
+      <point x="7211.468452380952" y="3231.0" />
+      <point x="7211.468452380952" y="247.0" />
+      <point x="3300.125045787546" y="247.0" />
+      <point x="87.69230769230762" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListAdapter.PenViewHolder" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="143.66666666666697" y="-48.0" />
+      <point x="6048.659769290534" y="1033.0" />
+      <point x="5922.318934444293" y="1033.0" />
+      <point x="5922.318934444293" y="693.0" />
+      <point x="3090.484606952872" y="693.0" />
+      <point x="69.80555555555566" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateKeeperActivity" target="internet.famous.animal.zoo.ui.BaseActivity">
+      <point x="31.25" y="-48.5" />
+      <point x="1078.3974142977718" y="2545.0" />
+      <point x="1031.8035714285716" y="2545.0" />
+      <point x="1031.8035714285716" y="2123.0" />
+      <point x="945.1162680868756" y="2123.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppComponent.Builder" target="internet.famous.animal.zoo.di.AppComponent">
+      <point x="-65.25" y="-36.5" />
+      <point x="2932.032226340692" y="3626.0" />
+      <point x="2933.782226340692" y="3626.0" />
+      <point x="-63.5" y="36.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListFragment" target="internet.famous.animal.zoo.ui.main.AssignPenBottomSheetFragment">
+      <point x="120.39999999999964" y="-36.5" />
+      <point x="5673.323809523808" y="2123.0" />
+      <point x="6894.968452380952" y="2123.0" />
+      <point x="-102.0" y="103.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListAdapter" target="internet.famous.animal.zoo.ui.main.AnimalListAdapter.AnimalViewHolder">
+      <point x="0.0" y="-70.5" />
+      <point x="3971.166268086876" y="1414.0" />
+      <point x="3956.782226340692" y="1414.0" />
+      <point x="-98.0" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppModule" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-230.22222222222217" y="-113.5" />
+      <point x="4057.24750411847" y="3231.0" />
+      <point x="2461.5320296823875" y="3231.0" />
+      <point x="2461.5320296823875" y="1414.0" />
+      <point x="2450.6153630157205" y="1414.0" />
+      <point x="-28.0" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.App.JsonSeedData" target="internet.famous.animal.zoo.App">
+      <point x="50.75" y="36.5" />
+      <point x="2342.5320296823875" y="1659.0" />
+      <point x="2334.7820296823875" y="1659.0" />
+      <point x="116.25" y="-147.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.SpeciesListAdapter" target="internet.famous.animal.zoo.ui.main.SpeciesListAdapter.SpeciesViewHolder">
+      <point x="52.125" y="-37.0" />
+      <point x="4543.907226340692" y="1659.0" />
+      <point x="4546.782226340692" y="1659.0" />
+      <point x="-99.5" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter.SpeciesViewHolder" target="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter">
+      <point x="99.5" y="48.0" />
+      <point x="2898.8285714285716" y="1659.0" />
+      <point x="2848.8287680868757" y="1659.0" />
+      <point x="52.125" y="-37.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainActivity" target="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity">
+      <point x="-144.0" y="-136.5" />
+      <point x="1809.397414297772" y="2888.0" />
+      <point x="305.29027144062957" y="2888.0" />
+      <point x="100.0" y="136.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListAdapter" target="internet.famous.animal.zoo.ui.BaseAdapter">
+      <point x="164.4000000000001" y="-70.5" />
+      <point x="4135.566268086876" y="1404.0" />
+      <point x="4344.252267777626" y="1404.0" />
+      <point x="-133.33333333333303" y="81.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.KeeperListFragment" target="internet.famous.animal.zoo.ui.BaseListFragment">
+      <point x="-120.375" y="-25.5" />
+      <point x="5763.548809523809" y="2003.0" />
+      <point x="5078.532226340692" y="2003.0" />
+      <point x="127.5" y="103.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListAdapter.AnimalViewHolder" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="-147.0" y="-48.0" />
+      <point x="3907.782226340692" y="943.0" />
+      <point x="3024.3339659272306" y="943.0" />
+      <point x="68.30769230769238" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListFragment" target="internet.famous.animal.zoo.ui.main.AnimalListAdapter">
+      <point x="-63.80000000000018" y="-36.5" />
+      <point x="4502.15484504811" y="2113.0" />
+      <point x="3971.166268086876" y="2113.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.Pen" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-69.80555555555566" y="148.0" />
+      <point x="2950.873495841761" y="683.0" />
+      <point x="2428.6429402862045" y="683.0" />
+      <point x="2428.6429402862045" y="913.0" />
+      <point x="2478.6153630157205" y="913.0" />
+      <point x="0.0" y="-125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.FragmentBuilderModule" target="internet.famous.animal.zoo.ui.main.AssignAnimalBottomSheetFragment">
+      <point x="169.14285714285757" y="-91.5" />
+      <point x="5765.362583483549" y="2535.0" />
+      <point x="6514.048101110959" y="2535.0" />
+      <point x="6514.048101110959" y="2093.0" />
+      <point x="6293.868102623867" y="2093.0" />
+      <point x="102.0" y="103.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppComponent" target="internet.famous.animal.zoo.di.AppModule">
+      <point x="31.75" y="-36.5" />
+      <point x="3029.032226340692" y="3498.0" />
+      <point x="4287.469726340692" y="3498.0" />
+      <point x="0.0" y="113.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainActivity" target="internet.famous.animal.zoo.ui.BaseActivity">
+      <point x="-16.0" y="-136.5" />
+      <point x="1937.397414297772" y="2103.0" />
+      <point x="1077.9734109440187" y="2103.0" />
+      <point x="132.85714285714312" y="70.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity.EmojiFilter" target="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity">
+      <point x="111.5" y="25.5" />
+      <point x="367.0" y="2505.0" />
+      <point x="262.43312858348645" y="2505.0" />
+      <point x="57.14285714285688" y="-136.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity" target="internet.famous.animal.zoo.ui.BaseActivity">
+      <point x="-57.14285714285688" y="-136.5" />
+      <point x="148.14741429777268" y="2525.0" />
+      <point x="22.0" y="2525.0" />
+      <point x="22.0" y="2113.0" />
+      <point x="745.8305538011609" y="2113.0" />
+      <point x="-199.28571428571468" y="70.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetFragment" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-136.0" y="-126.0" />
+      <point x="2540.0320296823875" y="2123.0" />
+      <point x="2506.2820296823875" y="2123.0" />
+      <point x="2506.2820296823875" y="1414.0" />
+      <point x="2469.2820296823875" y="1414.0" />
+      <point x="-9.33333333333303" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.Pen" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="0.0" y="-148.0" />
+      <point x="3020.6790513973165" y="287.0" />
+      <point x="3197.8173534798534" y="287.0" />
+      <point x="-14.615384615384755" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppComponent" target="internet.famous.animal.zoo.di.FragmentBuilderModule">
+      <point x="95.25" y="-36.5" />
+      <point x="3092.532226340692" y="3508.0" />
+      <point x="7236.607341269841" y="3508.0" />
+      <point x="7236.607341269841" y="2888.0" />
+      <point x="5596.219726340692" y="2888.0" />
+      <point x="0.0" y="91.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.SpeciesListAdapter.SpeciesViewHolder" target="internet.famous.animal.zoo.ui.BaseViewHolder">
+      <point x="0.0" y="-48.0" />
+      <point x="4646.282226340692" y="1414.0" />
+      <point x="4722.689767777625" y="1414.0" />
+      <point x="4722.689767777625" y="1033.0" />
+      <point x="4678.73630952381" y="1033.0" />
+      <point x="0.0" y="59.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateKeeperActivity" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="93.75" y="-48.5" />
+      <point x="1140.8974142977718" y="2545.0" />
+      <point x="1274.8035714285716" y="2545.0" />
+      <point x="1274.8035714285716" y="237.0" />
+      <point x="3124.7404304029305" y="237.0" />
+      <point x="-87.69230769230762" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateAnimalActivity" target="internet.famous.animal.zoo.ui.create.BaseCreateActivity">
+      <point x="-87.19999999999982" y="-81.5" />
+      <point x="1348.2012736195384" y="2515.0" />
+      <point x="1005.8035714285716" y="2515.0" />
+      <point x="108.5" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListAdapter" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="-164.4000000000001" y="-70.5" />
+      <point x="3806.766268086876" y="1414.0" />
+      <point x="3794.766268086876" y="1414.0" />
+      <point x="3794.766268086876" y="963.0" />
+      <point x="2990.1801197733844" y="963.0" />
+      <point x="34.15384615384619" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppModule" target="internet.famous.animal.zoo.data.remote.ApiConstants">
+      <point x="0.0" y="-113.5" />
+      <point x="4287.469726340692" y="3231.0" />
+      <point x="4323.2820296823875" y="3231.0" />
+      <point x="-49.0" y="47.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetFragment" target="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter">
+      <point x="136.0" y="-126.0" />
+      <point x="2812.0320296823875" y="2123.0" />
+      <point x="2796.7037680868757" y="2123.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateKeeperActivity" target="internet.famous.animal.zoo.ui.create.BaseCreateActivity">
+      <point x="-93.75" y="-48.5" />
+      <point x="953.3974142977718" y="2545.0" />
+      <point x="912.8035714285716" y="2545.0" />
+      <point x="15.5" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.App" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="-193.75" y="-147.0" />
+      <point x="2024.7820296823875" y="1649.0" />
+      <point x="1971.960110956076" y="1649.0" />
+      <point x="1971.960110956076" y="267.0" />
+      <point x="3168.586584249084" y="267.0" />
+      <point x="-43.84615384615381" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.KeeperListAdapter" target="internet.famous.animal.zoo.ui.BaseAdapter">
+      <point x="-154.875" y="-37.0" />
+      <point x="6354.743102623867" y="1324.0" />
+      <point x="4610.918934444292" y="1324.0" />
+      <point x="133.33333333333303" y="81.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainActivity" target="internet.famous.animal.zoo.data.remote.Weather">
+      <point x="80.0" y="-136.5" />
+      <point x="2033.397414297772" y="2868.0" />
+      <point x="2253.3447263406915" y="2868.0" />
+      <point x="2253.3447263406915" y="2465.0" />
+      <point x="4119.442940286205" y="2465.0" />
+      <point x="-78.75" y="47.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListAdapter.AnimalViewHolder" target="internet.famous.animal.zoo.data.local.Keeper">
+      <point x="-49.0" y="-48.0" />
+      <point x="4005.782226340692" y="297.0" />
+      <point x="3227.048122710623" y="297.0" />
+      <point x="14.615384615384755" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.KeeperListAdapter" target="internet.famous.animal.zoo.ui.main.KeeperListAdapter.KeeperViewHolder">
+      <point x="-51.625" y="-37.0" />
+      <point x="6457.993102623867" y="1414.0" />
+      <point x="6411.118102623867" y="1414.0" />
+      <point x="-98.5" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.App.JsonSeedData" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="50.75" y="-36.5" />
+      <point x="2342.5320296823875" y="1404.0" />
+      <point x="2413.2820296823875" y="1404.0" />
+      <point x="-65.33333333333303" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListFragment" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="-127.59999999999991" y="-36.5" />
+      <point x="4438.35484504811" y="2123.0" />
+      <point x="3741.016268086876" y="2123.0" />
+      <point x="3741.016268086876" y="973.0" />
+      <point x="2973.103196696461" y="973.0" />
+      <point x="17.076923076922867" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListFragment" target="internet.famous.animal.zoo.ui.BaseListFragment">
+      <point x="63.80000000000018" y="-36.5" />
+      <point x="4629.75484504811" y="2083.0" />
+      <point x="4823.532226340692" y="2083.0" />
+      <point x="-127.5" y="103.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.FragmentBuilderModule" target="internet.famous.animal.zoo.ui.main.AnimalListFragment">
+      <point x="-169.14285714285688" y="-91.5" />
+      <point x="5427.076869197836" y="2425.0" />
+      <point x="4645.704845048111" y="2425.0" />
+      <point x="79.75" y="36.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.SpeciesListFragment" target="internet.famous.animal.zoo.ui.BaseListFragment">
+      <point x="40.625" y="-25.5" />
+      <point x="4996.21734504811" y="2043.0" />
+      <point x="4874.532226340692" y="2043.0" />
+      <point x="-76.5" y="103.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetAdapter.SpeciesViewHolder" target="internet.famous.animal.zoo.data.local.Species">
+      <point x="-132.66666666666697" y="-48.0" />
+      <point x="2666.6619047619047" y="1384.0" />
+      <point x="2525.2820296823875" y="1384.0" />
+      <point x="46.66666666666697" y="125.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListAdapter" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="157.19999999999982" y="-92.5" />
+      <point x="6101.493102623867" y="1414.0" />
+      <point x="6175.368102623867" y="1414.0" />
+      <point x="6175.368102623867" y="673.0" />
+      <point x="3130.373495841761" y="673.0" />
+      <point x="109.69444444444434" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity" target="internet.famous.animal.zoo.ui.create.BaseCreateActivity">
+      <point x="114.28571428571468" y="-136.5" />
+      <point x="319.57598572634424" y="2515.0" />
+      <point x="788.8035714285716" y="2515.0" />
+      <point x="-108.5" y="48.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.KeeperListFragment" target="internet.famous.animal.zoo.ui.main.KeeperListAdapter">
+      <point x="40.125" y="-25.5" />
+      <point x="5924.048809523809" y="2103.0" />
+      <point x="6406.368102623867" y="2103.0" />
+      <point x="-103.25" y="37.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.PenListFragment" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="0.0" y="-36.5" />
+      <point x="5552.923809523809" y="2073.0" />
+      <point x="5673.9181026238675" y="2073.0" />
+      <point x="5673.9181026238675" y="703.0" />
+      <point x="3070.540162508428" y="703.0" />
+      <point x="49.86111111111131" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AnimalListAdapter.AnimalViewHolder" target="internet.famous.animal.zoo.ui.BaseViewHolder">
+      <point x="49.0" y="-48.0" />
+      <point x="4103.782226340692" y="1013.0" />
+      <point x="4624.190854978355" y="1013.0" />
+      <point x="-54.54545454545496" y="59.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.remote.Weather.WeatherDeserializer" target="internet.famous.animal.zoo.data.remote.Weather">
+      <point x="163.66666666666663" y="-48.0" />
+      <point x="4899.448696349054" y="2455.0" />
+      <point x="4245.442940286205" y="2455.0" />
+      <point x="47.25" y="47.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.AppModule" target="internet.famous.animal.zoo.data.local.Pen">
+      <point x="-115.11111111111109" y="-113.5" />
+      <point x="4172.358615229581" y="3211.0" />
+      <point x="3158.5320296823875" y="3211.0" />
+      <point x="3158.5320296823875" y="713.0" />
+      <point x="3050.5957180639825" y="713.0" />
+      <point x="29.916666666666515" y="148.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.AssignPenBottomSheetFragment" target="internet.famous.animal.zoo.ui.main.KeeperListAdapter">
+      <point x="-153.0" y="-103.5" />
+      <point x="6843.968452380952" y="1659.0" />
+      <point x="6612.868102623867" y="1659.0" />
+      <point x="103.25" y="37.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainActivity" target="internet.famous.animal.zoo.ui.create.CreateAnimalActivity">
+      <point x="-48.0" y="-136.5" />
+      <point x="1905.397414297772" y="2858.0" />
+      <point x="1544.4012736195382" y="2858.0" />
+      <point x="109.0" y="81.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity" target="internet.famous.animal.zoo.ui.create.CreateSpeciesActivity.EmojiFilter">
+      <point x="0.0" y="-136.5" />
+      <point x="205.29027144062957" y="2515.0" />
+      <point x="144.0" y="2515.0" />
+      <point x="-111.5" y="25.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainActivity" target="internet.famous.animal.zoo.data.remote.OpenWeatherMapService">
+      <point x="112.0" y="-136.5" />
+      <point x="2065.3974142977722" y="2878.0" />
+      <point x="3237.0320296823875" y="2878.0" />
+      <point x="-68.0" y="25.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.remote.OpenWeatherMapService" target="internet.famous.animal.zoo.data.remote.Weather">
+      <point x="0.0" y="-25.5" />
+      <point x="3305.0320296823875" y="2475.0" />
+      <point x="4150.942940286205" y="2475.0" />
+      <point x="-47.25" y="47.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.FragmentBuilderModule" target="internet.famous.animal.zoo.ui.main.AssignPenBottomSheetFragment">
+      <point x="253.714285714286" y="-91.5" />
+      <point x="5849.934012054979" y="2545.0" />
+      <point x="7098.968452380952" y="2545.0" />
+      <point x="102.0" y="103.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.create.CreateAnimalActivity" target="internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetFragment">
+      <point x="174.39999999999964" y="-81.5" />
+      <point x="1609.8012736195378" y="2455.0" />
+      <point x="2574.0320296823875" y="2455.0" />
+      <point x="-102.0" y="126.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.di.ActivityBuilderModule" target="internet.famous.animal.zoo.ui.create.CreateKeeperActivity">
+      <point x="0.0" y="-69.5" />
+      <point x="894.9601109560758" y="3211.0" />
+      <point x="984.6474142977718" y="3211.0" />
+      <point x="-62.5" y="48.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.data.local.AllocatorService" target="internet.famous.animal.zoo.data.local.Animal">
+      <point x="146.75" y="-92.5" />
+      <point x="1725.5535714285716" y="933.0" />
+      <point x="2853.5647351579996" y="933.0" />
+      <point x="-102.46153846153857" y="70.0" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainFragmentAdapter" target="internet.famous.animal.zoo.ui.main.SpeciesListFragment">
+      <point x="-40.25" y="-71.0" />
+      <point x="4053.0320296823875" y="2495.0" />
+      <point x="4874.34234504811" y="2495.0" />
+      <point x="-81.25" y="25.5" />
+    </edge>
+    <edge source="internet.famous.animal.zoo.ui.main.MainActivity" target="internet.famous.animal.zoo.data.local.AllocatorService">
+      <point x="48.0" y="-136.5" />
+      <point x="2001.397414297772" y="2878.0" />
+      <point x="1959.397414297772" y="2878.0" />
+      <point x="1959.397414297772" y="1374.0" />
+      <point x="1578.8035714285716" y="1374.0" />
+      <point x="0.0" y="92.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.16268533772652388" x="3632.0" y="1887.0" />
+  <SelectedNodes>
+    <node>internet.famous.animal.zoo.ui.create.SelectSpeciesBottomSheetFragment</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
