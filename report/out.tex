@@ -339,41 +339,136 @@ out of the scope of explanation in this report.
 \hypertarget{data}{%
 \section{Data}\label{data}}
 
+To quote the coursework specification:
+
+\begin{quote}
+\emph{Your program should demonstrate good object oriented design and
+modelling techniques. \textbf{The domain model should be separate from
+user interface (UI)} controllers and views. You are expected to use
+object-oriented concepts such as inheritance and polymorphism where it
+is required and makes sense to do so.} {[}Emphasis mine{]}
+\end{quote}
+
+This section focuses on dicussing the \textbf{bolded} section. The apps
+models can be divided many ways, but one that makes sense is local v.
+remote, entity v. service. In the context of this application: a service
+retrieves or creates data on-demand; an entity is data that will
+eventually be persisted.
+
 \hypertarget{local-entities}{%
 \subsection{Local entities}\label{local-entities}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Animal}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Has a name.
+  \item
+    Has a Many-to-One relationship to Species entity.
+  \end{itemize}
+\item
+  \texttt{Keeper}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Has a name.
+  \item
+    One-to-Many relationship to Pen entity.
+  \end{itemize}
+\item
+  \texttt{Pen}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Has the amount of land, air, water, and whether or not is pettable.
+  \item
+    Many-to-One relationship to Keeper entity.
+  \end{itemize}
+\item
+  \texttt{Species}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Has a name.
+  \item
+    Has the amount of land, air, water needed, and whether or not is
+    pettable.
+  \item
+    One-to-Many relationship to Animal entity.
+  \end{itemize}
+\end{itemize}
 
 \hypertarget{local-services}{%
 \subsection{Local services}\label{local-services}}
 
+\texttt{AllocatorService} automatically assigns keepers to un-assigned
+pens, and un-assigned animals to available pens.
+
 \hypertarget{remote-services}{%
 \subsection{Remote services}\label{remote-services}}
+
+\texttt{OpenWeatherMapService} fetches weather data about Barcelona
+(where the Zoo is located), and turns it into a POJO (Plain Old Java
+Object) using Gson.
 
 \hypertarget{ui}{%
 \section{UI}\label{ui}}
 
-\hypertarget{base-classes}{%
-\subsection{Base classes}\label{base-classes}}
+To quote the coursework specification:
 
-\hypertarget{main}{%
-\subsection{Main}\label{main}}
+\begin{quote}
+\emph{Your program should demonstrate good object oriented design and
+modelling techniques. The domain model should be separate from
+\textbf{user interface (UI) controllers and views}. You are expected to
+use object-oriented concepts such as inheritance and polymorphism where
+it is required and makes sense to do so.} {[}Emphasis mine{]}
+\end{quote}
 
-\hypertarget{create}{%
-\subsection{Create}\label{create}}
+This section focuses on dicussing the \textbf{bolded} section. There are
+two main sections to this application: main, where the user can see all
+available data; create, where the user can create new data.
+
+For the requirements we read:
+
+\begin{quote}
+\emph{If a pen is full or otherwise unable to accommodate the animal,
+the user should see an error message explaining why.}
+\end{quote}
+
+I believe that an error is always bad if we can avoid it. Precisely for
+this reason, when a user wants to assign an animal to a pen the only
+choices that they are prompted with are those that can accommodate the
+animal.
 
 \hypertarget{critical-evaluation}{%
 \chapter{Critical Evaluation}\label{critical-evaluation}}
+
+This application could be improved in the following aspects:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Use firebase for the persistance layer
+  Use firebase for the persistance layer.
 \item
-  Auto-update weather, display timestamp
+  Auto-update weather.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Allow configuration of how often it should auto-update.
+  \end{itemize}
 \item
-  Unit tests
+  Unit tests.
 \item
-  Provide sensible empty states
+  Add empty states, when there is no data.
 \end{enumerate}
 
 \hypertarget{test-plan}{%

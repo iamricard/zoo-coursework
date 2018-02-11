@@ -76,19 +76,68 @@ explanation in this report.
 
 ## Data
 
+To quote the coursework specification:
+
+> _Your program should demonstrate good object oriented design and modelling
+> techniques. __The domain model should be separate from user interface (UI)__
+> controllers and views. You are expected to use object-oriented concepts such
+> as inheritance and polymorphism where it is required and makes sense to do
+> so._ \[Emphasis mine\]
+
+This section focuses on dicussing the __bolded__ section. The apps models can be
+divided many ways, but one that makes sense is local v. remote, entity v.
+service. In the context of this application: a service retrieves or creates data
+on-demand; an entity is data that will eventually be persisted.
+
 ### Local entities
+
+*   `Animal`
+    *   Has a name.
+    *   Has a Many-to-One relationship to Species entity.
+*   `Keeper`
+    *   Has a name.
+    *   One-to-Many relationship to Pen entity.
+*   `Pen`
+    *   Has the amount of land, air, water, and whether or not is pettable.
+    *   Many-to-One relationship to Keeper entity.
+*   `Species`
+    *   Has a name.
+    *   Has the amount of land, air, water needed, and whether or not is
+    pettable.
+    *   One-to-Many relationship to Animal entity.
 
 ### Local services
 
+`AllocatorService` automatically assigns keepers to un-assigned pens, and
+un-assigned animals to available pens.
+
 ### Remote services
+
+`OpenWeatherMapService` fetches weather data about Barcelona (where the Zoo is
+located), and turns it into a POJO (Plain Old Java Object) using Gson.
 
 ## UI
 
-### Base classes
+To quote the coursework specification:
 
-### Main
+> _Your program should demonstrate good object oriented design and modelling
+> techniques. The domain model should be separate from __user interface (UI)
+> controllers and views__. You are expected to use object-oriented concepts such
+> as inheritance and polymorphism where it is required and makes sense to do
+> so._ \[Emphasis mine\]
 
-### Create
+This section focuses on dicussing the __bolded__ section. There are two main
+sections to this application: main, where the user can see all available data;
+create, where the user can create new data.
+
+For the requirements we read:
+
+> _If a pen is full or otherwise unable to accommodate the animal, the user
+> should see an error message explaining why._
+
+I believe that an error is always bad if we can avoid it. Precisely for this
+reason, when a user wants to assign an animal to a pen the only choices that
+they are prompted with are those that can accommodate the animal.
 
 [OkHttp]: http://square.github.io/okhttp/
 [Java Stream API]: https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
