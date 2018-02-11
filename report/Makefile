@@ -1,4 +1,4 @@
-TARGET = out.tex
+TARGET = out
 OUT_FORMAT = latex
 IN_FORMAT = markdown+smart
 HEADER = src/header.tex
@@ -12,7 +12,7 @@ $(TARGET): src/*.yaml src/*.md
 	-H $(HEADER) \
 	-f $(IN_FORMAT) \
 	-t $(OUT_FORMAT) \
-	-s -o $(TARGET) $^ \
+	-s -o $(TARGET).tex $^ \
 	--top-level-division=chapter \
 	--number-sections \
 	--pdf-engine=xelatex \

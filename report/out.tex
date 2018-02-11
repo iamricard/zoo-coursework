@@ -101,7 +101,7 @@ plagiarism detection service. TurnitinUK for originality checks.
 \hypertarget{design-choices}{%
 \chapter{Design Choices}\label{design-choices}}
 
-Some of the choice I have made when building this project deviate a
+Some of the choices I have made when building this project deviate a
 little from the initially suggested approach and can therefore benefit
 from some extra explanation.
 
@@ -111,15 +111,15 @@ from some extra explanation.
 
 The design of this assignment seems to be testing more of UI development
 than it does OOP and other concepts covered in the \emph{Advanced
-Programming} module. While one lecture did briefly touch on what
+Programming} module. While one lecture did brie y touch on what
 \emph{JavaFX} is, and how it might be and improvement on Java's
 \href{https://www.wikiwand.com/en/Swing_(Java)}{Swing} the lecture was
 not nearly in-depth enough to justify using a framework that has been
 put on maintenance mode\footnote{Last version is JavaFX 8, released
   nearly 4 years ago in March of 2014.}.
 
-Instead the more sensible choices seemed to use a web-framework with a
-UI built on HTML, CSS, and JavaScript, such as
+Instead, the more sensible choices seemed to use a web-framework with a
+UI built on HTML, CSS, and JavaScript, like
 \href{http://sparkjava.com/}{Spark}; or the most popular mobile
 platform's SDK, \emph{Android}. I would argue an even better choice for
 the given requirements (building a UI) would have been a 100\%
@@ -127,9 +127,9 @@ the given requirements (building a UI) would have been a 100\%
 \emph{JavaScript}) application using the browser's
 \href{http://leveldb.org/}{LevelDB},
 \href{https://html.spec.whatwg.org/multipage/webstorage.html}{LocalStorage},
-or \href{https://firebase.google.com/}{Firebase} as a persistance layer
+or \href{https://firebase.google.com/}{Firebase} as a persistence layer
 but one of the requirements commanded \emph{Java} as the main language
-so they were not valid options. My most recient professional experience
+so they were not valid options. My most recent professional experience
 in \emph{Java} included building \emph{Android} applications so that
 was, from my point view, the most sensible choice given all the
 previously stated arguments was to use the \emph{Android Platform}:
@@ -148,10 +148,11 @@ previously stated arguments was to use the \emph{Android Platform}:
 \hypertarget{pens}{%
 \section{Pens}\label{pens}}
 
-The assignment's wording was very vague and it was specially so when
-referring to the \emph{pens}. I will unpack the text presented in the
-specification and explain my interpretation, in an attempt to get the
-reader of this report and myself on the same page:
+The assignment's specification was vague. it was specially so when
+describing what a \emph{pen} is and its characteristics. I will unpack
+the challenges presented in the specification and explain my
+interpretation, in an attempt to get the reader of this report and
+myself on the same page:
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -181,17 +182,16 @@ specification:
 \def\labelenumi{\arabic{enumi}.}
 \item
   There is no need to store the length, the width, or the height. If a
-  pen is dry its are will be land in m\^{}2, if it's an aviary it'll be
-  m\^{}3 in air space, and in water for aquariums. If it's hybrid, to be
-  able to accomodate, for example, a Hippo, the pen will have two
-  measurements, land in m\^{}2, and water in m\^{}3.
+  pen is dry its are will be land in \(m^{2}\), if it's an aviary it'll
+  be \(m^{3}\) in air space, and in water for aquariums. If it's hybrid,
+  to accommodate, for example, a Hippo, the pen will have two
+  measurements, land in \(m^{2}\), and water in \(m^{3}\).
 \item
-  The temperature is irrelevant with the provided specification. None of
-  the examples provided by the person writing the spec made mention of
-  an animal needing specific temperatures and is therefore irrelevant
-  information that need not be stored. Were this requirement changed,
-  storing temperature data would be a trivial change with this
-  implementation.
+  The temperature is irrelevant, at least with the examples provided in
+  the spec. The person writing the spec did not specify why or how the
+  temperature should be used. No animals need specific temperature,
+  making that data useless. Were this requirement to change, storing
+  temperature data would be a trivial change with this implementation.
 \end{enumerate}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
@@ -219,17 +219,17 @@ suggested we create one \texttt{class} for each sample animal provided.
 
 While that approach works, I believe it would be severely defficient in
 a real-world application when managing a zoo. The most obvious
-short-coming of the (TODO)afformentioned architecture is that any new
-species registered by the zoo would require actual source code change.
-Instead I propose this: treat each animal entity as having a
-relationship to a \emph{species} entity. Akin to how in the game of
-\emph{Pokémon} one would have a \emph{Pokédex} with all known
-\emph{Pokémon types} (\emph{species}) and a separate compartment with
-all the actual Pokémon. One wouldn't create a new \texttt{class} for
-every new \emph{Pokémon type} that appeared. Instead, one would treat
-each \emph{species} as a simply data. This would allow new discoveries
-about the \emph{species} to be changed as needed from a UI and without
-changing the source code itself.
+short-coming of the aforementioned architecture is that any new species
+registered by the zoo would require actual source code change. Instead I
+propose this: treat each animal entity as having a relationship to a
+\emph{species} entity. Akin to how in the game of \emph{Pokémon} one
+would have a \emph{Pokédex} with all known \emph{Pokémon types}
+(\emph{species}) and a separate compartment with all the actual Pokémon.
+One wouldn't create a new \texttt{class} for every new \emph{Pokémon
+type} that appeared. Instead, one would treat each \emph{species} as a
+simply data. This would allow new discoveries about the \emph{species}
+to be changed as needed from a UI and without changing the source code
+itself.
 
 \hypertarget{keepers-dont-have-a-type}{%
 \section{Keepers don't have a type}\label{keepers-dont-have-a-type}}
@@ -249,27 +249,92 @@ used on top of the already existing \emph{Android Platform} framework.
 \section{Libraries}\label{libraries}}
 
 \hypertarget{retrofitokhttp}{%
-\subsection{Retrofit/okHttp}\label{retrofitokhttp}}
+\subsection{Retrofit/OkHttp}\label{retrofitokhttp}}
 
-\hypertarget{stream-light-api}{%
-\subsection{Stream Light API}\label{stream-light-api}}
+\begin{quote}
+\emph{Type-safe HTTP client for Android and Java by Square, Inc.}
+
+\url{https://github.com/square/retrofit}
+\end{quote}
+
+Square's retrofit is built on top of another Square library:
+\href{http://square.github.io/okhttp/}{OkHttp}. It comes with a set of
+Java annotations that make it straight forward and safe to declare a
+remote service in Java and Android. Here it is used to model the
+OpenWeatherMap API data.
+
+\hypertarget{lightweight-stream-api}{%
+\subsection{Lightweight-Stream-API}\label{lightweight-stream-api}}
+
+\begin{quote}
+\emph{Stream API from Java 8 rewritten on iterators for Java 7 and
+below.}
+
+\url{https://github.com/aNNiMON/Lightweight-Stream-API}
+\end{quote}
+
+To allow for backward compatibility on older Android devices (back to
+Lollipop in this application) and still be able to use the nifty
+\href{https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html}{Java
+Stream API} I have included a library that backports the functionality
+to Android friendly idioms.
 
 \hypertarget{gson}{%
 \subsection{Gson}\label{gson}}
 
+\begin{quote}
+\emph{Gson is a Java library that can be used to convert Java Objects
+into their JSON representation. It can also be used to convert a JSON
+string to an equivalent Java object. Gson can work with arbitrary Java
+objects including pre-existing objects that you do not have source-code
+of.}
+
+\url{https://github.com/google/gson}
+\end{quote}
+
+It is widely known that the default \emph{org.json} is a terrible
+implementation of a JSON parsing library. It is also widely known the
+Gson and Jackson are great implementations solving the same problem. Due
+to my familiarity with it I have chosen the former.
+
+I use it to deserialize the Weather data from the API as well as load
+the initial seed data from a JSON file.
+
 \hypertarget{guava}{%
 \subsection{Guava}\label{guava}}
+
+\begin{quote}
+\emph{Guava is a set of core libraries that includes new collection
+types (such as multimap and multiset), immutable collections, a graph
+library, functional types, an in-memory cache, and APIs/utilities for
+concurrency, I/O, hashing, primitives, reflection, string processing,
+and much more!}
+
+\url{https://github.com/google/guava}
+\end{quote}
+
+I don't think Guava needs much explanation due to its widespread use in
+the industry. In the particular case of this application it is used to
+have better futures for asynchronous and non-blocking operations, as
+well as immutable data structures.
 
 \hypertarget{dagger}{%
 \subsection{Dagger}\label{dagger}}
 
-\hypertarget{dependency-injection}{%
-\section{Dependency Injection}\label{dependency-injection}}
-
-From Wikipedia:
-
 \begin{quote}
+\emph{Dagger 2 is a compile-time evolution approach to dependency
+injection. Taking the approach started in Dagger 1.x to its ultimate
+conclusion, Dagger 2.x eliminates all reflection, and improves code
+clarity by removing the traditional ObjectGraph/Injector in favor of
+user-specified @Component interfaces.}
+
+\url{https://github.com/google/dagger}
 \end{quote}
+
+Like Guava, Dagger 2 is a very common library to use dependency
+injection. Even more so when it comes to Android applications, due to
+its performance. \emph{Dependency Injection} solves many problems and is
+out of the scope of explanation in this report.
 
 \hypertarget{data}{%
 \section{Data}\label{data}}
@@ -298,8 +363,144 @@ From Wikipedia:
 \hypertarget{critical-evaluation}{%
 \chapter{Critical Evaluation}\label{critical-evaluation}}
 
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Use firebase for the persistance layer
+\item
+  Auto-update weather, display timestamp
+\item
+  Unit tests
+\item
+  Provide sensible empty states
+\end{enumerate}
+
 \hypertarget{test-plan}{%
 \chapter{Test Plan}\label{test-plan}}
+
+\begin{itemize}
+\tightlist
+\item
+  The program has three main screens:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    A list of all animals, displaying key information about each animal.
+  \item
+    A list of all pens, displaying key information about each pen.
+  \item
+    A list of staff, displaying key information about each staff member.
+  \end{enumerate}
+\item
+  The user must be able to add new animals
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Add new animal
+  \end{itemize}
+\item
+  Entering all the information regarding animal requirements.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Add new species
+  \end{itemize}
+\item
+  The user must be able to add new pens, entering all the information
+  about the pen.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Add new pens
+  \end{itemize}
+\item
+  The user must be able to assign animals to pens.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Assign animal to a pen.
+  \end{itemize}
+\item
+  The user must be able to assign staff to pens.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Assign a staff member to a pen.
+  \end{itemize}
+\item
+  If a pen is full or otherwise unable to accommodate the animal, the
+  user should see an error message explaining why.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The UI only displays pens that can accomodate the animal.
+  \end{itemize}
+\item
+  If a staff member is assigned to an unsuitable pen, the user should
+  see an error message explaining why.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Decided not to implement this requirement.
+  \end{itemize}
+\item
+  Any animals that have not been assigned a pen should be indicated
+  clearly.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Navigate to animal list with unassigned animals.
+  \end{itemize}
+\item
+  Any pens that have not had staff assigned should generate an alert of
+  some kind.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Navigate to pen list with unassigned animals.
+  \end{itemize}
+\item
+  The program must display the current weather, using data queried from
+  \url{https://openweathermap.org/api}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Highlight weather area.
+  \end{itemize}
+\item
+  The user must be able to refresh the weather data. This should not
+  block the UI whilst the request is made.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Refresh weather data, showing notification.
+  \end{itemize}
+\item
+  Automatic mode, which automatically tries to allocate animals to the
+  available pens without input from the user/Automatic mode, which
+  automatically tries to allocate staff to the available pens without
+  input from the user.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Create animals and pens, run auto-allocator.
+  \end{itemize}
+\end{itemize}
 
 \hypertarget{appendix-a-uml-diagram}{%
 \chapter{Appendix A: UML Diagram}\label{appendix-a-uml-diagram}}
