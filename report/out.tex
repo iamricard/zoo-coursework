@@ -35,6 +35,9 @@
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 % Make links footnotes instead of hotlinks:
 \DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
@@ -474,130 +477,116 @@ This application could be improved in the following aspects:
 \hypertarget{test-plan}{%
 \chapter{Test Plan}\label{test-plan}}
 
-\begin{itemize}
-\tightlist
-\item
-  The program has three main screens:
+\hypertarget{manual-tests}{%
+\section{Manual tests}\label{manual-tests}}
 
-  \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \tightlist
-  \item
-    A list of all animals, displaying key information about each animal.
-  \item
-    A list of all pens, displaying key information about each pen.
-  \item
-    A list of staff, displaying key information about each staff member.
-  \end{enumerate}
-\item
-  The user must be able to add new animals
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.47\columnwidth}\raggedright
+\emph{Test}\strut
+\end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
+\emph{Evidence}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+The application is available on the Play Store and gets installed
+correctly.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/rs59dB3NiFs}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+The program has three main screens: 1) A list of all animals, displaying
+key information about each animal. 2) A list of all pens, displaying key
+information about each pen. 3) A list of staff, displaying key
+information about each staff member.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/Sa4bBV7o8q0}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+The user must be able to add new animals.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/eHSeDcjuvoQ}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+The user must be able to add new species.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/g7uatbrfUCE}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+The user must be able to add new pens\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/K0kjBK1mcJk}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+The user must be able to assign animals to pens\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/LSGTgJ69SGs}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+The user must be able to assign staff to pens.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/5nhEoXPGg0g}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+If a pen is full or otherwise unable to accommodate the animal, the user
+should see an error message explaining why.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/i7mtL9kj-3g} Notes: Create new pen of 51m3 air,
+new giant parrot needs 51m3. When attempting to assign another bird,
+previous pen won't show up. Due to not enough space. Also, non-air pens
+won't appear as an option either.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+Any animals that have not been assigned a pen should be indicated
+clearly.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://imgur.com/a/wdMS2} (image)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+Any pens that have not had staff assigned should generate an alert of
+some kind.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://imgur.com/a/Pq8Ee} (image)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+The program must display the current weather, using data queried from
+\url{https://openweathermap.org/api}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://imgur.com/a/mqnnX} (image)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+The user must be able to refresh the weather data. This should not block
+the UI whilst the request is made.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/zZ2qF-6KycY}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+Automatic mode, which automatically tries to allocate animals to the
+available pens without input from the user/Automatic mode, which
+automatically tries to allocate staff to the available pens without
+input from the user.\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\url{https://youtu.be/5D7hzvBwS0Y}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Add new animal
-  \end{itemize}
-\item
-  Entering all the information regarding animal requirements.
+\hypertarget{appendix-a-exra-documents}{%
+\chapter{Appendix A: Exra Documents}\label{appendix-a-exra-documents}}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Add new species
-  \end{itemize}
-\item
-  The user must be able to add new pens, entering all the information
-  about the pen.
+\hypertarget{uml}{%
+\section{UML}\label{uml}}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Add new pens
-  \end{itemize}
-\item
-  The user must be able to assign animals to pens.
+The UML as an image can be found at \url{https://git.io/vAqRA}. The
+source code of the UML can be found at \url{https://git.io/vAqRN}.
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Assign animal to a pen.
-  \end{itemize}
-\item
-  The user must be able to assign staff to pens.
+\hypertarget{source-code}{%
+\section{Source code}\label{source-code}}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Assign a staff member to a pen.
-  \end{itemize}
-\item
-  If a pen is full or otherwise unable to accommodate the animal, the
-  user should see an error message explaining why.
+The source code can be found at
+\url{https://github.com/rcsole/zoo-coursework}.
 
-  \begin{itemize}
-  \tightlist
-  \item
-    The UI only displays pens that can accomodate the animal.
-  \end{itemize}
-\item
-  If a staff member is assigned to an unsuitable pen, the user should
-  see an error message explaining why.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Decided not to implement this requirement.
-  \end{itemize}
-\item
-  Any animals that have not been assigned a pen should be indicated
-  clearly.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Navigate to animal list with unassigned animals.
-  \end{itemize}
-\item
-  Any pens that have not had staff assigned should generate an alert of
-  some kind.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Navigate to pen list with unassigned animals.
-  \end{itemize}
-\item
-  The program must display the current weather, using data queried from
-  \url{https://openweathermap.org/api}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Highlight weather area.
-  \end{itemize}
-\item
-  The user must be able to refresh the weather data. This should not
-  block the UI whilst the request is made.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Refresh weather data, showing notification.
-  \end{itemize}
-\item
-  Automatic mode, which automatically tries to allocate animals to the
-  available pens without input from the user/Automatic mode, which
-  automatically tries to allocate staff to the available pens without
-  input from the user.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Create animals and pens, run auto-allocator.
-  \end{itemize}
-\end{itemize}
-
-\hypertarget{appendix-a-uml-diagram}{%
-\chapter{Appendix A: UML Diagram}\label{appendix-a-uml-diagram}}
+A zip file has been uploaded to Classroom.
 
 \end{document}
