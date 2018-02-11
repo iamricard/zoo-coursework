@@ -4,7 +4,7 @@
     - Google UK
     - Ada National College for Digital Skills
   date: \today
-  title: "Programming - Part I"
+  title: "Advanced Programming"
   toc: true
   lang: "en"
   papersize: "a4"
@@ -20,8 +20,9 @@
     the application can be installed from Google's Play Store at
     http://bit.ly/ada-zooify. The minimum Android version required is 5.0
     (Lollipop).
-  - Some of the decisions taken in building this app do not follow the original
-    suggested guidelines. TODO.
+  - Some of the decisions taken in building this application will appear to not
+    follow the suggested guidelines. A detailed explanation is provided in the
+    _design choices_ chapter.
   - \section*{Declaration}
   - I confirm that the submitted coursework is my own work and that all material
     attributed to others (whether published or unpublished) has been clearly
